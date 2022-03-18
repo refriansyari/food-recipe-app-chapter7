@@ -1,4 +1,4 @@
-package com.allana.food_recipe_app_chapter7.data.model
+package com.allana.food_recipe_app_chapter7.base.model
 
 sealed class Resource<T>(
     val data: T? = null,

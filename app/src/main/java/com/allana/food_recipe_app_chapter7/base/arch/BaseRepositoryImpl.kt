@@ -1,4 +1,4 @@
-package com.allana.food_recipe_app_chapter7.data.arch
+package com.allana.food_recipe_app_chapter7.base.arch
 
 import android.util.Log
 
