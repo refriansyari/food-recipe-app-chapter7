@@ -6,4 +6,10 @@
     <string name="text_desc_intro_second">If recipe is not relevant anymore, \nfeel free to Update</string>
     <string name="text_title_intro_third">Feel <font color="#FF672C">Free</font> to Remove</string>
     <string name="text_desc_intro_third">If recipe is not relevant anymore, \nyou can remove easily</string>
+    <string name="text_login">Login</string>
+    <string name="text_hint_enter_email_or_username">Enter email or username</string>
+    <string name="text_hint_password">Password</string>
+    <string name="text_btn_login">Login</string>
+    <string name="text_new_to_logistics">New to Logistics?</string>
+    <string name="text_navigate_to_register">Register</string>
 </resources>

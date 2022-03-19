@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_app_white">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/iv_login_page"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_40sdp"
+                android:layout_marginTop="@dimen/_40sdp"
+                android:layout_marginEnd="@dimen/_40sdp"
+                android:src="@drawable/ic_login"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_login"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_22sdp"
+                android:layout_marginTop="@dimen/_30sdp"
+                android:fontFamily="@font/poppins_700_bold"
+                android:text="@string/text_login"
+                android:textColor="@color/font_primary_color"
+                android:textSize="@dimen/_24ssp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/iv_login_page" />
+
+            <LinearLayout
+                android:id="@+id/ll_login_page"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_22sdp"
+                android:layout_marginTop="@dimen/_30sdp"
+                android:layout_marginEnd="@dimen/_22sdp"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_login">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cv_text_email_username"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/bg_input_text_darker_white"
+                    app:cardCornerRadius="@dimen/_10sdp">
+
+                    <EditText
+                        android:id="@+id/et_email_username"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_48sdp"
+                        android:fontFamily="@font/poppins_400_regular"
+                        android:hint="@string/text_hint_enter_email_or_username"
+                        android:padding="@dimen/_10sdp"
+                        android:textColorHint="@color/font_black_color"
+                        android:textSize="@dimen/_14ssp" />
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cv_text_password"
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/bg_input_text_darker_white"
+                    app:cardCornerRadius="@dimen/_10sdp">
+
+                    <EditText
+                        android:id="@+id/et_password"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_48sdp"
+                        android:fontFamily="@font/poppins_400_regular"
+                        android:hint="@string/text_hint_password"
+                        android:padding="@dimen/_10sdp"
+                        android:textColorHint="@color/font_black_color"
+                        android:textSize="@dimen/_14ssp" />
+
+                </com.google.android.material.card.MaterialCardView>
+                
+                <com.google.android.material.button.MaterialButton
+                    android:layout_width="match_parent"
+                    android:id="@+id/btn_login"
+                    android:layout_marginTop="@dimen/_60sdp"
+                    android:fontFamily="@font/roboto_700_bold"
+                    android:text="@string/text_btn_login"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_16ssp"
+                    android:backgroundTint="@color/primary_color"
+                    app:cornerRadius="@dimen/_10sdp"
+                    android:layout_height="@dimen/_42sdp"/>
+
+            </LinearLayout>
+           <LinearLayout
+               android:id="@+id/ll_text_navigate"
+               app:layout_constraintEnd_toEndOf="parent"
+               android:layout_marginTop="@dimen/_30sdp"
+               app:layout_constraintStart_toStartOf="parent"
+               app:layout_constraintTop_toBottomOf="@id/ll_login_page"
+               android:orientation="horizontal"
+               android:gravity="center_horizontal"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content">
+               <TextView
+                   android:layout_width="wrap_content"
+                   app:layout_constraintTop_toBottomOf="@id/ll_login_page"
+                   app:layout_constraintEnd_toEndOf="parent"
+                   app:layout_constraintStart_toStartOf="parent"
+                   android:textSize="@dimen/_10ssp"
+                   android:textColor="@color/font_black_color"
+                   android:text="@string/text_new_to_logistics"
+                   android:id="@+id/tv_new_logistics"
+                   android:layout_height="wrap_content"/>
+               <TextView
+                   android:layout_width="wrap_content"
+                   app:layout_constraintTop_toBottomOf="@id/ll_login_page"
+                   app:layout_constraintStart_toEndOf="@id/tv_new_logistics"
+                   android:textSize="@dimen/_10ssp"
+                   android:textColor="@color/font_primary_color"
+                   android:fontFamily="@font/poppins_600_semibold"
+                   android:text="@string/text_navigate_to_register"
+                   android:id="@+id/tv_navigate_to_register"
+                   android:layout_marginStart="@dimen/_5sdp"
+                   android:layout_height="wrap_content"/>
+
+           </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
