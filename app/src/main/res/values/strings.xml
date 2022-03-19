@@ -6,4 +6,8 @@
     <string name="text_desc_intro_second">If recipe is not relevant anymore, \nfeel free to Update</string>
     <string name="text_title_intro_third">Feel <font color="#FF672C">Free</font> to Remove</string>
     <string name="text_desc_intro_third">If recipe is not relevant anymore, \nyou can remove easily</string>
+    <string name="tv_profile_title">Profile</string>
+    <string name="tv_edit_profile">Edit Profile</string>
+    <string name="tv_change_password">Change Password</string>
+    <string name="tv_logout">Logout</string>
 </resources>
