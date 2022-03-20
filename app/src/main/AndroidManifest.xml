@@ -10,16 +10,19 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Default">
         <activity
+            android:name=".ui.register.RegisterActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.home.HomeActivity"
             android:exported="false" />
         <activity
             android:name=".ui.intro.IntroScreenActivity"
-            android:theme="@style/Theme.Intro"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/Theme.Intro" />
         <activity
             android:name=".ui.splash.SplashScreenActivity"
-            android:theme="@style/Theme.SplashScreen"
-            android:exported="true">
+            android:exported="true"
+            android:theme="@style/Theme.SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
