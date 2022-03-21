@@ -3,13 +3,23 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="app/src/main/res/layout/activity_detail.xml" value="0.2776268115942029" />
+     <entry key="app/src/main/res/layout/activity_detail.xml" value="0.2776268115942029" />
         <entry key="app/src/main/res/layout/activity_home.xml" value="0.2776268115942029" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.2776268115942029" />
         <entry key="app/src/main/res/layout/item_recipe.xml" value="0.2776268115942029" />
         <entry key="app/src/main/res/layout/layout_intro_first.xml" value="0.2078125" />
         <entry key="app/src/main/res/menu/menu_bottom_nav.xml" value="0.3734375" />
+        <entry key="app/src/main/res/drawable/bg_edit_text_favorite.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_home.xml" value="0.10511651469098278" />
+        <entry key="app/src/main/res/layout/activity_intro_screen.xml" value="0.10511651469098278" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_splash_screen.xml" value="0.10511651469098278" />
+        <entry key="app/src/main/res/layout/fragment_favorite_recipe.xml" value="0.18" />
+        <entry key="app/src/main/res/layout/layout_intro_first.xml" value="0.22" />
+        <entry key="app/src/main/res/layout/layout_intro_second.xml" value="0.14" />
+        <entry key="app/src/main/res/layout/layout_intro_third.xml" value="0.17" />
+        <entry key="app/src/main/res/layout/list_item_favorite_recipe.xml" value="0.25" />
       </map>
     </option>
   </component>
