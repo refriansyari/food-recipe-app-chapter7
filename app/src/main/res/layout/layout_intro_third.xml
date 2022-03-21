@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <TextView
+        android:id="@+id/tv_title_intro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_30sdp"
+        android:layout_marginBottom="@dimen/_10sdp"
+        android:fontFamily="@font/poppins_700_bold"
+        android:text="@string/text_title_intro_third"
+        android:textColor="@color/font_black_color"
+        android:textSize="@dimen/_22ssp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/tv_desc_intro" />
+
+    <TextView
+        android:id="@+id/tv_desc_intro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/_30sdp"
+        android:layout_marginBottom="@dimen/_26sdp"
+        android:fontFamily="@font/poppins_400_regular"
+        android:text="@string/text_desc_intro_third"
+        android:textColor="@color/font_black_color"
+        android:textSize="@dimen/_14ssp"
+        app:layout_constraintStart_toStartOf="@id/tv_title_intro"
+        app:layout_constraintBottom_toTopOf="@id/iv_intro"/>
+
+    <ImageView
+        android:id="@+id/iv_intro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_intro_third"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
