@@ -10,6 +10,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Default">
         <activity
+            android:name=".ui.editprofile.EditProfileActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.home.HomeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.intro.IntroScreenActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Intro" />
+       <activity
             android:name=".ui.features.home.detail.DetailActivity"
             android:exported="false" />
         <activity
