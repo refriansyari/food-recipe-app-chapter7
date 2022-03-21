@@ -19,6 +19,16 @@
             android:name=".ui.intro.IntroScreenActivity"
             android:exported="false"
             android:theme="@style/Theme.Intro" />
+       <activity
+            android:name=".ui.features.home.detail.DetailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.features.MainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.intro.IntroScreenActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Intro" />
         <activity
             android:name=".ui.splash.SplashScreenActivity"
             android:exported="true"
