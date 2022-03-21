@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="white">#FFFFFFFF</color>
-
+    <color name="unselected_indicator">#B6AA9E</color>
     <color name="bg_splash_color">#3F3D56</color>
     <color name="primary_color">#FF672C</color>
     <color name="font_black_color">#403F3E</color>
