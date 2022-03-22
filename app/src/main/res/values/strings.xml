@@ -6,6 +6,8 @@
     <string name="text_desc_intro_second">If recipe is not relevant anymore, \nfeel free to Update</string>
     <string name="text_title_intro_third">Feel <font color="#FF672C">Free</font> to Remove</string>
     <string name="text_desc_intro_third">If recipe is not relevant anymore, \nyou can remove easily</string>
+    <string name="text_title_ingredients_detail">Ingredients</string>
+    <string name="text_title_instructions_title">Instructions</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="text_title_recipe">Peanut Butter and Jelly Smoothie</string>
