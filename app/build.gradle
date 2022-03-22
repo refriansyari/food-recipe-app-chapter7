@@ -38,6 +38,13 @@ android {
     kapt {
         correctErrorTypes true
     }
+    flavorDimensions 'default'
+    productFlavors {
+        production {
+            dimension = 'default'
+            buildConfigField("String", "BASE_URL_RECIPE_SPOONACULAR", "\"https://api.spoonacular.com/recipes/\"")
+        }
+    }
 }
 
 dependencies {
