@@ -16,7 +16,7 @@ abstract class BaseFragment<B : ViewBinding, VM : BaseContract.BaseViewModel>(
     private lateinit var binding: B
 
     @Inject
-    lateinit var viewModel: VM
+    private lateinit var viewModel: VM
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -38,8 +38,6 @@ abstract class BaseFragment<B : ViewBinding, VM : BaseContract.BaseViewModel>(
     abstract fun initViewModel(): VM
 
     fun getViewBinding(): B = binding
-
-    @JvmName("getViewModelFragment")
     fun getViewModel(): VM = viewModel
 
     override fun observeData() {

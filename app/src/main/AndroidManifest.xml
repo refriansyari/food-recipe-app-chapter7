@@ -12,8 +12,19 @@
         <activity
             android:name=".ui.recipedetail.DetailRecipeActivity"
             android:exported="false" />
+      
+       <activity
+            android:name=".ui.editprofile.EditProfileActivity"
+            android:exported="false" />
         <activity
             android:name=".ui.home.HomeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.intro.IntroScreenActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Intro" />
+        <activity
+            android:name=".ui.features.MainActivity"
             android:exported="false" />
         <activity
             android:name=".ui.intro.IntroScreenActivity"
