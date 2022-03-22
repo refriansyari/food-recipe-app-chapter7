@@ -3,14 +3,13 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/asus/AndroidStudioProjects/food-recipe-app-chapter7/app/src/main/res/layout/activity_home.xml" value="0.20521590423257802" />
-        <entry key="..\:/Users/asus/AndroidStudioProjects/food-recipe-app-chapter7/app/src/main/res/layout/activity_intro_screen.xml" value="0.25" />
-        <entry key="..\:/Users/asus/AndroidStudioProjects/food-recipe-app-chapter7/app/src/main/res/layout/activity_login_page.xml" value="0.176" />
-        <entry key="..\:/Users/asus/AndroidStudioProjects/food-recipe-app-chapter7/app/src/main/res/layout/activity_splash_screen.xml" value="0.25" />
-        <entry key="..\:/Users/asus/AndroidStudioProjects/food-recipe-app-chapter7/app/src/main/res/layout/layout_intro_first.xml" value="0.25" />
-        <entry key="..\:/Users/asus/AndroidStudioProjects/food-recipe-app-chapter7/app/src/main/res/layout/layout_intro_second.xml" value="0.25" />
-        <entry key="..\:/Users/asus/AndroidStudioProjects/food-recipe-app-chapter7/app/src/main/res/layout/layout_intro_third.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_home.xml" value="0.10511651469098278" />
+        <entry key="app/src/main/res/layout/activity_intro_screen.xml" value="0.10511651469098278" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_splash_screen.xml" value="0.10511651469098278" />
+        <entry key="app/src/main/res/layout/layout_intro_first.xml" value="0.22" />
+        <entry key="app/src/main/res/layout/layout_intro_second.xml" value="0.14" />
+        <entry key="app/src/main/res/layout/layout_intro_third.xml" value="0.17" />
       </map>
     </option>
   </component>
