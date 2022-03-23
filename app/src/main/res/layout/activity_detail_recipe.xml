@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/bg_app_darker_white"
-    tools:context=".ui.recipedetail.DetailRecipeActivity">
+    tools:context=".ui.features.home.detail.DetailRecipeActivity">
 
 
 
@@ -21,7 +21,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/_200sdp"
                 app:layout_constraintTop_toTopOf="parent"
-                tools:src="@drawable/burger_"
+                tools:src="@drawable/burger"
                 android:background="@color/bg_splash_color"/>
 
             <LinearLayout
@@ -38,7 +38,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/_20sdp"
                     android:layout_gravity="center"
-                    android:fontFamily="@font/poppins_700_bold"
+                    android:fontFamily="@font/poppins_bold"
                     android:textColor="@color/font_black_color"
                     android:textSize="@dimen/_16ssp"
                     tools:text="Teriyaki Chicken Casserole" />
@@ -49,7 +49,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/_10sdp"
                     android:layout_gravity="center"
-                    android:fontFamily="@font/poppins_400_regular"
+                    android:fontFamily="@font/poppins_regular"
                     android:textColor="@color/font_black_color"
                     android:textSize="@dimen/_14ssp"
                     tools:text="Chicken" />
@@ -59,7 +59,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/_20sdp"
-                    android:fontFamily="@font/poppins_600_semibold"
+                    android:fontFamily="@font/poppins_semibold"
                     android:text="@string/text_title_ingredients_detail"
                     android:textColor="@color/font_black_color"
                     android:textSize="@dimen/_16ssp" />
@@ -69,7 +69,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/_10sdp"
-                    android:fontFamily="@font/poppins_400_regular"
+                    android:fontFamily="@font/poppins_regular"
                     android:textColor="@color/font_black_color"
                     android:textSize="@dimen/_14ssp"
                     tools:text="Chicken" />
@@ -79,7 +79,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/_20sdp"
-                    android:fontFamily="@font/poppins_600_semibold"
+                    android:fontFamily="@font/poppins_semibold"
                     android:text="@string/text_title_instructions_title"
                     android:textColor="@color/font_black_color"
                     android:textSize="@dimen/_16ssp" />
@@ -89,7 +89,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/_10sdp"
-                    android:fontFamily="@font/poppins_400_regular"
+                    android:fontFamily="@font/poppins_regular"
                     android:textColor="@color/font_black_color"
                     android:textSize="@dimen/_14ssp"
                     tools:text="Chicken" />

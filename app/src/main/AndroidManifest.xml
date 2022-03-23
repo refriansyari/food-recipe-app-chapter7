@@ -10,29 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Default">
         <activity
-            android:name=".ui.recipedetail.DetailRecipeActivity"
+            android:name=".ui.features.home.search.SearchActivity"
             android:exported="false" />
-      
-       <activity
-            android:name=".ui.editprofile.EditProfileActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ui.home.HomeActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ui.intro.IntroScreenActivity"
-            android:exported="false"
-            android:theme="@style/Theme.Intro" />
-        <activity
-            android:name=".ui.features.MainActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ui.intro.IntroScreenActivity"
-            android:exported="false"
-            android:theme="@style/Theme.Intro" />
         <activity
             android:name=".ui.splash.SplashScreenActivity"
             android:exported="true"
+            android:screenOrientation="portrait"
             android:theme="@style/Theme.SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -40,6 +23,19 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".ui.features.home.detail.DetailRecipeActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.intro.IntroScreenActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Intro" />
+        <activity
+            android:name=".ui.features.MainActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.Home" />
     </application>
 
 </manifest>

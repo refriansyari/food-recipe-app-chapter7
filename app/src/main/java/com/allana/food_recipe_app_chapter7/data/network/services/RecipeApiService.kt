@@ -1,13 +1,15 @@
 package com.allana.food_recipe_app_chapter7.data.network.services
 
 import com.allana.food_recipe_app_chapter7.BuildConfig
-import com.allana.food_recipe_app_chapter7.data.model.Recipe
+import com.allana.food_recipe_app_chapter7.data.model.response.recipe.Recipe
+import com.allana.food_recipe_app_chapter7.data.model.response.recipe.detail.RecipeDetailResponse
 import com.allana.food_recipe_app_chapter7.data.network.services.ApiKey.API_KEY
 import com.chuckerteam.chucker.api.ChuckerInterceptor
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.GET
+import retrofit2.http.Path
 import retrofit2.http.Query
 import java.util.concurrent.TimeUnit
 
@@ -22,7 +24,12 @@ interface RecipeApiService {
         @Query("number") number: Int = 20
     ): List<Recipe>
 
-
+    /**
+     * detail
+     * **/
+    // TODO sesuaikan dengan strukturnya
+    @GET("recipes/{recipeId}/information?apiKey=6ea0d5be0db54fb59cf9ee4b285232f1&includeNutrition=false")
+    suspend fun getRecipeDetail(@Path("recipeId") recipeId : Int): RecipeDetailResponse
 
     companion object {
         @JvmStatic
