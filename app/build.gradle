@@ -42,7 +42,6 @@ android {
     productFlavors {
         production {
             dimension = 'default'
-            buildConfigField("String", "BASE_URL_RECIPE_SPOONACULAR", "\"https://api.spoonacular.com/recipes/\"")
             buildConfigField("String", "BASE_URL_BINAR_AUTH", "\"https://binar-gdd-cc8.herokuapp.com/api/v1/\"")
             buildConfigField("String", "BASE_URL_RECIPE", "\"https://api.spoonacular.com/recipes/\"")
         }

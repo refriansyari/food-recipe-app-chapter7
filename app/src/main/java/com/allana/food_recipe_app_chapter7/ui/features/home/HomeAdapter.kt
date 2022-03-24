@@ -4,8 +4,8 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
-import com.allana.food_recipe_app_chapter7.data.model.Recipe
-import com.allana.food_recipe_app_chapter7.databinding.ItemRecipeBinding
+import com.allana.food_recipe_app_chapter7.data.model.response.recipe.Recipe
+import com.allana.food_recipe_app_chapter7.databinding.ItemListRecipeBinding
 
 class HomeAdapter(private val itemClick: (Recipe) -> Unit) :
     RecyclerView.Adapter<HomeAdapter.HomeViewHolder>() {
@@ -29,7 +29,7 @@ class HomeAdapter(private val itemClick: (Recipe) -> Unit) :
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HomeViewHolder {
-        val binding = ItemRecipeBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        val binding = ItemListRecipeBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return HomeViewHolder(binding, itemClick)
     }
 
@@ -39,7 +39,7 @@ class HomeAdapter(private val itemClick: (Recipe) -> Unit) :
 
     override fun getItemCount(): Int = items.size
 
-    class HomeViewHolder(private val binding: ItemRecipeBinding, val itemClick: (Recipe) -> Unit) :
+    class HomeViewHolder(private val binding: ItemListRecipeBinding, val itemClick: (Recipe) -> Unit) :
         RecyclerView.ViewHolder(binding.root) {
         fun bindView(item: Recipe) {
             with(item) {
