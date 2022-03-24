@@ -3,25 +3,28 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Binar-Android-Project/food-recipe-app-chapter7/app/src/main/res/drawable/ic_baseline_arrow_back_24.xml" value="0.1195" />
-        <entry key="..\:/Binar-Android-Project/food-recipe-app-chapter7/app/src/main/res/drawable/ic_baseline_chevron_left_24.xml" value="0.1195" />
-        <entry key="..\:/Binar-Android-Project/food-recipe-app-chapter7/app/src/main/res/drawable/ic_baseline_favorite_24.xml" value="0.1195" />
-        <entry key="..\:/Binar-Android-Project/food-recipe-app-chapter7/app/src/main/res/drawable/ic_baseline_favorite_border_24.xml" value="0.1195" />
-        <entry key="..\:/Binar-Android-Project/food-recipe-app-chapter7/app/src/main/res/layout/activity_detail_recipe.xml" value="0.33" />
-        <entry key="app/src/main/res/layout/activity_home.xml" value="0.10511651469098278" />
-        <entry key="app/src/main/res/layout/activity_intro_screen.xml" value="0.10511651469098278" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.25" />
-        <entry key="app/src/main/res/layout/activity_splash_screen.xml" value="0.10511651469098278" />
-        <entry key="app/src/main/res/layout/layout_intro_first.xml" value="0.22" />
-        <entry key="app/src/main/res/layout/layout_intro_second.xml" value="0.14" />
-        <entry key="app/src/main/res/layout/layout_intro_third.xml" value="0.17" />
+        <entry key="app/src/main/res/drawable-v24/bottom_navigation_selector.xml" value="0.162" />
+        <entry key="app/src/main/res/drawable/bg_search.xml" value="0.162" />
+        <entry key="app/src/main/res/layout/activity_detail_recipe.xml" value="0.2776268115942029" />
+        <entry key="app/src/main/res/layout/activity_intro_screen.xml" value="0.2776268115942029" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.2776268115942029" />
+        <entry key="app/src/main/res/layout/activity_search.xml" value="0.17058572039333048" />
+        <entry key="app/src/main/res/layout/activity_splash_screen.xml" value="0.2776268115942029" />
+        <entry key="app/src/main/res/layout/fragment_favorite_recipe.xml" value="0.2776268115942029" />
+        <entry key="app/src/main/res/layout/fragment_home.xml" value="0.492091388400703" />
+        <entry key="app/src/main/res/layout/fragment_profile.xml" value="0.2776268115942029" />
+        <entry key="app/src/main/res/layout/item_list_recipe.xml" value="0.7944938770238904" />
+        <entry key="app/src/main/res/layout/item_recipe.xml" value="0.2776268115942029" />
+        <entry key="app/src/main/res/layout/layout_intro_first.xml" value="0.2776268115942029" />
+        <entry key="app/src/main/res/layout/layout_intro_second.xml" value="0.2776268115942029" />
+        <entry key="app/src/main/res/layout/layout_intro_third.xml" value="0.2776268115942029" />
+        <entry key="app/src/main/res/layout/list_item_favorite_recipe.xml" value="0.2776268115942029" />
+        <entry key="app/src/main/res/menu/menu_bottom_nav.xml" value="0.3734375" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher 2.xml" value="0.1" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.162" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.162" />
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
-    <output url="file://$PROJECT_DIR$/build/classes" />
-  </component>
-  <component name="ProjectType">
-    <option name="id" value="Android" />
-  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="1.8" project-jdk-type="JavaSDK" />
 </project>

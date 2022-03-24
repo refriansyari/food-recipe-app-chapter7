@@ -5,18 +5,18 @@
         android:id="@+id/action_home"
         android:enabled="true"
         android:icon="@drawable/ic_home"
-        android:title=""
+        android:title="@string/label_btm_home"
         app:showAsAction="ifRoom" />
     <item
         android:id="@+id/action_favorite"
         android:enabled="true"
         android:icon="@drawable/ic_favorite"
-        android:title=""
+        android:title="@string/label_btm_favorite"
         app:showAsAction="ifRoom" />
     <item
         android:id="@+id/action_profile"
         android:enabled="true"
         android:icon="@drawable/ic_profile"
-        android:title=""
+        android:title="@string/label_btm_profile"
         app:showAsAction="ifRoom" />
 </menu>

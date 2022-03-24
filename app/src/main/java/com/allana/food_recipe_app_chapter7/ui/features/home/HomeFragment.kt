@@ -1,5 +1,6 @@
 package com.allana.food_recipe_app_chapter7.ui.features.home
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
