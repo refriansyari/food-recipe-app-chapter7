@@ -4,8 +4,8 @@ import com.allana.food_recipe_app_chapter7.data.local.preference.UserPreference
 import com.allana.food_recipe_app_chapter7.data.network.model.response.auth.User
 import javax.inject.Inject
 
-class LocalDataAuthSourceImpl
-@Inject constructor(private val userPreference: UserPreference) : LocalDataAuthSource {
+class LocalAuthDataSourceImpl
+@Inject constructor(private val userPreference: UserPreference) : LocalAuthDataSource {
     override fun getAuthToken(): String? {
         return userPreference.authToken
     }

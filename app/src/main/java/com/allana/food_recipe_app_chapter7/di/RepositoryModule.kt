@@ -1,6 +1,6 @@
 package com.allana.food_recipe_app_chapter7.di
 
-import com.allana.food_recipe_app_chapter7.data.local.preference.datasource.LocalDataAuthSource
+import com.allana.food_recipe_app_chapter7.data.local.preference.datasource.LocalAuthDataSource
 import com.allana.food_recipe_app_chapter7.data.network.datasource.RecipeDataSource
 import com.allana.food_recipe_app_chapter7.data.network.datasource.auth.AuthApiDataSource
 import com.allana.food_recipe_app_chapter7.ui.features.home.HomeRepository
@@ -28,9 +28,9 @@ object RepositoryModule {
     @Singleton
     fun provideLoginPageRepository(
         authApiDataSource: AuthApiDataSource,
-        localDataAuthSource: LocalDataAuthSource
+        localAuthDataSource: LocalAuthDataSource
     ) : LoginPageRepository{
-        return LoginPageRepository(authApiDataSource,localDataAuthSource)
+        return LoginPageRepository(authApiDataSource,localAuthDataSource)
     }
 
     // TODO add detailRecipeRepo

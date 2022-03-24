@@ -10,7 +10,7 @@ import com.allana.food_recipe_app_chapter7.data.network.model.response.auth.User
 interface LoginPageContract {
     interface View: BaseContract.BaseView{
         fun setOnClick()
-        fun isFormValid(): Boolean
+        fun checkFormValidation(): Boolean
         fun navigateToHome()
         fun navigateToRegister()
         fun setToolbar()

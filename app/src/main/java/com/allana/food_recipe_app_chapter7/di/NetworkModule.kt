@@ -1,6 +1,8 @@
 package com.allana.food_recipe_app_chapter7.di
 
 import android.content.Context
+import com.allana.food_recipe_app_chapter7.data.local.preference.datasource.LocalAuthDataSource
+import com.allana.food_recipe_app_chapter7.data.network.services.AuthApiServices
 import com.allana.food_recipe_app_chapter7.data.network.services.RecipeApiService
 import com.chuckerteam.chucker.api.ChuckerInterceptor
 import dagger.Module
@@ -14,7 +16,14 @@ import javax.inject.Singleton
 @InstallIn(SingletonComponent::class)
 object NetworkModule {
 
-    // TODO add auth api services
+    @Singleton
+    @Provides
+    fun provideAuthApiServices(
+        localAuthDataSource: LocalAuthDataSource,
+        chuckerInterceptor: ChuckerInterceptor
+    ): AuthApiServices{
+        return AuthApiServices.invoke(localAuthDataSource,chuckerInterceptor)
+    }
 
     @Singleton
     @Provides
