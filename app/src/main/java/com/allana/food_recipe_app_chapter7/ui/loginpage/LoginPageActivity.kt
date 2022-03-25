@@ -24,7 +24,7 @@ class LoginPageActivity :
 
     override fun setOnClick() {
         getViewBinding().btnLogin.setOnClickListener {
-            if (checkFormValidation()){
+            if (checkFormValidation()) {
                 getViewModel().loginUser(
                     AuthRequest(
                         email = getViewBinding().etEmailUsername.text.toString(),
@@ -45,16 +45,24 @@ class LoginPageActivity :
         when {
             email.isEmpty() -> {
                 isFormValid = false
-                getViewBinding().etEmailUsername.error = getString(R.string.error_email_username)
+                getViewBinding().tilEmailUsername.isErrorEnabled = true
+                getViewBinding().tilEmailUsername.error = getString(R.string.error_email_username)
             }
             StringUtils.isEmailValid(email).not() -> {
                 isFormValid = false
+                getViewBinding().tilEmailUsername.isErrorEnabled = true
                 getViewBinding().etEmailUsername.error = getString(R.string.invalid_email)
+            }
+            else -> {
+                getViewBinding().tilEmailUsername.isErrorEnabled = false
             }
         }
         if (password.isEmpty()) {
             isFormValid = false
-            getViewBinding().etPassword.error = getString(R.string.error_password)
+            getViewBinding().tilPassword.isErrorEnabled = true
+            getViewBinding().tilPassword.error = getString(R.string.error_password)
+        } else {
+            getViewBinding().tilEmailUsername.isErrorEnabled = false
         }
         return isFormValid
     }
