@@ -30,7 +30,7 @@ object DataSourceModule {
     }
     @Singleton
     @Provides
-    fun provideLocalAuthDataSource(userPreference: SessionPreference): LocalAuthDataSource{
-        return LocalAuthDataSourceImpl(userPreference)
+    fun provideLocalAuthDataSource(sessionPreference: SessionPreference): LocalAuthDataSource{
+        return LocalAuthDataSourceImpl(sessionPreference)
     }
 }

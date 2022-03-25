@@ -3,7 +3,7 @@ package com.allana.food_recipe_app_chapter7.data.network.model.response.auth
 import com.google.gson.annotations.SerializedName
 
 data class User(
-    @SerializedName("id")
+    @SerializedName("_id")
     var id :String?,
     @SerializedName("email")
     var email :String?,
