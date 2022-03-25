@@ -36,7 +36,7 @@
         <EditText
             android:id="@+id/et_search_favorite_recipe"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/_48sdp"
+            android:layout_height="@dimen/_38sdp"
             android:inputType="text"
             android:background="@color/white"
             android:drawableStart="@drawable/ic_search"
