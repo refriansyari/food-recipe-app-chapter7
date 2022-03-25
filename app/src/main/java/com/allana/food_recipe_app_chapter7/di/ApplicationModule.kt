@@ -1,7 +1,7 @@
 package com.allana.food_recipe_app_chapter7.di
 
 import android.content.Context
-import com.allana.food_recipe_app_chapter7.data.local.preference.UserPreference
+import com.allana.food_recipe_app_chapter7.data.local.preference.SessionPreference
 import com.google.gson.Gson
 import dagger.Module
 import dagger.Provides
@@ -18,8 +18,8 @@ object ApplicationModule {
     fun provideUserPreference(
         @ApplicationContext context:Context,
         gson: Gson
-    ) : UserPreference{
-        return UserPreference(context,gson)
+    ) : SessionPreference{
+        return SessionPreference(context,gson)
     }
     @Singleton
     @Provides

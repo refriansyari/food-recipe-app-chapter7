@@ -12,7 +12,7 @@ import javax.inject.Inject
 Written with love by Muhammad Hermas Yuda Pamungkas
 Github : https://github.com/hermasyp
  **/
-class UserPreference @Inject constructor(
+class SessionPreference @Inject constructor(
     @ApplicationContext val context: Context,
 val gson: Gson) {
     private var preference: SharedPreferences = context.getSharedPreferences(NAME, MODE)
