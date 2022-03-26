@@ -3,6 +3,8 @@ package com.allana.food_recipe_app_chapter7.di
 import com.allana.food_recipe_app_chapter7.base.arch.GenericViewModelFactory
 import com.allana.food_recipe_app_chapter7.ui.features.home.HomeRepository
 import com.allana.food_recipe_app_chapter7.ui.features.home.HomeViewModel
+import com.allana.food_recipe_app_chapter7.ui.features.home.detail.DetailRepository
+import com.allana.food_recipe_app_chapter7.ui.features.home.detail.DetailViewModel
 import com.allana.food_recipe_app_chapter7.ui.loginpage.LoginPageRepository
 import com.allana.food_recipe_app_chapter7.ui.loginpage.LoginPageViewModel
 import com.allana.food_recipe_app_chapter7.ui.splash.SplashScreenRepository
@@ -27,6 +29,14 @@ object ViewModelModule {
             HomeViewModel::class.java
         )
     }
+    @Provides
+    @ActivityScoped
+    fun provideDetailViewModel(detailRepository: DetailRepository): DetailViewModel{
+        return GenericViewModelFactory(DetailViewModel(detailRepository)).create(
+            DetailViewModel::class.java
+        )
+    }
+    // TODO add loginModel
     @Provides
     @ActivityScoped
     fun provideLoginPageViewModel(
