@@ -1,8 +1,8 @@
 package com.allana.food_recipe_app_chapter7.di
 
 import com.allana.food_recipe_app_chapter7.data.local.preference.SessionPreference
-import com.allana.food_recipe_app_chapter7.data.local.preference.datasource.LocalAuthDataSource
-import com.allana.food_recipe_app_chapter7.data.local.preference.datasource.LocalAuthDataSourceImpl
+import com.allana.food_recipe_app_chapter7.data.local.datasource.LocalAuthDataSource
+import com.allana.food_recipe_app_chapter7.data.local.datasource.LocalAuthDataSourceImpl
 import com.allana.food_recipe_app_chapter7.data.network.datasource.RecipeDataSource
 import com.allana.food_recipe_app_chapter7.data.network.datasource.RecipeDataSourceImpl
 import com.allana.food_recipe_app_chapter7.data.network.datasource.auth.AuthApiDataSource
@@ -30,7 +30,7 @@ object DataSourceModule {
     }
     @Singleton
     @Provides
-    fun provideLocalAuthDataSource(userPreference: SessionPreference): LocalAuthDataSource{
+    fun provideLocalAuthDataSource(userPreference: SessionPreference): LocalAuthDataSource {
         return LocalAuthDataSourceImpl(userPreference)
     }
 }

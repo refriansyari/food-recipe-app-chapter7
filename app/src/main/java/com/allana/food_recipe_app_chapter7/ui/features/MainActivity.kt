@@ -9,7 +9,6 @@ import com.allana.food_recipe_app_chapter7.ui.features.favorite.FavoriteFragment
 import com.allana.food_recipe_app_chapter7.ui.features.home.HomeFragment
 import com.allana.food_recipe_app_chapter7.ui.features.profile.ProfileFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import dagger.hilt.android.AndroidEntryPoint
 
 class MainActivity : AppCompatActivity() {
 
@@ -17,7 +16,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val binding = ActivityMainBinding.inflate(layoutInflater)
+        binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         supportActionBar?.hide()
 

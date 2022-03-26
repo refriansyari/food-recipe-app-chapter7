@@ -70,7 +70,8 @@
                         android:inputType="textEmailAddress"
                         android:maxLines="1"
                         android:textColorHint="@color/font_black_color"
-                        android:textSize="@dimen/_14ssp" />
+                        android:textSize="@dimen/_14ssp"
+                        android:background="@color/bg_input_text_darker_white"/>
 
                 </com.google.android.material.card.MaterialCardView>
 
@@ -92,7 +93,8 @@
                         android:padding="@dimen/_10sdp"
                         android:inputType="textPassword"
                         android:textColorHint="@color/font_black_color"
-                        android:textSize="@dimen/_14ssp" />
+                        android:textSize="@dimen/_14ssp"
+                        android:background="@color/bg_input_text_darker_white"/>
 
                 </com.google.android.material.card.MaterialCardView>
 

@@ -5,6 +5,8 @@ import com.allana.food_recipe_app_chapter7.ui.features.home.HomeRepository
 import com.allana.food_recipe_app_chapter7.ui.features.home.HomeViewModel
 import com.allana.food_recipe_app_chapter7.ui.loginpage.LoginPageRepository
 import com.allana.food_recipe_app_chapter7.ui.loginpage.LoginPageViewModel
+import com.allana.food_recipe_app_chapter7.ui.splash.SplashScreenRepository
+import com.allana.food_recipe_app_chapter7.ui.splash.SplashScreenViewModel
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -37,4 +39,11 @@ object ViewModelModule {
     // TODO add registerViewModel
     // TODO add splashViewModel
     // TODO add profileViewModel
+
+    @ActivityScoped
+    @Provides
+    fun provideSplashScreenViewModel(splashScreenRepository: SplashScreenRepository): SplashScreenViewModel {
+        return GenericViewModelFactory(SplashScreenViewModel(splashScreenRepository))
+            .create(SplashScreenViewModel::class.java)
+    }
 }
