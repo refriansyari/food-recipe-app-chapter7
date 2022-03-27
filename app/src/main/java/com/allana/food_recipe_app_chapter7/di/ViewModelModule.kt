@@ -3,6 +3,8 @@ package com.allana.food_recipe_app_chapter7.di
 import com.allana.food_recipe_app_chapter7.base.arch.GenericViewModelFactory
 import com.allana.food_recipe_app_chapter7.ui.features.home.HomeRepository
 import com.allana.food_recipe_app_chapter7.ui.features.home.HomeViewModel
+import com.allana.food_recipe_app_chapter7.ui.loginpage.LoginPageRepository
+import com.allana.food_recipe_app_chapter7.ui.loginpage.LoginPageViewModel
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -23,7 +25,15 @@ object ViewModelModule {
             HomeViewModel::class.java
         )
     }
-    // TODO add loginModel
+    @Provides
+    @ActivityScoped
+    fun provideLoginPageViewModel(
+        repository : LoginPageRepository
+    ) : LoginPageViewModel{
+        return GenericViewModelFactory(LoginPageViewModel(repository)).create(
+            LoginPageViewModel::class.java
+        )
+    }
     // TODO add registerViewModel
     // TODO add splashViewModel
     // TODO add profileViewModel
