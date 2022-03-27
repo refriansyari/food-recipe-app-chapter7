@@ -1,4 +1,4 @@
-package com.allana.food_recipe_app_chapter7.ui.register
+package com.allana.food_recipe_app_chapter7.ui.features.register
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
