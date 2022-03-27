@@ -1,9 +1,13 @@
 package com.allana.food_recipe_app_chapter7.di
 
+import com.allana.food_recipe_app_chapter7.data.local.datasource.LocalAuthDataSource
 import com.allana.food_recipe_app_chapter7.data.local.room.datasource.FavoriteRecipeDataSource
 import com.allana.food_recipe_app_chapter7.data.network.datasource.RecipeDataSource
+import com.allana.food_recipe_app_chapter7.data.network.datasource.auth.AuthApiDataSource
+import com.allana.food_recipe_app_chapter7.ui.features.favoriterecipe.FavoriteRecipeRepository
 import com.allana.food_recipe_app_chapter7.ui.features.home.HomeRepository
-import com.allana.food_recipe_app_chapter7.ui.features.home.detail.DetailRepository
+import com.allana.food_recipe_app_chapter7.ui.loginpage.LoginPageRepository
+import com.allana.food_recipe_app_chapter7.ui.splash.SplashScreenRepository
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -23,16 +27,40 @@ object RepositoryModule {
         return HomeRepository(recipeDataSource)
     }
 
-    // TODO add detailRecipeRepo
-    @Provides
     @Singleton
-    fun provideDetailRepository(
-        favoriteRecipeDataSource: FavoriteRecipeDataSource, recipeDataSource: RecipeDataSource
-    ): DetailRepository{
-        return DetailRepository(favoriteRecipeDataSource,recipeDataSource)
+    @Provides
+
+    fun provideLoginPageRepository(
+        authApiDataSource: AuthApiDataSource,
+        localAuthDataSource: LocalAuthDataSource
+    ): LoginPageRepository {
+        return LoginPageRepository(authApiDataSource, localAuthDataSource)
     }
 
-    // TODO add detailSplashRepo
+//    @Provides
+//    @Singleton
+//    fun provideDetailRepository(
+//        favoriteRecipeDataSource: FavoriteRecipeDataSource, recipeDataSource: RecipeDataSource
+//    ): DetailRepository{
+//        return DetailRepository(favoriteRecipeDataSource,recipeDataSource)
+//    }
 
-    // TODO add profileRepo
+    @Singleton
+    @Provides
+    fun provideSplashScreenRepository(
+        authApiDataSource: AuthApiDataSource,
+        localDataSource: LocalAuthDataSource
+    ): SplashScreenRepository
+    {
+        return SplashScreenRepository(authApiDataSource, localDataSource)
+    }
+
+    @Singleton
+    @Provides
+    fun provideFavoriteRecipeRepository(
+        favoriteRecipeDataSource: FavoriteRecipeDataSource
+    ): FavoriteRecipeRepository
+    {
+        return FavoriteRecipeRepository(favoriteRecipeDataSource)
+    }
 }
