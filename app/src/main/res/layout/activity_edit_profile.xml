@@ -11,7 +11,7 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent>">
+        app:layout_constraintTop_toTopOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -39,7 +39,7 @@
                 android:id="@+id/tv_edit_profile_title"
                 android:layout_width="@dimen/_100sdp"
                 android:layout_height="@dimen/_27sdp"
-                android:fontFamily="@font/poppins_600_semibold"
+                android:fontFamily="@font/poppins_semibold"
                 android:layout_marginTop="@dimen/_10sdp"
                 android:textColor="@color/font_black_color"
                 android:textSize="@dimen/_18ssp"
@@ -49,7 +49,7 @@
                 tools:text="Edit Profile" />
 
 
-            <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+            <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/civ_edit_profile_image"
                 android:layout_width="@dimen/_100sdp"
                 android:layout_height="@dimen/_100sdp"
@@ -66,7 +66,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_12sdp"
-                android:fontFamily="@font/poppins_600_semibold"
+                android:fontFamily="@font/poppins_semibold"
                 android:textAlignment="center"
                 android:textColor="@color/font_primary_color"
                 android:textSize="@dimen/_14ssp"
@@ -92,7 +92,7 @@
                     android:layout_height="@dimen/_44sdp"
                     android:background="@color/white"
                     android:drawablePadding="@dimen/_10sdp"
-                    android:fontFamily="@font/poppins_400_regular"
+                    android:fontFamily="@font/poppins_regular"
                     android:hint="Profile name"
                     android:padding="@dimen/_10sdp"
                     android:textColorHint="@color/font_grey_color" />
@@ -118,7 +118,7 @@
                     android:layout_height="@dimen/_44sdp"
                     android:background="@color/white"
                     android:drawablePadding="@dimen/_10sdp"
-                    android:fontFamily="@font/poppins_400_regular"
+                    android:fontFamily="@font/poppins_regular"
                     android:hint="Username"
                     android:padding="@dimen/_10sdp"
                     android:textColorHint="@color/font_grey_color" />
@@ -144,7 +144,7 @@
                     android:layout_height="@dimen/_44sdp"
                     android:background="@color/white"
                     android:drawablePadding="@dimen/_10sdp"
-                    android:fontFamily="@font/poppins_400_regular"
+                    android:fontFamily="@font/poppins_regular"
                     android:hint="Email"
                     android:padding="@dimen/_10sdp"
                     android:textColorHint="@color/font_grey_color" />
@@ -159,7 +159,7 @@
                 android:layout_marginEnd="@dimen/_8sdp"
                 app:cornerRadius="@dimen/_10sdp"
                 android:textSize="@dimen/_14ssp"
-                android:fontFamily="@font/roboto_700_bold"
+                android:fontFamily="@font/roboto_bold"
                 app:layout_constraintTop_toBottomOf="@id/cv_edit_profile_email"
                 tools:text="SAVE" />
 

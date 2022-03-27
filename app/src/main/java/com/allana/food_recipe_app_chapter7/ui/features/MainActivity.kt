@@ -5,15 +5,15 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.allana.food_recipe_app_chapter7.R
 import com.allana.food_recipe_app_chapter7.databinding.ActivityMainBinding
+import com.allana.food_recipe_app_chapter7.ui.features.favorite.FavoriteFragment
 import com.allana.food_recipe_app_chapter7.ui.features.home.HomeFragment
+import com.allana.food_recipe_app_chapter7.ui.features.profile.ProfileFragment
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import dagger.hilt.android.AndroidEntryPoint
 
-@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
-    private var homeFragment = HomeFragment()
-    private var allRecipeFragment: Fragment = homeFragment
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,26 +21,38 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
         supportActionBar?.hide()
 
-        initView()
+        binding.btmNav.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
+
+        val homeFragment = HomeFragment()
+        setupFragment(homeFragment)
     }
 
-    private fun initView() {
-        binding.btmNav.setOnItemSelectedListener {
-            when (it.itemId) {
+    private val mOnNavigationItemSelectedListener =
+        BottomNavigationView.OnNavigationItemSelectedListener { item ->
+            when (item.itemId) {
                 R.id.action_home -> {
-                    setupFragment(homeFragment)
-                    true
+                    val fragment = HomeFragment()
+                    setupFragment(fragment)
+                    return@OnNavigationItemSelectedListener true
                 }
-                else -> false
+                R.id.action_favorite -> {
+                    val fragment = FavoriteFragment()
+                    setupFragment(fragment)
+                    return@OnNavigationItemSelectedListener true
+                }
+                R.id.action_profile -> {
+                    val fragment = ProfileFragment()
+                    setupFragment(fragment)
+                    return@OnNavigationItemSelectedListener true
+                }
             }
+            false
         }
-    }
 
     private fun setupFragment(fragment: Fragment) {
-        supportFragmentManager.beginTransaction()
-            .hide(allRecipeFragment)
-            .show(fragment)
+        supportFragmentManager
+            .beginTransaction()
+            .replace(R.id.container, fragment, fragment.javaClass.simpleName)
             .commit()
-        allRecipeFragment = fragment
     }
 }

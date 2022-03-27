@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/bg_app_darker_white"
-    tools:context=".ui.favoriterecipe.FavoriteRecipeFragment">
+    tools:context=".ui.features.favorite.FavoriteFragment">
 
     <TextView
         android:id="@+id/tv_favorite"
@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/_35sdp"
         android:text="Favorite"
-        android:fontFamily="@font/poppins_600_semibold"
+        android:fontFamily="@font/poppins_semibold"
         android:textColor="@color/font_black_color"
         android:textSize="@dimen/_18ssp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -41,7 +41,7 @@
             android:background="@color/white"
             android:drawableStart="@drawable/ic_search"
             android:drawablePadding="@dimen/_10sdp"
-            android:fontFamily="@font/poppins_400_regular"
+            android:fontFamily="@font/poppins_regular"
             android:hint="Search favorite"
             android:padding="@dimen/_10sdp"
             android:textColorHint="@color/font_grey_color" />
@@ -63,7 +63,7 @@
             android:id="@+id/rv_favorite_recipe"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            tools:listitem="@layout/list_item_favorite_recipe"/>
+            tools:listitem="@layout/item_list_favorite_recipe"/>
 
     </ScrollView>
 
