@@ -40,7 +40,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/_10sdp"
                     android:layout_marginEnd="@dimen/_12sdp"
-                    android:fontFamily="@font/roboto_500_medium"
+                    android:fontFamily="@font/roboto_medium"
                     android:textSize="@dimen/_12ssp"
                     android:textColor="@color/font_black_color"
                     tools:text="Title" />
@@ -51,7 +51,7 @@
                     android:layout_marginTop="@dimen/_7sdp"
                     android:layout_marginStart="@dimen/_10sdp"
                     android:layout_marginEnd="@dimen/_12sdp"
-                    android:fontFamily="@font/roboto_400_regular"
+                    android:fontFamily="@font/roboto_regular"
                     android:textSize="@dimen/_10ssp"
                     android:textColor="@color/font_black_color"
                     tools:text="Servings"/>

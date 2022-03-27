@@ -4,10 +4,10 @@ import com.allana.food_recipe_app_chapter7.data.local.datasource.LocalAuthDataSo
 import com.allana.food_recipe_app_chapter7.data.local.room.datasource.FavoriteRecipeDataSource
 import com.allana.food_recipe_app_chapter7.data.network.datasource.RecipeDataSource
 import com.allana.food_recipe_app_chapter7.data.network.datasource.auth.AuthApiDataSource
+import com.allana.food_recipe_app_chapter7.ui.features.favoriterecipe.FavoriteRecipeRepository
 import com.allana.food_recipe_app_chapter7.ui.features.home.HomeRepository
 import com.allana.food_recipe_app_chapter7.ui.loginpage.LoginPageRepository
 import com.allana.food_recipe_app_chapter7.ui.splash.SplashScreenRepository
-import com.allana.food_recipe_app_chapter7.ui.features.home.detail.DetailRepository
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -36,18 +36,13 @@ object RepositoryModule {
         return LoginPageRepository(authApiDataSource,localAuthDataSource)
     }
 
-    // TODO add detailRecipeRepo
-    @Provides
-    @Singleton
-    fun provideDetailRepository(
-        favoriteRecipeDataSource: FavoriteRecipeDataSource, recipeDataSource: RecipeDataSource
-    ): DetailRepository{
-        return DetailRepository(favoriteRecipeDataSource,recipeDataSource)
-    }
-
-    // TODO add detailSplashRepo
-
-    // TODO add profileRepo
+//    @Provides
+//    @Singleton
+//    fun provideDetailRepository(
+//        favoriteRecipeDataSource: FavoriteRecipeDataSource, recipeDataSource: RecipeDataSource
+//    ): DetailRepository{
+//        return DetailRepository(favoriteRecipeDataSource,recipeDataSource)
+//    }
 
     @Singleton
     @Provides
@@ -57,5 +52,14 @@ object RepositoryModule {
     ): SplashScreenRepository
     {
         return SplashScreenRepository(authApiDataSource, localDataSource)
+    }
+
+    @Singleton
+    @Provides
+    fun provideFavoriteRecipeRepository(
+        favoriteRecipeDataSource: FavoriteRecipeDataSource
+    ): FavoriteRecipeRepository
+    {
+        return FavoriteRecipeRepository(favoriteRecipeDataSource)
     }
 }
