@@ -9,8 +9,6 @@ import com.allana.food_recipe_app_chapter7.data.network.model.response.auth.User
 
 class RegisterContract {
     interface View : BaseContract.BaseView {
-        fun initView()
-        fun setToolbar()
         fun setOnClick()
         fun setLoadingState(isLoadingVisible: Boolean)
         fun checkFormValidation(): Boolean
