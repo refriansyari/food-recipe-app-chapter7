@@ -1,7 +1,7 @@
 package com.allana.food_recipe_app_chapter7.data.network.services
 
 import com.allana.food_recipe_app_chapter7.BuildConfig
-import com.allana.food_recipe_app_chapter7.data.local.preference.datasource.LocalAuthDataSource
+import com.allana.food_recipe_app_chapter7.data.local.datasource.LocalAuthDataSource
 import com.allana.food_recipe_app_chapter7.data.network.model.request.AuthRequest
 import com.allana.food_recipe_app_chapter7.data.network.model.response.auth.BaseAuthResponse
 import com.allana.food_recipe_app_chapter7.data.network.model.response.auth.User
