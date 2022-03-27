@@ -1,7 +1,7 @@
 package com.allana.food_recipe_app_chapter7.di
 
 import android.content.Context
-import com.allana.food_recipe_app_chapter7.data.local.preference.datasource.LocalAuthDataSource
+import com.allana.food_recipe_app_chapter7.data.local.datasource.LocalAuthDataSource
 import com.allana.food_recipe_app_chapter7.data.network.services.AuthApiServices
 import com.allana.food_recipe_app_chapter7.data.network.services.RecipeApiService
 import com.chuckerteam.chucker.api.ChuckerInterceptor
