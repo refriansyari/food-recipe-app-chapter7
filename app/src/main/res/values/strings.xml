@@ -32,4 +32,11 @@
     <string name="error_password">Please input your Password</string>
     <string name="text_succes_login">Login Success</string>
     <string name="text_error_login">Login Failed, Please check your email or username and password !</string>
+    <string name="text_sign_up">Sign Up</string>
+    <string name="text_hint_enter_email">Enter Email</string>
+    <string name="text_hint_enter_user_name">Create User name</string>
+    <string name="text_privacy_policy">By signing up, you’re agree to our  <font color='#FF672C'><b>Terms &amp; Conditions</b></font> and <font color='#FF672C'><b>Privacy Policy</b></font> </string>
+    <string name="text_to_login">Join
+        us before? <font color='#FF672C'><b>Login</b></font></string>
+
 </resources>
