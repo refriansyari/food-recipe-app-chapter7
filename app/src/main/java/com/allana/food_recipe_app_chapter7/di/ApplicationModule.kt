@@ -30,7 +30,7 @@ object ApplicationModule {
 
     @Singleton
     @Provides
-    fun provideUserPreference(
+    fun provideSessionPreference(
         @ApplicationContext context:Context,
         gson: Gson
     ) : SessionPreference{

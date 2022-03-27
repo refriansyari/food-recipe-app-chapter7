@@ -5,28 +5,28 @@ import com.allana.food_recipe_app_chapter7.data.network.model.response.auth.User
 import javax.inject.Inject
 
 class LocalAuthDataSourceImpl
-@Inject constructor(private val userPreference: SessionPreference) : LocalAuthDataSource {
+@Inject constructor(private val sessionPreference: SessionPreference) : LocalAuthDataSource {
     override fun getAuthToken(): String? {
-        return userPreference.authToken
+        return sessionPreference.authToken
     }
 
     override fun setAuthToken(authToken: String?) {
-        userPreference.authToken = authToken
+        sessionPreference.authToken = authToken
     }
 
     override fun isUserLoggedIn(): Boolean {
-        return !userPreference.authToken.isNullOrEmpty()
+        return !sessionPreference.authToken.isNullOrEmpty()
     }
 
     override fun saveUserData(user: User) {
-        userPreference.user = user
+        sessionPreference.user = user
     }
 
     override fun getUserData(): User? {
-        return userPreference.user
+        return sessionPreference.user
     }
 
     override fun clearSession() {
-        userPreference.deleteSession()
+        sessionPreference.deleteSession()
     }
 }

@@ -27,13 +27,14 @@ object RepositoryModule {
         return HomeRepository(recipeDataSource)
     }
 
-    @Provides
     @Singleton
+    @Provides
+
     fun provideLoginPageRepository(
         authApiDataSource: AuthApiDataSource,
         localAuthDataSource: LocalAuthDataSource
-    ) : LoginPageRepository{
-        return LoginPageRepository(authApiDataSource,localAuthDataSource)
+    ): LoginPageRepository {
+        return LoginPageRepository(authApiDataSource, localAuthDataSource)
     }
 
 //    @Provides
