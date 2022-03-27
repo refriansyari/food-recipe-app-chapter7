@@ -52,7 +52,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tv_login">
 
-                <com.google.android.material.textfield.TextInputLayout
+             <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/til_email_username"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -72,13 +72,12 @@
                         android:fontFamily="@font/poppins_regular"
                         android:inputType="textEmailAddress"
                         android:maxLines="1"
-                        android:padding="@dimen/_10sdp"
                         android:textColor="@color/font_black_color"
                         android:textSize="@dimen/_14ssp" />
 
                 </com.google.android.material.textfield.TextInputLayout>
-
-                <!-- <com.google.android.material.card.MaterialCardView
+-->
+               <!-- <com.google.android.material.card.MaterialCardView
                      android:id="@+id/cv_text_email_username"
                      android:layout_width="match_parent"
                      android:layout_height="wrap_content"
@@ -99,7 +98,6 @@
                          android:textSize="@dimen/_14ssp"/>
 
                  </com.google.android.material.card.MaterialCardView>-->
-
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/til_password"
                     android:layout_width="match_parent"
@@ -121,12 +119,11 @@
                         android:fontFamily="@font/poppins_regular"
                         android:inputType="textPassword"
                         android:maxLines="1"
-                        android:padding="@dimen/_10sdp"
                         android:textColor="@color/font_black_color"
                         android:textSize="@dimen/_14ssp" />
 
                 </com.google.android.material.textfield.TextInputLayout>
-                <!--<com.google.android.material.card.MaterialCardView
+               <!-- <com.google.android.material.card.MaterialCardView
                     android:id="@+id/cv_text_password"
                     android:layout_width="match_parent"
                     android:layout_marginTop="@dimen/_10sdp"
