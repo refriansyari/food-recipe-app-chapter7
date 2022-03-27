@@ -13,6 +13,9 @@
             android:name=".ui.features.home.search.SearchActivity"
             android:exported="false" />
         <activity
+            android:name=".ui.features.home.detail.DetailActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.splash.SplashScreenActivity"
             android:exported="true"
             android:screenOrientation="portrait"
@@ -23,10 +26,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".ui.features.home.detail.DetailRecipeActivity"
-            android:exported="false"
-            android:screenOrientation="portrait" />
         <activity
             android:name=".ui.intro.IntroScreenActivity"
             android:exported="false"
