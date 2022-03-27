@@ -6,17 +6,23 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModel
 import androidx.viewbinding.ViewBinding
 import javax.inject.Inject
 
-abstract class BaseFragment<B : ViewBinding, VM : BaseContract.BaseViewModel>(
+abstract class BaseFragment<B : ViewBinding, VM : ViewModel>(
     val bindingFactory: (LayoutInflater, ViewGroup?, Boolean) -> B
 ) : Fragment(), BaseContract.BaseView {
 
     private lateinit var binding: B
 
     @Inject
-    private lateinit var viewModel: VM
+    lateinit var viewModel: VM
+
+    fun getViewBinding(): B = binding
+
+    @JvmName("getViewModelFragment")
+    fun getViewModel(): VM = viewModel
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -36,9 +42,6 @@ abstract class BaseFragment<B : ViewBinding, VM : BaseContract.BaseViewModel>(
 
     abstract fun initView()
     abstract fun initViewModel(): VM
-
-    fun getViewBinding(): B = binding
-    fun getViewModel(): VM = viewModel
 
     override fun observeData() {
         //do nothing

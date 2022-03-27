@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_app_darker_white"
+    tools:context=".ui.features.favorite.FavoriteFragment">
+
+    <TextView
+        android:id="@+id/tv_favorite"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_35sdp"
+        android:text="Favorite"
+        android:fontFamily="@font/poppins_semibold"
+        android:textColor="@color/font_black_color"
+        android:textSize="@dimen/_18ssp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/fl_edit_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_favorite"
+        app:cardCornerRadius="@dimen/_15sdp"
+        android:layout_marginTop="@dimen/_40sdp"
+        android:layout_marginStart="@dimen/_20sdp"
+        android:layout_marginEnd="@dimen/_20sdp">
+
+        <EditText
+            android:id="@+id/et_search_favorite_recipe"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_48sdp"
+            android:inputType="text"
+            android:background="@color/white"
+            android:drawableStart="@drawable/ic_search"
+            android:drawablePadding="@dimen/_10sdp"
+            android:fontFamily="@font/poppins_regular"
+            android:hint="Search favorite"
+            android:padding="@dimen/_10sdp"
+            android:textColorHint="@color/font_grey_color" />
+
+    </com.google.android.material.card.MaterialCardView>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/fl_edit_text"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="@dimen/_30sdp"
+        android:layout_marginStart="@dimen/_20sdp"
+        android:layout_marginEnd="@dimen/_20sdp">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_favorite_recipe"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:listitem="@layout/item_list_favorite_recipe"/>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

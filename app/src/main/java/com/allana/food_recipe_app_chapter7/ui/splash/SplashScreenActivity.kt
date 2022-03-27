@@ -6,7 +6,7 @@ import android.os.Bundle
 import android.os.CountDownTimer
 import com.allana.food_recipe_app_chapter7.R
 import com.allana.food_recipe_app_chapter7.data.local.preference.UserPreference
-import com.allana.food_recipe_app_chapter7.ui.home.HomeActivity
+import com.allana.food_recipe_app_chapter7.ui.features.MainActivity
 import com.allana.food_recipe_app_chapter7.ui.intro.IntroScreenActivity
 
 class SplashScreenActivity : AppCompatActivity() {
@@ -19,7 +19,7 @@ class SplashScreenActivity : AppCompatActivity() {
                     intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
                     startActivity(intent)
                 } else{
-                    val intent = Intent(this@SplashScreenActivity, HomeActivity::class.java)
+                    val intent = Intent(this@SplashScreenActivity, MainActivity::class.java)
                     intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
                     startActivity(intent)
                 }
