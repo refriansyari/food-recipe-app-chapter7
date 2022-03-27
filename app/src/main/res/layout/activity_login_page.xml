@@ -52,30 +52,81 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tv_login">
 
-                <com.google.android.material.card.MaterialCardView
-                    android:id="@+id/cv_text_email_username"
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/til_email_username"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:backgroundTint="@color/bg_input_text_darker_white"
-                    app:cardCornerRadius="@dimen/_10sdp">
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:background="@color/bg_input_text_darker_white"
+                    android:hint="@string/text_hint_enter_email_or_username"
+                    app:boxCornerRadiusBottomEnd="@dimen/_10sdp"
+                    app:boxCornerRadiusBottomStart="@dimen/_10sdp"
+                    app:boxCornerRadiusTopEnd="@dimen/_10sdp"
+                    app:boxCornerRadiusTopStart="@dimen/_10sdp"
+                    app:boxStrokeWidth="0dp">
 
-                    <EditText
+                    <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/et_email_username"
                         android:layout_width="match_parent"
-                        android:layout_height="@dimen/_48sdp"
+                        android:layout_height="wrap_content"
                         android:fontFamily="@font/poppins_regular"
-                        android:textColor="@color/font_black_color"
-                        android:hint="@string/text_hint_enter_email_or_username"
-                        android:padding="@dimen/_10sdp"
                         android:inputType="textEmailAddress"
                         android:maxLines="1"
-                        android:textColorHint="@color/font_black_color"
-                        android:textSize="@dimen/_14ssp"
-                        android:background="@color/bg_input_text_darker_white"/>
+                        android:padding="@dimen/_10sdp"
+                        android:textColor="@color/font_black_color"
+                        android:textSize="@dimen/_14ssp" />
 
-                </com.google.android.material.card.MaterialCardView>
+                </com.google.android.material.textfield.TextInputLayout>
 
-                <com.google.android.material.card.MaterialCardView
+                <!-- <com.google.android.material.card.MaterialCardView
+                     android:id="@+id/cv_text_email_username"
+                     android:layout_width="match_parent"
+                     android:layout_height="wrap_content"
+                     android:backgroundTint="@color/bg_input_text_darker_white"
+                     app:cardCornerRadius="@dimen/_10sdp">
+
+                     <com.google.android.material.textfield.TextInputEditText
+                         android:id="@+id/et_email_username"
+                         android:layout_width="match_parent"
+                         android:layout_height="@dimen/_48sdp"
+                         android:fontFamily="@font/poppins_regular"
+                         android:textColor="@color/font_black_color"
+                         android:hint="@string/text_hint_enter_email_or_username"
+                         android:padding="@dimen/_10sdp"
+                         android:inputType="textEmailAddress"
+                         android:maxLines="1"
+                         android:textColorHint="@color/font_black_color"
+                         android:textSize="@dimen/_14ssp"/>
+
+                 </com.google.android.material.card.MaterialCardView>-->
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/til_password"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:background="@color/bg_input_text_darker_white"
+                    android:hint="@string/text_hint_password"
+                    app:boxCornerRadiusBottomEnd="@dimen/_10sdp"
+                    app:boxCornerRadiusBottomStart="@dimen/_10sdp"
+                    app:boxCornerRadiusTopEnd="@dimen/_10sdp"
+                    app:boxCornerRadiusTopStart="@dimen/_10sdp"
+                    app:boxStrokeWidth="0dp"
+                    app:passwordToggleEnabled="true">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/et_password"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_regular"
+                        android:inputType="textPassword"
+                        android:maxLines="1"
+                        android:padding="@dimen/_10sdp"
+                        android:textColor="@color/font_black_color"
+                        android:textSize="@dimen/_14ssp" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+                <!--<com.google.android.material.card.MaterialCardView
                     android:id="@+id/cv_text_password"
                     android:layout_width="match_parent"
                     android:layout_marginTop="@dimen/_10sdp"
@@ -83,7 +134,7 @@
                     android:backgroundTint="@color/bg_input_text_darker_white"
                     app:cardCornerRadius="@dimen/_10sdp">
 
-                    <EditText
+                    <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/et_password"
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/_48sdp"
@@ -93,66 +144,68 @@
                         android:padding="@dimen/_10sdp"
                         android:inputType="textPassword"
                         android:textColorHint="@color/font_black_color"
-                        android:textSize="@dimen/_14ssp"
-                        android:background="@color/bg_input_text_darker_white"/>
+                        android:textSize="@dimen/_14ssp"/>
 
-                </com.google.android.material.card.MaterialCardView>
+                </com.google.android.material.card.MaterialCardView>-->
 
                 <ProgressBar
-                    android:layout_width="wrap_content"
                     android:id="@+id/pb_login"
-                    android:visibility="gone"
-                    tools:visibility="visible"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_marginTop="@dimen/_15sdp"
-                    android:layout_height="wrap_content"/>
-                
+                    android:visibility="gone"
+                    tools:visibility="visible" />
+
                 <com.google.android.material.button.MaterialButton
-                    android:layout_width="match_parent"
                     android:id="@+id/btn_login"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_42sdp"
                     android:layout_marginTop="@dimen/_15sdp"
+                    android:backgroundTint="@color/primary_color"
                     android:fontFamily="@font/roboto_bold"
                     android:text="@string/text_btn_login"
                     android:textColor="@color/white"
                     android:textSize="@dimen/_16ssp"
-                    android:backgroundTint="@color/primary_color"
-                    app:cornerRadius="@dimen/_10sdp"
-                    android:layout_height="@dimen/_42sdp"/>
+                    app:cornerRadius="@dimen/_10sdp" />
 
             </LinearLayout>
-           <LinearLayout
-               android:id="@+id/ll_text_navigate"
-               app:layout_constraintEnd_toEndOf="parent"
-               android:layout_marginTop="@dimen/_30sdp"
-               app:layout_constraintStart_toStartOf="parent"
-               app:layout_constraintTop_toBottomOf="@id/ll_login_page"
-               android:orientation="horizontal"
-               android:gravity="center_horizontal"
-               android:layout_width="match_parent"
-               android:layout_height="wrap_content">
-               <TextView
-                   android:layout_width="wrap_content"
-                   app:layout_constraintTop_toBottomOf="@id/ll_login_page"
-                   app:layout_constraintEnd_toEndOf="parent"
-                   app:layout_constraintStart_toStartOf="parent"
-                   android:textSize="@dimen/_10ssp"
-                   android:textColor="@color/font_black_color"
-                   android:text="@string/text_new_to_logistics"
-                   android:id="@+id/tv_new_logistics"
-                   android:layout_height="wrap_content"/>
-               <TextView
-                   android:layout_width="wrap_content"
-                   app:layout_constraintTop_toBottomOf="@id/ll_login_page"
-                   app:layout_constraintStart_toEndOf="@id/tv_new_logistics"
-                   android:textSize="@dimen/_10ssp"
-                   android:textColor="@color/font_primary_color"
-                   android:fontFamily="@font/poppins_semibold"
-                   android:text="@string/text_navigate_to_register"
-                   android:id="@+id/tv_navigate_to_register"
-                   android:layout_marginStart="@dimen/_5sdp"
-                   android:layout_height="wrap_content"/>
 
-           </LinearLayout>
+            <LinearLayout
+                android:id="@+id/ll_text_navigate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_30sdp"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ll_login_page">
+
+                <TextView
+                    android:id="@+id/tv_new_logistics"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/text_new_to_logistics"
+                    android:textColor="@color/font_black_color"
+                    android:textSize="@dimen/_10ssp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/ll_login_page" />
+
+                <TextView
+                    android:id="@+id/tv_navigate_to_register"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:text="@string/text_navigate_to_register"
+                    android:textColor="@color/font_primary_color"
+                    android:textSize="@dimen/_10ssp"
+                    app:layout_constraintStart_toEndOf="@id/tv_new_logistics"
+                    app:layout_constraintTop_toBottomOf="@id/ll_login_page" />
+
+            </LinearLayout>
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </ScrollView>
