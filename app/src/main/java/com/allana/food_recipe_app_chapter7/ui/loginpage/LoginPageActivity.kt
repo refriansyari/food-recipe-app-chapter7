@@ -24,6 +24,7 @@ class LoginPageActivity :
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
         super.onCreate(savedInstanceState)
     }
+
     override fun initView() {
         setToolbar()
         setOnClick()
@@ -58,7 +59,7 @@ class LoginPageActivity :
             StringUtils.isEmailValid(email).not() -> {
                 isFormValid = false
                 getViewBinding().tilEmailUsername.isErrorEnabled = true
-                getViewBinding().etEmailUsername.error = getString(R.string.invalid_email)
+                getViewBinding().tilEmailUsername.error = getString(R.string.invalid_email)
             }
             else -> {
                 getViewBinding().tilEmailUsername.isErrorEnabled = false
