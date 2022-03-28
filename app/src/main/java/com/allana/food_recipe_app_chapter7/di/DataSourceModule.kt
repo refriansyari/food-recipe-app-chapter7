@@ -6,6 +6,7 @@ import com.allana.food_recipe_app_chapter7.data.local.preference.SessionPreferen
 import com.allana.food_recipe_app_chapter7.data.local.room.dao.FavoriteRecipeDao
 import com.allana.food_recipe_app_chapter7.data.local.room.datasource.FavoriteRecipeDataSource
 import com.allana.food_recipe_app_chapter7.data.local.room.datasource.FavoriteRecipeDataSourceImpl
+import com.allana.food_recipe_app_chapter7.data.local.room.entity.FavoriteRecipe
 import com.allana.food_recipe_app_chapter7.data.network.datasource.RecipeDataSource
 import com.allana.food_recipe_app_chapter7.data.network.datasource.RecipeDataSourceImpl
 import com.allana.food_recipe_app_chapter7.data.network.datasource.auth.AuthApiDataSource
