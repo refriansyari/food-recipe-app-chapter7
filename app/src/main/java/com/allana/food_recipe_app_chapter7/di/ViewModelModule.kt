@@ -5,6 +5,8 @@ import com.allana.food_recipe_app_chapter7.ui.features.favoriterecipe.FavoriteRe
 import com.allana.food_recipe_app_chapter7.ui.features.favoriterecipe.FavoriteRecipeViewModel
 import com.allana.food_recipe_app_chapter7.ui.features.home.HomeRepository
 import com.allana.food_recipe_app_chapter7.ui.features.home.HomeViewModel
+import com.allana.food_recipe_app_chapter7.ui.features.home.detail.DetailRepository
+import com.allana.food_recipe_app_chapter7.ui.features.home.detail.DetailViewModel
 import com.allana.food_recipe_app_chapter7.ui.features.register.RegisterRepository
 import com.allana.food_recipe_app_chapter7.ui.features.register.RegisterViewModel
 import com.allana.food_recipe_app_chapter7.ui.loginpage.LoginPageRepository
@@ -31,13 +33,13 @@ object ViewModelModule {
         )
     }
 
-//    @Provides
-//    @ActivityScoped
-//    fun provideDetailViewModel(detailRepository: DetailRepository): DetailViewModel{
-//        return GenericViewModelFactory(DetailViewModel(detailRepository)).create(
-//            DetailViewModel::class.java
-//        )
-//    }
+    @Provides
+    @ActivityScoped
+    fun provideDetailViewModel(detailRepository: DetailRepository): DetailViewModel {
+        return GenericViewModelFactory(DetailViewModel(detailRepository)).create(
+            DetailViewModel::class.java
+        )
+    }
 
     @Provides
     @ActivityScoped
