@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/bg_app_white">
+    android:background="@color/bg_app_white"
+    tools:context=".ui.features.register.RegisterActivity">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -22,7 +23,7 @@
                 android:layout_marginStart="@dimen/_40sdp"
                 android:layout_marginTop="@dimen/_40sdp"
                 android:layout_marginEnd="@dimen/_40sdp"
-                android:src="@drawable/ic_login"
+                android:src="@drawable/ic_sign_up"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -34,7 +35,7 @@
                 android:layout_marginStart="@dimen/_22sdp"
                 android:layout_marginTop="@dimen/_30sdp"
                 android:fontFamily="@font/poppins_bold"
-                android:text="@string/text_login"
+                android:text="@string/text_sign_up"
                 android:textColor="@color/font_primary_color"
                 android:textSize="@dimen/_24ssp"
                 app:layout_constraintStart_toStartOf="parent"
@@ -52,118 +53,113 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tv_login">
 
-             <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/til_email_username"
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/til_email"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="@dimen/_10sdp"
-                    android:background="@color/bg_input_text_darker_white"
-                    android:hint="@string/text_hint_enter_email_or_username"
+                    android:hint="@string/text_hint_enter_email"
                     app:boxCornerRadiusBottomEnd="@dimen/_10sdp"
                     app:boxCornerRadiusBottomStart="@dimen/_10sdp"
                     app:boxCornerRadiusTopEnd="@dimen/_10sdp"
                     app:boxCornerRadiusTopStart="@dimen/_10sdp"
-                    app:boxStrokeWidth="0dp">
+                    app:boxStrokeWidth="0dp"
+                    app:boxStrokeWidthFocused="0dp">
+
 
                     <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/et_email_username"
+                        android:id="@+id/et_email"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/poppins_regular"
-                        android:inputType="textEmailAddress"
-                        android:maxLines="1"
-                        android:textColor="@color/font_black_color"
-                        android:textSize="@dimen/_14ssp" />
+                        android:layout_height="wrap_content" />
 
                 </com.google.android.material.textfield.TextInputLayout>
--->
-               <!-- <com.google.android.material.card.MaterialCardView
-                     android:id="@+id/cv_text_email_username"
-                     android:layout_width="match_parent"
-                     android:layout_height="wrap_content"
-                     android:backgroundTint="@color/bg_input_text_darker_white"
-                     app:cardCornerRadius="@dimen/_10sdp">
 
-                     <com.google.android.material.textfield.TextInputEditText
-                         android:id="@+id/et_email_username"
-                         android:layout_width="match_parent"
-                         android:layout_height="@dimen/_48sdp"
-                         android:fontFamily="@font/poppins_regular"
-                         android:textColor="@color/font_black_color"
-                         android:hint="@string/text_hint_enter_email_or_username"
-                         android:padding="@dimen/_10sdp"
-                         android:inputType="textEmailAddress"
-                         android:maxLines="1"
-                         android:textColorHint="@color/font_black_color"
-                         android:textSize="@dimen/_14ssp"/>
-
-                 </com.google.android.material.card.MaterialCardView>-->
                 <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/til_password"
+                    android:id="@+id/til_uname"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="@dimen/_10sdp"
-                    android:background="@color/bg_input_text_darker_white"
+                    android:hint="@string/text_hint_enter_user_name"
+                    app:boxCornerRadiusBottomEnd="@dimen/_10sdp"
+                    app:boxCornerRadiusBottomStart="@dimen/_10sdp"
+                    app:boxCornerRadiusTopEnd="@dimen/_10sdp"
+                    app:boxCornerRadiusTopStart="@dimen/_10sdp"
+                    app:boxStrokeWidth="0dp"
+                    app:boxStrokeWidthFocused="0dp">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/et_username"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/til_pass"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/_16sdp"
                     android:hint="@string/text_hint_password"
                     app:boxCornerRadiusBottomEnd="@dimen/_10sdp"
                     app:boxCornerRadiusBottomStart="@dimen/_10sdp"
                     app:boxCornerRadiusTopEnd="@dimen/_10sdp"
                     app:boxCornerRadiusTopStart="@dimen/_10sdp"
                     app:boxStrokeWidth="0dp"
+                    app:boxStrokeWidthFocused="0dp"
                     app:passwordToggleEnabled="true">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/et_password"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:fontFamily="@font/poppins_regular"
-                        android:inputType="textPassword"
-                        android:maxLines="1"
-                        android:textColor="@color/font_black_color"
-                        android:textSize="@dimen/_14ssp" />
+                        android:inputType="textPassword" />
 
                 </com.google.android.material.textfield.TextInputLayout>
-               <!-- <com.google.android.material.card.MaterialCardView
-                    android:id="@+id/cv_text_password"
+
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_marginTop="@dimen/_10sdp"
                     android:layout_height="wrap_content"
-                    android:backgroundTint="@color/bg_input_text_darker_white"
-                    app:cardCornerRadius="@dimen/_10sdp">
+                    android:layout_marginBottom="@dimen/_30sdp"
+                    android:gravity="center_horizontal"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/ll_login_page">
 
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/et_password"
-                        android:layout_width="match_parent"
-                        android:layout_height="@dimen/_48sdp"
-                        android:fontFamily="@font/poppins_regular"
-                        android:hint="@string/text_hint_password"
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/text_privacy_policy"
                         android:textColor="@color/font_black_color"
-                        android:padding="@dimen/_10sdp"
-                        android:inputType="textPassword"
-                        android:textColorHint="@color/font_black_color"
-                        android:textSize="@dimen/_14ssp"/>
+                        android:textSize="@dimen/_10ssp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/ll_login_page" />
 
-                </com.google.android.material.card.MaterialCardView>-->
+
+                </LinearLayout>
 
                 <ProgressBar
-                    android:id="@+id/pb_login"
+                    android:id="@+id/pb_loading"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="@dimen/_15sdp"
                     android:visibility="gone"
-                    tools:visibility="visible" />
+                    tools:visibility="visible"
+                    android:layout_gravity="center"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/til_password" />
 
                 <com.google.android.material.button.MaterialButton
-                    android:id="@+id/btn_login"
+                    android:id="@+id/btn_regist"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/_42sdp"
-                    android:layout_marginTop="@dimen/_15sdp"
                     android:backgroundTint="@color/primary_color"
                     android:fontFamily="@font/roboto_bold"
-                    android:text="@string/text_btn_login"
+                    android:text="Continue"
                     android:textColor="@color/white"
-                    android:textSize="@dimen/_16ssp"
+                    android:textSize="@dimen/_12ssp"
                     app:cornerRadius="@dimen/_10sdp" />
 
             </LinearLayout>
@@ -173,6 +169,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_30sdp"
+                android:layout_marginBottom="@dimen/_30sdp"
                 android:gravity="center_horizontal"
                 android:orientation="horizontal"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -180,27 +177,16 @@
                 app:layout_constraintTop_toBottomOf="@id/ll_login_page">
 
                 <TextView
-                    android:id="@+id/tv_new_logistics"
+                    android:id="@+id/tv_navigate_to_login"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/text_new_to_logistics"
+                    android:text="@string/text_to_login"
                     android:textColor="@color/font_black_color"
                     android:textSize="@dimen/_10ssp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/ll_login_page" />
 
-                <TextView
-                    android:id="@+id/tv_navigate_to_register"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/_5sdp"
-                    android:fontFamily="@font/poppins_semibold"
-                    android:text="@string/text_navigate_to_register"
-                    android:textColor="@color/font_primary_color"
-                    android:textSize="@dimen/_10ssp"
-                    app:layout_constraintStart_toEndOf="@id/tv_new_logistics"
-                    app:layout_constraintTop_toBottomOf="@id/ll_login_page" />
 
             </LinearLayout>
         </androidx.constraintlayout.widget.ConstraintLayout>
