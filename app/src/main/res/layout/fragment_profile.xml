@@ -31,7 +31,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_profile_title"
-            tools:src="@drawable/ic_profile" />
+            tools:src="@drawable/ic_photo" />
 
         <TextView
             android:id="@+id/tv_name"
@@ -76,6 +76,7 @@
                 android:orientation="vertical">
 
                 <LinearLayout
+                    android:id="@+id/ll_edit_profile"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
@@ -119,6 +120,7 @@
 
 
                 <LinearLayout
+                    android:id="@+id/ll_logout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"

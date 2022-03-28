@@ -43,5 +43,5 @@
     <string name="error_password_empty">Password is Required</string>
     <string name="error_username_empty">Username is Required</string>
     <string name="text_register_success">Account Successfully Registered!</string>
-
+    <string name="username_string">\@%s</string>
 </resources>
