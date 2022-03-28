@@ -1,13 +1,11 @@
 package com.allana.food_recipe_app_chapter7.ui.features.home
 
-import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.allana.food_recipe_app_chapter7.base.arch.BaseFragment
 import com.allana.food_recipe_app_chapter7.databinding.FragmentHomeBinding
-import com.allana.food_recipe_app_chapter7.ui.features.home.detail.DetailActivity
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

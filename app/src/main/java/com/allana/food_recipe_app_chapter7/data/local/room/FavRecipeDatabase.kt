@@ -1,8 +1,6 @@
 package com.allana.food_recipe_app_chapter7.data.local.room
 
-import android.content.Context
 import androidx.room.Database
-import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.allana.food_recipe_app_chapter7.data.local.room.dao.FavoriteRecipeDao
 import com.allana.food_recipe_app_chapter7.data.local.room.entity.FavoriteRecipe
