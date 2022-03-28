@@ -5,9 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/bg_app_darker_white"
-    tools:context=".ui.features.home.detail.DetailRecipeActivity">
+    tools:context=".ui.features.home.detail.DetailActivity">
 
     <ScrollView
+        android:id="@+id/sv_detail_recipe"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent">
@@ -20,7 +21,7 @@
                 android:layout_height="@dimen/_210sdp"
                 app:layout_constraintTop_toTopOf="parent"
                 tools:src="@drawable/burger"
-                android:background="@color/bg_splash_color"/>
+                tools:background="@color/bg_splash_color"/>
 
             <LinearLayout
                 android:id="@+id/ll_detail_recipe"
@@ -126,5 +127,16 @@
             android:src="@drawable/ic_baseline_favorite_border"
             android:layout_gravity="center"/>
     </FrameLayout>
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:visibility="visible"
+        android:visibility="invisible"
+        android:layout_marginTop="@dimen/_48sdp"
+        app:layout_constraintTop_toTopOf="@+id/sv_detail_recipe"
+        app:layout_constraintBottom_toBottomOf="@+id/sv_detail_recipe"
+        app:layout_constraintStart_toStartOf="@+id/sv_detail_recipe"
+        app:layout_constraintEnd_toEndOf="@+id/sv_detail_recipe"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

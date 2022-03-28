@@ -3,16 +3,13 @@ package com.allana.food_recipe_app_chapter7.ui.features.home.detail
 import android.content.Context
 import android.content.Intent
 import android.widget.Toast
+import androidx.core.view.isVisible
 import coil.load
 import com.allana.food_recipe_app_chapter7.R
 import com.allana.food_recipe_app_chapter7.base.arch.BaseActivity
-import com.allana.food_recipe_app_chapter7.base.arch.GenericViewModelFactory
 import com.allana.food_recipe_app_chapter7.base.model.Resource
-import com.allana.food_recipe_app_chapter7.data.local.room.FavRecipeDatabase
-import com.allana.food_recipe_app_chapter7.data.local.room.datasource.FavoriteRecipeDataSourceImpl
 import com.allana.food_recipe_app_chapter7.data.local.room.entity.FavoriteRecipe
 import com.allana.food_recipe_app_chapter7.data.model.response.recipe.detail.RecipeDetailResponse
-import com.allana.food_recipe_app_chapter7.data.network.datasource.RecipeDataSourceImpl
 import com.allana.food_recipe_app_chapter7.data.network.services.RecipeApiService
 import com.allana.food_recipe_app_chapter7.databinding.ActivityDetailBinding
 import com.allana.food_recipe_app_chapter7.utils.MapperExtension.toRecipeFavorite
@@ -29,20 +26,29 @@ class DetailActivity :
 
     override fun initView() {
         getIntentData()
-        addRecipeToFavorite()
+        setClickListener()
     }
 
     override fun observeData() {
         getViewModel().getRecipeDetailResponse().observe(this) {
             when (it) {
+                is Resource.Loading -> {
+                    showLoading(true)
+                    showContent(false)
+                    showError(false, null)
+                }
                 is Resource.Success -> {
+                    showLoading(false)
+                    showContent(true)
                     it.data?.let { data ->
                         setContentData(data)
                     }
-                    Toast.makeText(this, "success", Toast.LENGTH_SHORT).show()
+                    showError(false, null)
                 }
-                else -> {
-                    Toast.makeText(this, "error", Toast.LENGTH_SHORT).show()
+                is Resource.Error -> {
+                    showLoading(false)
+                    showContent(false)
+                    showError(true, it.message)
                 }
             }
             this.finish()
@@ -66,9 +72,21 @@ class DetailActivity :
         getViewModel().setIntentData(intent.extras)
     }
 
+    private fun setClickListener() {
+        //for add recipe to fav
+        getViewBinding().ivBtnFavorite.setOnClickListener {
+            getViewBinding().ivBtnFavorite.setImageResource(R.drawable.ic_baseline_favorite)
+            addRecipeToFavorite()
+        }
+        getViewBinding().flBtnBack.setOnClickListener{
+            //back to home
+            onBackPressed()
+        }
+    }
+
     private fun addRecipeToFavorite() {
-        getViewBinding().flBtnFavorite.setOnClickListener {
-            isFavorite = !isFavorite
+        isFavorite = !isFavorite
+        if (isFavorite) {
             recipeFavorite = recipeToFav.let {
                 FavoriteRecipe(
                     recipeToFav.id,
@@ -77,29 +95,23 @@ class DetailActivity :
                     recipeToFav.serving.toString()
                 )
             }
-            if (isFavorite) {
-                recipeFavorite.let {
-                    viewModelInstance.insertRecipeFavorite(it).apply {
-                        FavoriteRecipeDataSourceImpl(
-                            FavRecipeDatabase.getInstance(this@DetailActivity).favoriteRecipeDao()
-                        )
-                    }
-                }
-            } else {
-                // for delete favorite
+            recipeFavorite.let {
+                viewModelInstance.insertRecipeFavorite(it)
             }
-            setRecipeFavorite(isFavorite)
         }
     }
 
-    private fun setRecipeFavorite(favorite: Boolean) {
-        if (favorite) {
-            getViewBinding().ivBtnFavorite.setImageResource(R.drawable.ic_baseline_favorite)
-        } else {
-            getViewBinding().ivBtnFavorite.setImageResource(R.drawable.ic_baseline_favorite_border)
-        }
+    override fun showLoading(isVisible: Boolean) {
+        getViewBinding().progressBar.isVisible = isVisible
     }
 
+    override fun showContent(isVisible: Boolean) {
+        getViewBinding().svDetailRecipe.isVisible = isVisible
+    }
+
+    override fun showError(isErrorEnabled: Boolean, msg: String?) {
+        Toast.makeText(this, msg, Toast.LENGTH_SHORT).show()
+    }
 
     companion object {
         const val EXTRAS_RECIPE_DETAIL = "EXTRAS_RECIPE_DETAIL"
