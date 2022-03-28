@@ -32,4 +32,5 @@
     <string name="error_password">Please input your Password</string>
     <string name="text_succes_login">Login Success</string>
     <string name="text_error_login">Login Failed, Please check your email or username and password !</string>
+    <string name="username_string">\@%s</string>
 </resources>

@@ -5,6 +5,8 @@ import com.allana.food_recipe_app_chapter7.ui.features.favoriterecipe.FavoriteRe
 import com.allana.food_recipe_app_chapter7.ui.features.favoriterecipe.FavoriteRecipeViewModel
 import com.allana.food_recipe_app_chapter7.ui.features.home.HomeRepository
 import com.allana.food_recipe_app_chapter7.ui.features.home.HomeViewModel
+import com.allana.food_recipe_app_chapter7.ui.features.profile.ProfileRepository
+import com.allana.food_recipe_app_chapter7.ui.features.profile.ProfileViewModel
 import com.allana.food_recipe_app_chapter7.ui.loginpage.LoginPageRepository
 import com.allana.food_recipe_app_chapter7.ui.loginpage.LoginPageViewModel
 import com.allana.food_recipe_app_chapter7.ui.splash.SplashScreenRepository
@@ -59,5 +61,15 @@ object ViewModelModule {
     fun provideFavoriteRecipeViewModel(favoriteRecipeRepository: FavoriteRecipeRepository): FavoriteRecipeViewModel {
         return GenericViewModelFactory(FavoriteRecipeViewModel(favoriteRecipeRepository))
             .create(FavoriteRecipeViewModel::class.java)
+    }
+
+    @Provides
+    @ActivityScoped
+    fun provideProfileViewModel(
+        repository : ProfileRepository
+    ) : ProfileViewModel{
+        return GenericViewModelFactory(ProfileViewModel(repository)).create(
+            ProfileViewModel::class.java
+        )
     }
 }
