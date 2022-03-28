@@ -1,14 +1,14 @@
 package com.allana.food_recipe_app_chapter7.di
 
 import com.allana.food_recipe_app_chapter7.base.arch.GenericViewModelFactory
-import com.allana.food_recipe_app_chapter7.ui.features.favoriterecipe.FavoriteRecipeRepository
-import com.allana.food_recipe_app_chapter7.ui.features.favoriterecipe.FavoriteRecipeViewModel
+import com.allana.food_recipe_app_chapter7.ui.features.favorite.FavoriteRecipeRepository
+import com.allana.food_recipe_app_chapter7.ui.features.favorite.FavoriteRecipeViewModel
 import com.allana.food_recipe_app_chapter7.ui.features.home.HomeRepository
 import com.allana.food_recipe_app_chapter7.ui.features.home.HomeViewModel
 import com.allana.food_recipe_app_chapter7.ui.features.home.detail.DetailRepository
 import com.allana.food_recipe_app_chapter7.ui.features.home.detail.DetailViewModel
-import com.allana.food_recipe_app_chapter7.ui.features.register.RegisterRepository
-import com.allana.food_recipe_app_chapter7.ui.features.register.RegisterViewModel
+import com.allana.food_recipe_app_chapter7.ui.register.RegisterRepository
+import com.allana.food_recipe_app_chapter7.ui.register.RegisterViewModel
 import com.allana.food_recipe_app_chapter7.ui.loginpage.LoginPageRepository
 import com.allana.food_recipe_app_chapter7.ui.loginpage.LoginPageViewModel
 import com.allana.food_recipe_app_chapter7.ui.splash.SplashScreenRepository
@@ -25,7 +25,7 @@ object ViewModelModule {
 
     @Provides
     @ActivityScoped
-    fun provideCoinListViewModel(
+    fun provideRecipeListViewModel(
         homeRepository: HomeRepository
     ): HomeViewModel {
         return GenericViewModelFactory(HomeViewModel(homeRepository)).create(

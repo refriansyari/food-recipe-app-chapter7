@@ -1,4 +1,4 @@
-package com.allana.food_recipe_app_chapter7.ui.features.favoriterecipe
+package com.allana.food_recipe_app_chapter7.ui.features.favorite
 
 import com.allana.food_recipe_app_chapter7.base.arch.BaseRepositoryImpl
 import com.allana.food_recipe_app_chapter7.data.local.room.datasource.FavoriteRecipeDataSource

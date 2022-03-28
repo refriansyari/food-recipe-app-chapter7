@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="#F2F2F2"
     android:padding="@dimen/_12sdp"
-    tools:context=".ui.editprofile.EditProfileActivity">
+    tools:context=".ui.features.profile.editprofile.EditProfileActivity">
 
     <ScrollView
         android:layout_width="match_parent"

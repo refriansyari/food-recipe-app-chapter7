@@ -1,4 +1,4 @@
-package com.allana.food_recipe_app_chapter7.ui.editprofile
+package com.allana.food_recipe_app_chapter7.ui.features.profile.editprofile
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

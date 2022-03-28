@@ -17,12 +17,10 @@ abstract class BaseFragment<B : ViewBinding, VM : ViewModel>(
     private lateinit var binding: B
 
     @Inject
-    lateinit var viewModel: VM
+    lateinit var viewModelInstance: VM
 
     fun getViewBinding(): B = binding
-
-    @JvmName("getViewModelFragment")
-    fun getViewModel(): VM = viewModel
+    fun getViewModel(): VM = viewModelInstance
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -35,13 +33,12 @@ abstract class BaseFragment<B : ViewBinding, VM : ViewModel>(
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        viewModel = initViewModel()
+//        viewModel = initViewModel()
         observeData()
         initView()
     }
 
     abstract fun initView()
-    abstract fun initViewModel(): VM
 
     override fun observeData() {
         //do nothing

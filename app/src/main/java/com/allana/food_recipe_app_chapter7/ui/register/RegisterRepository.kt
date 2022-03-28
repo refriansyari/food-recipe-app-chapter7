@@ -1,10 +1,10 @@
-package com.allana.food_recipe_app_chapter7.ui.features.register
+package com.allana.food_recipe_app_chapter7.ui.register
 
 import com.allana.food_recipe_app_chapter7.base.arch.BaseRepositoryImpl
+import com.allana.food_recipe_app_chapter7.data.model.request.AuthRequest
+import com.allana.food_recipe_app_chapter7.data.model.response.auth.BaseAuthResponse
+import com.allana.food_recipe_app_chapter7.data.model.response.auth.User
 import com.allana.food_recipe_app_chapter7.data.network.datasource.auth.AuthApiDataSource
-import com.allana.food_recipe_app_chapter7.data.network.model.request.AuthRequest
-import com.allana.food_recipe_app_chapter7.data.network.model.response.auth.BaseAuthResponse
-import com.allana.food_recipe_app_chapter7.data.network.model.response.auth.User
 import javax.inject.Inject
 
 class RegisterRepository

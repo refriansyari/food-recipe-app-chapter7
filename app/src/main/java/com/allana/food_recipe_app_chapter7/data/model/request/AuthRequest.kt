@@ -1,4 +1,4 @@
-package com.allana.food_recipe_app_chapter7.data.network.model.request
+package com.allana.food_recipe_app_chapter7.data.model.request
 
 import com.google.gson.annotations.SerializedName
 

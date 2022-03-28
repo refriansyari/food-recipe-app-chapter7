@@ -1,13 +1,12 @@
-package com.allana.food_recipe_app_chapter7.ui.features.register
+package com.allana.food_recipe_app_chapter7.ui.register
 
 import android.content.Intent
-import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import com.allana.food_recipe_app_chapter7.R
 import com.allana.food_recipe_app_chapter7.base.arch.BaseActivity
 import com.allana.food_recipe_app_chapter7.base.model.Resource
-import com.allana.food_recipe_app_chapter7.data.network.model.request.AuthRequest
+import com.allana.food_recipe_app_chapter7.data.model.request.AuthRequest
 import com.allana.food_recipe_app_chapter7.databinding.ActivityRegisterBinding
 import com.allana.food_recipe_app_chapter7.ui.loginpage.LoginPageActivity
 import com.allana.food_recipe_app_chapter7.utils.StringUtils

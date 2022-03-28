@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">food-recipe-app-chapter7</string>
+    <string name="app_name">Recipe App</string>
     <string name="text_title_intro_first">Explore <font color="#FF672C">Thousands \n</font>of Recipes</string>
     <string name="text_desc_intro_first">You can create your own recipe here</string>
     <string name="text_title_intro_second">Feel <font color="#FF672C">Free</font> to Update</string>

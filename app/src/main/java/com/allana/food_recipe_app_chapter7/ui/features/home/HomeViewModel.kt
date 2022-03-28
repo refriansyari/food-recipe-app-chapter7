@@ -5,6 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.allana.food_recipe_app_chapter7.base.arch.BaseViewModelImpl
 import com.allana.food_recipe_app_chapter7.base.model.Resource
+import com.allana.food_recipe_app_chapter7.data.model.response.auth.User
 import com.allana.food_recipe_app_chapter7.data.model.response.recipe.Recipe
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
@@ -34,5 +35,13 @@ class HomeViewModel @Inject constructor(private val repository: HomeRepository) 
                 }
             }
         }
+    }
+
+    override fun deleteSession() {
+        repository.deleteSession()
+    }
+
+    override fun getUser(): User? {
+        return repository.getUser()
     }
 }

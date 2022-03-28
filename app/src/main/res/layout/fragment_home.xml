@@ -66,13 +66,13 @@
                 android:background="@color/white"
                 android:drawableStart="@drawable/ic_search"
                 android:drawablePadding="@dimen/_10sdp"
+                android:enabled="false"
                 android:fontFamily="@font/poppins_regular"
                 android:hint="@string/hint_search_recipe"
-                android:enabled="false"
                 android:padding="@dimen/_10sdp"
                 android:textColor="@color/font_black_color"
                 android:textColorHint="@color/font_grey_color"
-                android:textSize="@dimen/_12ssp"/>
+                android:textSize="@dimen/_12ssp" />
 
         </com.google.android.material.card.MaterialCardView>
 
@@ -87,21 +87,27 @@
 
     </LinearLayout>
 
-    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
-        android:id="@+id/swipeRefresh"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:visibility="visible"
+        android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@id/ll_welcome">
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rv_recipe"
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/swipeRefresh"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            tools:listitem="@layout/item_list_recipe"
-            android:padding="@dimen/_10sdp"/>
-    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+            android:layout_height="0dp"
+            android:visibility="visible">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_recipe"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="@dimen/_10sdp"
+                tools:listitem="@layout/item_list_recipe" />
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+    </ScrollView>
 
     <ProgressBar
         android:id="@+id/progressBar"

@@ -1,4 +1,4 @@
-package com.allana.food_recipe_app_chapter7.ui.features.favoriterecipe
+package com.allana.food_recipe_app_chapter7.ui.features.favorite
 
 import android.widget.Toast
 import androidx.appcompat.widget.SearchView
@@ -8,7 +8,7 @@ import com.allana.food_recipe_app_chapter7.base.arch.BaseFragment
 import com.allana.food_recipe_app_chapter7.base.model.Resource
 import com.allana.food_recipe_app_chapter7.data.local.room.entity.FavoriteRecipe
 import com.allana.food_recipe_app_chapter7.databinding.FragmentFavoriteRecipeBinding
-import com.allana.food_recipe_app_chapter7.ui.features.favoriterecipe.adapter.FavoriteRecipeAdapter
+import com.allana.food_recipe_app_chapter7.ui.features.favorite.adapter.FavoriteRecipeAdapter
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -113,7 +113,7 @@ FavoriteRecipeContract.View, SearchView.OnQueryTextListener {
         Toast.makeText(context, msg, Toast.LENGTH_SHORT).show()
     }
 
-    override fun initViewModel(): FavoriteRecipeViewModel {
-        TODO("Not yet implemented")
-    }
+//    override fun initViewModel(): FavoriteRecipeViewModel {
+//        TODO("Not yet implemented")
+//    }
 }
