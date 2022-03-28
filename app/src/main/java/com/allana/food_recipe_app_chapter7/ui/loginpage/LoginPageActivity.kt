@@ -9,7 +9,7 @@ import com.allana.food_recipe_app_chapter7.base.model.Resource
 import com.allana.food_recipe_app_chapter7.data.network.model.request.AuthRequest
 import com.allana.food_recipe_app_chapter7.databinding.ActivityLoginPageBinding
 import com.allana.food_recipe_app_chapter7.ui.features.MainActivity
-import com.allana.food_recipe_app_chapter7.ui.features.home.HomeFragment
+import com.allana.food_recipe_app_chapter7.ui.features.register.RegisterActivity
 import com.allana.food_recipe_app_chapter7.utils.StringUtils
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -75,7 +75,8 @@ class LoginPageActivity :
     }
 
     override fun navigateToRegister() {
-        //  TODO navigate to Register Activity
+        val intent = Intent(this, RegisterActivity::class.java)
+        startActivity(intent)
     }
 
     override fun observeData() {

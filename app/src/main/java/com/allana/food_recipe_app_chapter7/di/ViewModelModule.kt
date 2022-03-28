@@ -7,6 +7,8 @@ import com.allana.food_recipe_app_chapter7.ui.features.home.HomeRepository
 import com.allana.food_recipe_app_chapter7.ui.features.home.HomeViewModel
 import com.allana.food_recipe_app_chapter7.ui.features.profile.ProfileRepository
 import com.allana.food_recipe_app_chapter7.ui.features.profile.ProfileViewModel
+import com.allana.food_recipe_app_chapter7.ui.features.register.RegisterRepository
+import com.allana.food_recipe_app_chapter7.ui.features.register.RegisterViewModel
 import com.allana.food_recipe_app_chapter7.ui.loginpage.LoginPageRepository
 import com.allana.food_recipe_app_chapter7.ui.loginpage.LoginPageViewModel
 import com.allana.food_recipe_app_chapter7.ui.splash.SplashScreenRepository
@@ -70,6 +72,16 @@ object ViewModelModule {
     ) : ProfileViewModel{
         return GenericViewModelFactory(ProfileViewModel(repository)).create(
             ProfileViewModel::class.java
+        )
+    }
+
+    @Provides
+    @ActivityScoped
+    fun provideRegisterViewModel(
+        registerRepository: RegisterRepository
+    ): RegisterViewModel {
+        return GenericViewModelFactory(RegisterViewModel(registerRepository)).create(
+            RegisterViewModel::class.java
         )
     }
 }
