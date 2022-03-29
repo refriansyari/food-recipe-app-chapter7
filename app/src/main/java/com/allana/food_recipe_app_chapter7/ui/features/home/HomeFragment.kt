@@ -1,9 +1,5 @@
 package com.allana.food_recipe_app_chapter7.ui.features.home
 
-import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import com.allana.food_recipe_app_chapter7.base.arch.BaseFragment
 import com.allana.food_recipe_app_chapter7.databinding.FragmentHomeBinding
 import dagger.hilt.android.AndroidEntryPoint
@@ -13,14 +9,6 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewModel>(FragmentHo
     HomeListContract.View {
 
     private lateinit var adapter: HomeAdapter
-
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        return super.onCreateView(inflater, container, savedInstanceState)
-    }
 
     override fun getData() {
         getViewModel().getAllRecipes()
@@ -40,10 +28,6 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewModel>(FragmentHo
 
     override fun initSwipeRefresh() {
 
-    }
-
-    override fun initViewModel(): HomeViewModel {
-        TODO("Not yet implemented")
     }
 
 }
