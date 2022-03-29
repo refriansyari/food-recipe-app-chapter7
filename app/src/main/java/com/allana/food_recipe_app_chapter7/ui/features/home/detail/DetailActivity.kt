@@ -12,7 +12,7 @@ import com.allana.food_recipe_app_chapter7.data.local.room.entity.FavoriteRecipe
 import com.allana.food_recipe_app_chapter7.data.model.response.recipe.detail.RecipeDetailResponse
 import com.allana.food_recipe_app_chapter7.data.network.services.RecipeApiService
 import com.allana.food_recipe_app_chapter7.databinding.ActivityDetailBinding
-import com.allana.food_recipe_app_chapter7.utils.MapperExtension.toRecipeFavorite
+
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
