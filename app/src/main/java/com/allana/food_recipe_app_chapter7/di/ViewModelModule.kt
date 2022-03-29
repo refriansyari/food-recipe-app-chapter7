@@ -1,14 +1,18 @@
 package com.allana.food_recipe_app_chapter7.di
 
 import com.allana.food_recipe_app_chapter7.base.arch.GenericViewModelFactory
-import com.allana.food_recipe_app_chapter7.ui.features.favoriterecipe.FavoriteRecipeRepository
-import com.allana.food_recipe_app_chapter7.ui.features.favoriterecipe.FavoriteRecipeViewModel
+import com.allana.food_recipe_app_chapter7.ui.features.favorite.FavoriteRecipeRepository
+import com.allana.food_recipe_app_chapter7.ui.features.favorite.FavoriteRecipeViewModel
 import com.allana.food_recipe_app_chapter7.ui.features.home.HomeRepository
 import com.allana.food_recipe_app_chapter7.ui.features.home.HomeViewModel
+import com.allana.food_recipe_app_chapter7.ui.features.home.detail.DetailRepository
+import com.allana.food_recipe_app_chapter7.ui.features.home.detail.DetailViewModel
 import com.allana.food_recipe_app_chapter7.ui.features.profile.ProfileRepository
 import com.allana.food_recipe_app_chapter7.ui.features.profile.ProfileViewModel
 import com.allana.food_recipe_app_chapter7.ui.loginpage.LoginPageRepository
 import com.allana.food_recipe_app_chapter7.ui.loginpage.LoginPageViewModel
+import com.allana.food_recipe_app_chapter7.ui.register.RegisterRepository
+import com.allana.food_recipe_app_chapter7.ui.register.RegisterViewModel
 import com.allana.food_recipe_app_chapter7.ui.splash.SplashScreenRepository
 import com.allana.food_recipe_app_chapter7.ui.splash.SplashScreenViewModel
 import dagger.Module
@@ -23,7 +27,7 @@ object ViewModelModule {
 
     @Provides
     @ActivityScoped
-    fun provideCoinListViewModel(
+    fun provideRecipeListViewModel(
         homeRepository: HomeRepository
     ): HomeViewModel {
         return GenericViewModelFactory(HomeViewModel(homeRepository)).create(
@@ -31,13 +35,13 @@ object ViewModelModule {
         )
     }
 
-//    @Provides
-//    @ActivityScoped
-//    fun provideDetailViewModel(detailRepository: DetailRepository): DetailViewModel{
-//        return GenericViewModelFactory(DetailViewModel(detailRepository)).create(
-//            DetailViewModel::class.java
-//        )
-//    }
+    @Provides
+    @ActivityScoped
+    fun provideDetailViewModel(detailRepository: DetailRepository): DetailViewModel {
+        return GenericViewModelFactory(DetailViewModel(detailRepository)).create(
+            DetailViewModel::class.java
+        )
+    }
 
     @Provides
     @ActivityScoped
@@ -70,6 +74,16 @@ object ViewModelModule {
     ) : ProfileViewModel{
         return GenericViewModelFactory(ProfileViewModel(repository)).create(
             ProfileViewModel::class.java
+        )
+    }
+
+    @Provides
+    @ActivityScoped
+    fun provideRegisterViewModel(
+        registerRepository: RegisterRepository
+    ): RegisterViewModel {
+        return GenericViewModelFactory(RegisterViewModel(registerRepository)).create(
+            RegisterViewModel::class.java
         )
     }
 }
