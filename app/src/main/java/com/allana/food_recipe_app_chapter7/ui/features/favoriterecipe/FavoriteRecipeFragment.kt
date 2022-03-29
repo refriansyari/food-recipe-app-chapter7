@@ -106,8 +106,4 @@ FavoriteRecipeContract.View {
     override fun showError(isErrorEnabled: Boolean, msg: String?) {
         Toast.makeText(context, msg, Toast.LENGTH_SHORT).show()
     }
-
-    override fun initViewModel(): FavoriteRecipeViewModel {
-        TODO("Not yet implemented")
-    }
 }
