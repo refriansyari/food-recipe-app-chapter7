@@ -1,31 +1,34 @@
 package com.allana.food_recipe_app_chapter7.ui.features.favorite
 
 import android.widget.Toast
-import androidx.appcompat.widget.SearchView
 import androidx.core.view.isVisible
+import androidx.core.widget.addTextChangedListener
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.allana.food_recipe_app_chapter7.base.arch.BaseFragment
 import com.allana.food_recipe_app_chapter7.base.model.Resource
 import com.allana.food_recipe_app_chapter7.data.local.room.entity.FavoriteRecipe
 import com.allana.food_recipe_app_chapter7.databinding.FragmentFavoriteRecipeBinding
+import com.allana.food_recipe_app_chapter7.ui.features.home.detail.DetailActivity
 import com.allana.food_recipe_app_chapter7.ui.features.favorite.adapter.FavoriteRecipeAdapter
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class FavoriteRecipeFragment : BaseFragment<FragmentFavoriteRecipeBinding, FavoriteRecipeViewModel>(FragmentFavoriteRecipeBinding::inflate),
-FavoriteRecipeContract.View, SearchView.OnQueryTextListener {
+FavoriteRecipeContract.View {
 
     private lateinit var adapter: FavoriteRecipeAdapter
 
     override fun initView() {
-        val search = getViewBinding().etSearchFavoriteRecipe as SearchView
-        search.isSubmitButtonEnabled = true
-        search.setOnQueryTextListener(this)
+        getViewBinding().etSearchFavoriteRecipe.addTextChangedListener{ searchQuery ->
+            getSearchData(searchQuery.toString())
+        }
+        initList()
+        getListData()
     }
 
     override fun initList() {
         adapter = FavoriteRecipeAdapter {
-            // go to detail recipe
+            DetailActivity.startActivity(context, it.idRecipe?.toInt() ?: 0)
         }
         getViewBinding().rvFavoriteRecipe.apply {
             layoutManager = LinearLayoutManager(context)
@@ -92,15 +95,6 @@ FavoriteRecipeContract.View, SearchView.OnQueryTextListener {
         }
     }
 
-    override fun onQueryTextSubmit(query: String?): Boolean = true
-
-    override fun onQueryTextChange(query: String?): Boolean {
-        if (query != null) {
-            getSearchData(query)
-        }
-        return true
-    }
-
     override fun showLoading(isVisible: Boolean) {
         getViewBinding().progressBar.isVisible = isVisible
     }
@@ -112,8 +106,4 @@ FavoriteRecipeContract.View, SearchView.OnQueryTextListener {
     override fun showError(isErrorEnabled: Boolean, msg: String?) {
         Toast.makeText(context, msg, Toast.LENGTH_SHORT).show()
     }
-
-//    override fun initViewModel(): FavoriteRecipeViewModel {
-//        TODO("Not yet implemented")
-//    }
 }
