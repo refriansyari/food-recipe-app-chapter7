@@ -20,7 +20,11 @@ FavoriteRecipeContract.View {
 
     override fun initView() {
         getViewBinding().etSearchFavoriteRecipe.addTextChangedListener{ searchQuery ->
-            getSearchData(searchQuery.toString())
+            searchQuery?.let {
+                if (searchQuery.toString().isNotEmpty()) {
+                    getSearchData(searchQuery.toString())
+                }
+            }
         }
         initList()
         getListData()
