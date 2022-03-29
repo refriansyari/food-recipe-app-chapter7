@@ -9,6 +9,7 @@ import com.allana.food_recipe_app_chapter7.base.model.Resource
 import com.allana.food_recipe_app_chapter7.data.local.room.entity.FavoriteRecipe
 import com.allana.food_recipe_app_chapter7.databinding.FragmentFavoriteRecipeBinding
 import com.allana.food_recipe_app_chapter7.ui.features.favoriterecipe.adapter.FavoriteRecipeAdapter
+import com.allana.food_recipe_app_chapter7.ui.features.home.detail.DetailActivity
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -25,7 +26,7 @@ FavoriteRecipeContract.View {
 
     override fun initList() {
         adapter = FavoriteRecipeAdapter {
-            // go to detail recipe
+            DetailActivity.startActivity(context, it.idRecipe?.toInt() ?: 0)
         }
         getViewBinding().rvFavoriteRecipe.apply {
             layoutManager = LinearLayoutManager(context)
