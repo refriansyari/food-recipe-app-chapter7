@@ -14,7 +14,7 @@ class RecipeDataSourceImpl @Inject constructor(private val recipeApiService: Rec
         return recipeApiService.getAllRecipes()
     }
 
-    override suspend fun getRecipeDetail(recipeId: Int): RecipeDetailResponse {
+    override suspend fun getRecipeDetail(recipeId: Long): RecipeDetailResponse {
         return recipeApiService.getRecipeDetail(recipeId)
     }
 

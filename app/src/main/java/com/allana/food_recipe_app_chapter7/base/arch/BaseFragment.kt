@@ -38,7 +38,6 @@ abstract class BaseFragment<B : ViewBinding, VM : ViewModel>(
     }
 
     abstract fun initView()
-    abstract fun initViewModel(): VM
 
     override fun observeData() {
         //do nothing

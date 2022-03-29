@@ -21,15 +21,15 @@ interface RecipeApiService {
     @GET("random/")
     suspend fun getAllRecipes(
         @Query("apiKey") key: String = API_KEY,
-        @Query("number") number: Int = 20
+        @Query("number") number: Long = 20
     ): RecipeResponse
 
     /**
      * detail
      * **/
     // TODO sesuaikan dengan strukturnya
-    @GET("recipes/{recipeId}/information?apiKey=6ea0d5be0db54fb59cf9ee4b285232f1&includeNutrition=false")
-    suspend fun getRecipeDetail(@Path("recipeId") recipeId: Int): RecipeDetailResponse
+    @GET("{recipeId}/information?apiKey=6ea0d5be0db54fb59cf9ee4b285232f1&includeNutrition=false")
+    suspend fun getRecipeDetail(@Path("recipeId") recipeId: Long): RecipeDetailResponse
 
     companion object {
         @JvmStatic

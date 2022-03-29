@@ -19,21 +19,21 @@ class DetailViewModel
 @Inject constructor(private val repository: DetailRepository):
     BaseViewModelImpl(), DetailContract.ViewModel {
 
-    private val recipeId = MutableLiveData<Int?>()
+    private val recipeId = MutableLiveData<Long?>()
     private val recipeDetailLiveData = MutableLiveData<Resource<RecipeDetailResponse>>()
     private val insertRecipeLiveData = MutableLiveData<Resource<Long>>()
 
     override fun getRecipeDetailResponse(): LiveData<Resource<RecipeDetailResponse>> = recipeDetailLiveData
 
-    override fun getRecipeId(): LiveData<Int?> = recipeId
+    override fun getRecipeId(): LiveData<Long?> = recipeId
 
     override fun setIntentData(extras: Bundle?) {
         if (extras != null) {
-            recipeId.value = extras.getString(DetailActivity.EXTRAS_RECIPE_DETAIL)?.toInt()
+            recipeId.value = extras.getLong(DetailActivity.EXTRAS_RECIPE_DETAIL)
         }
     }
 
-    override fun getRecipeDetail(id: Int) {
+    override fun getRecipeDetail(id: Long) {
         recipeDetailLiveData.value = Resource.Loading()
         viewModelScope.launch(Dispatchers.IO) {
             try {
