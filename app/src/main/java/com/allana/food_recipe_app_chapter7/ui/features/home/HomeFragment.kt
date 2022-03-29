@@ -4,17 +4,8 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.LinearLayout
-import androidx.core.content.ContextCompat.startActivity
-import androidx.core.view.isVisible
-import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.allana.food_recipe_app_chapter7.base.arch.BaseFragment
-import com.allana.food_recipe_app_chapter7.base.model.Resource
-import com.allana.food_recipe_app_chapter7.data.model.response.recipe.Recipe
 import com.allana.food_recipe_app_chapter7.databinding.FragmentHomeBinding
-import com.allana.food_recipe_app_chapter7.ui.features.home.detail.DetailActivity
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -22,11 +13,6 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewModel>(FragmentHo
     HomeListContract.View {
 
     private lateinit var adapter: HomeAdapter
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        getData()
-    }
 
     override fun getData() {
         getViewModel().getAllRecipes()

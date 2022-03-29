@@ -1,7 +1,9 @@
 package com.allana.food_recipe_app_chapter7.ui.loginpage
 
 import android.content.Intent
+import android.os.Bundle
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.view.isVisible
 import com.allana.food_recipe_app_chapter7.R
 import com.allana.food_recipe_app_chapter7.base.arch.BaseActivity
@@ -17,6 +19,12 @@ import dagger.hilt.android.AndroidEntryPoint
 class LoginPageActivity :
     BaseActivity<ActivityLoginPageBinding, LoginPageViewModel>(ActivityLoginPageBinding::inflate),
     LoginPageContract.View {
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+        super.onCreate(savedInstanceState)
+    }
+
     override fun initView() {
         setToolbar()
         setOnClick()
@@ -27,8 +35,8 @@ class LoginPageActivity :
             if (checkFormValidation()) {
                 getViewModel().loginUser(
                     AuthRequest(
-                        email = getViewBinding().etEmailUsername.text.toString(),
-                        password = getViewBinding().etPassword.text.toString()
+                        email = getViewBinding().etEmailUsername.text.toString().trim(),
+                        password = getViewBinding().etPassword.text.toString().trim()
                     )
                 )
             }
@@ -51,7 +59,7 @@ class LoginPageActivity :
             StringUtils.isEmailValid(email).not() -> {
                 isFormValid = false
                 getViewBinding().tilEmailUsername.isErrorEnabled = true
-                getViewBinding().etEmailUsername.error = getString(R.string.invalid_email)
+                getViewBinding().tilEmailUsername.error = getString(R.string.invalid_email)
             }
             else -> {
                 getViewBinding().tilEmailUsername.isErrorEnabled = false

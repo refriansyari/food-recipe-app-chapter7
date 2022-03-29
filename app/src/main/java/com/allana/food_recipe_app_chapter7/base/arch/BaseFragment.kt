@@ -33,9 +33,8 @@ abstract class BaseFragment<B : ViewBinding, VM : ViewModel>(
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-//        viewModel = initViewModel()
-        observeData()
         initView()
+        observeData()
     }
 
     abstract fun initView()

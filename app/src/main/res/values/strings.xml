@@ -7,7 +7,7 @@
     <string name="text_title_intro_third">Feel <font color="#FF672C">Free</font> to Remove</string>
     <string name="text_desc_intro_third">If recipe is not relevant anymore, \nyou can remove easily</string>
     <string name="text_login">Login</string>
-    <string name="text_hint_enter_email_or_username">Enter email or username</string>
+    <string name="text_hint_enter_email_login">Enter your email</string>
     <string name="text_hint_password">Password</string>
     <string name="text_btn_login">Login</string>
     <string name="text_new_to_logistics">New to Logistics ?</string>
@@ -27,11 +27,11 @@
     <string name="text_what_you_want_to_cook_today">What you want to cook today?</string>
     <string name="hint_search_recipe">Search recipe</string>
     <string name="text_popular_meal">Popular Meal</string>
-    <string name="error_email_username">Please input your Email Adrress ! or username</string>
-    <string name="invalid_email">Email or username is invalid</string>
+    <string name="error_email_username">Please input your email adrress!</string>
+    <string name="invalid_email">Email is Invalid</string>
     <string name="error_password">Please input your Password</string>
     <string name="text_succes_login">Login Success</string>
-    <string name="text_error_login">Login Failed, Please check your email or username and password !</string>
+    <string name="text_error_login">Login Failed, Please check your email or password !</string>
     <string name="text_sign_up">Sign Up</string>
     <string name="text_hint_enter_email">Enter Email</string>
     <string name="text_hint_enter_user_name">Create User name</string>
