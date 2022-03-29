@@ -9,6 +9,8 @@ import com.allana.food_recipe_app_chapter7.ui.features.profile.ProfileRepository
 import com.allana.food_recipe_app_chapter7.ui.features.profile.ProfileViewModel
 import com.allana.food_recipe_app_chapter7.ui.features.home.detail.DetailRepository
 import com.allana.food_recipe_app_chapter7.ui.features.home.detail.DetailViewModel
+import com.allana.food_recipe_app_chapter7.ui.features.profile.editprofile.EditProfileRepository
+import com.allana.food_recipe_app_chapter7.ui.features.profile.editprofile.EditProfileViewModel
 import com.allana.food_recipe_app_chapter7.ui.loginpage.LoginPageRepository
 import com.allana.food_recipe_app_chapter7.ui.loginpage.LoginPageViewModel
 import com.allana.food_recipe_app_chapter7.ui.register.RegisterRepository
@@ -27,7 +29,7 @@ object ViewModelModule {
 
     @Provides
     @ActivityScoped
-    fun provideRecipeListViewModel(
+    fun provideCoinListViewModel(
         homeRepository: HomeRepository
     ): HomeViewModel {
         return GenericViewModelFactory(HomeViewModel(homeRepository)).create(
@@ -74,6 +76,16 @@ object ViewModelModule {
     ) : ProfileViewModel{
         return GenericViewModelFactory(ProfileViewModel(repository)).create(
             ProfileViewModel::class.java
+        )
+    }
+
+    @Provides
+    @ActivityScoped
+    fun provideEditProfileViewModel(
+        repository : EditProfileRepository
+    ) : EditProfileViewModel {
+        return GenericViewModelFactory(EditProfileViewModel(repository)).create(
+            EditProfileViewModel::class.java
         )
     }
 
