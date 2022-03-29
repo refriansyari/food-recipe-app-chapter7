@@ -36,8 +36,7 @@
         <activity
             android:name=".ui.features.MainActivity"
             android:exported="false"
-            android:screenOrientation="portrait"
-            android:theme="@style/Theme.Home" />
+            android:screenOrientation="portrait" />
         <activity
             android:name=".ui.loginpage.LoginPageActivity"
             android:exported="false"
