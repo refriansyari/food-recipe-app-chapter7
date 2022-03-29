@@ -20,7 +20,7 @@ interface RecipeApiService {
      * **/
     @GET("random/")
     suspend fun getAllRecipes(
-        @Query("apiKey") key: String = API_KEY,
+        @Query("apiKey") key: String = BuildConfig.API_KEY,
         @Query("number") number: Int = 20
     ): RecipeResponse
 
