@@ -43,7 +43,7 @@
             android:screenOrientation="portrait"
             android:theme="@style/Theme.Intro"/>
         <activity
-            android:name=".ui.features.register.RegisterActivity"
+            android:name=".ui.register.RegisterActivity"
             android:exported="false"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.Intro"/>

@@ -20,7 +20,7 @@ import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class ProfileFragment: BaseFragment<FragmentProfileBinding, ProfileViewModel>(FragmentProfileBinding::inflate),
-ProfileContract.View {
+    ProfileContract.View {
     override fun initView() {
         getData()
         setOnClickListener()
@@ -44,6 +44,8 @@ ProfileContract.View {
             showLogoutConfirmation()
         }
     }
+
+
 
     override fun setProfileData(data: User) {
         if (!data.photo.isNullOrEmpty()){
