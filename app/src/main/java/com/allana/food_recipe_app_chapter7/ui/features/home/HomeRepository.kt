@@ -13,8 +13,8 @@ class HomeRepository @Inject constructor(
 ) :
     BaseRepositoryImpl(), HomeListContract.Repository {
 
-    override suspend fun getAllRecipes(): List<Recipe> {
-        return datasource.getAllRecipes()
+    override suspend fun getAllRecipes(apikey: String, number: Int): List<Recipe> {
+        return datasource.getAllRecipes(apikey, number)
     }
 
     override fun deleteSession() {

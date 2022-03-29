@@ -18,24 +18,6 @@
         android:name=".App"
         android:theme="@style/Theme.Default">
         <activity
-            android:name=".ui.loginpage.LoginPageActivity"
-            android:exported="false"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".ui.features.register.RegisterActivity"
-            android:exported="false"/>
-        <activity
-            android:name=".ui.intro.IntroScreenActivity"
-            android:exported="false"
-            android:theme="@style/Theme.Intro" />
-        <activity
-
-            android:name=".ui.features.home.search.SearchActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ui.features.home.detail.DetailActivity"
-            android:exported="false" />
-        <activity
             android:name=".ui.splash.SplashScreenActivity"
             android:exported="true"
             android:screenOrientation="portrait"
@@ -46,6 +28,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".ui.intro.IntroScreenActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.Intro" />
         <activity
             android:name=".ui.features.MainActivity"
             android:exported="false"

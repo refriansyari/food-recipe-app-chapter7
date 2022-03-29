@@ -9,19 +9,19 @@ import com.allana.food_recipe_app_chapter7.data.model.response.recipe.Recipe
 interface HomeListContract {
     interface View : BaseContract.BaseView {
         fun initList()
-        fun getData()
+        fun getData(apikey: String, number: Int)
         fun initSwipeRefresh()
     }
 
     interface ViewModel : BaseContract.BaseViewModel {
         fun getRecipeListLiveData(): LiveData<Resource<List<Recipe>>>
-        fun getAllRecipes()
+        fun getAllRecipes(apikey: String, number: Int)
         fun deleteSession()
         fun getUser() : User?
     }
 
     interface Repository : BaseContract.BaseRepository {
-        suspend fun getAllRecipes(): List<Recipe>
+        suspend fun getAllRecipes(apikey: String, number: Int): List<Recipe>
         fun deleteSession()
         fun getUser() : User?
     }

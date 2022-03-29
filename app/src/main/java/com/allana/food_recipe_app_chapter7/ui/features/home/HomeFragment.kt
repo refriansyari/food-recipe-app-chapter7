@@ -4,8 +4,17 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.LinearLayout
+import androidx.core.content.ContextCompat.startActivity
+import androidx.core.view.isVisible
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.allana.food_recipe_app_chapter7.base.arch.BaseFragment
+import com.allana.food_recipe_app_chapter7.base.model.Resource
+import com.allana.food_recipe_app_chapter7.data.model.response.recipe.Recipe
 import com.allana.food_recipe_app_chapter7.databinding.FragmentHomeBinding
+import com.allana.food_recipe_app_chapter7.ui.features.home.detail.DetailActivity
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -14,13 +23,24 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewModel>(FragmentHo
 
     private lateinit var adapter: HomeAdapter
 
-    override fun getData() {
-        getViewModel().getAllRecipes()
+    override fun initView() {
+        initList()
+        getData()
+        initSwipeRefresh()
     }
 
-    override fun initView() {
-        initSwipeRefresh()
-        initList()
+    override fun initList() {
+        adapter = HomeAdapter {
+            DetailActivity.startActivity(requireContext(), it.id?.toInt() ?: 0)
+        }
+        getViewBinding().rvRecipe.apply {
+            layoutManager = GridLayoutManager(context, 2)
+            adapter = this@HomeFragment.adapter
+        }
+    }
+
+    override fun getData(apikey: String, number: Int) {
+        getViewModel().getAllRecipes(apikey, number)
     }
 
     override fun showLoading(isVisible: Boolean) {
@@ -61,16 +81,6 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewModel>(FragmentHo
 
     private fun setAdapter(data: List<Recipe>?) {
         data?.let { adapter.setItems(it) }
-    }
-
-    override fun initList() {
-        adapter = HomeAdapter {
-            DetailActivity.startActivity(context, it.id.hashCode())
-        }
-        getViewBinding().rvRecipe.apply {
-            adapter = this@HomeFragment.adapter
-            layoutManager = GridLayoutManager(requireContext(), 2)
-        }
     }
 
     override fun initSwipeRefresh() {

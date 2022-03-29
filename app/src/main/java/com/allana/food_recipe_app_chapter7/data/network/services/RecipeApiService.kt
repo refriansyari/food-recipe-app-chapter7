@@ -18,8 +18,11 @@ interface RecipeApiService {
     /**
      * list recipe
      * **/
-    @GET("random/?apiKey=6ea0d5be0db54fb59cf9ee4b285232f1&number=20")
-    suspend fun getAllRecipes(): List<Recipe>
+    @GET("random/")
+    suspend fun getAllRecipes(
+        @Query("apiKey") key: String = API_KEY,
+        @Query("number") number: Int = 20
+    ): List<Recipe>
 
     /**
      * detail

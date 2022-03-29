@@ -8,10 +8,9 @@ import javax.inject.Inject
 class RecipeDataSourceImpl @Inject constructor(private val recipeApiService: RecipeApiService) :
     RecipeDataSource {
 
-    override suspend fun getAllRecipes(): List<Recipe> {
-        return recipeApiService.getAllRecipes()
+    override suspend fun getAllRecipes(apiKey: String, number: Int): List<Recipe> {
+        return recipeApiService.getAllRecipes(apiKey, number)
     }
-
 
     override suspend fun getRecipeDetail(recipeId: Int): RecipeDetailResponse {
         return recipeApiService.getRecipeDetail(recipeId)

@@ -21,11 +21,11 @@ class HomeViewModel @Inject constructor(private val repository: HomeRepository) 
 
     override fun getRecipeListLiveData(): LiveData<Resource<List<Recipe>>> = recipeLiveData
 
-    override fun getAllRecipes() {
+    override fun getAllRecipes(apikey: String, number: Int) {
         recipeLiveData.value = Resource.Loading()
         viewModelScope.launch(Dispatchers.IO) {
             try {
-                val response = repository.getAllRecipes()
+                val response = repository.getAllRecipes(apikey, number)
                 viewModelScope.launch(Dispatchers.Main) {
                     recipeLiveData.value = Resource.Success(response)
                 }
