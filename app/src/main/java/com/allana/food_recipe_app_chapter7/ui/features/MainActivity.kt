@@ -9,7 +9,9 @@ import com.allana.food_recipe_app_chapter7.ui.features.favoriterecipe.FavoriteRe
 import com.allana.food_recipe_app_chapter7.ui.features.home.HomeFragment
 import com.allana.food_recipe_app_chapter7.ui.features.profile.ProfileFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
