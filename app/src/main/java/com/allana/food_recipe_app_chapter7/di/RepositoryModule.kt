@@ -2,9 +2,9 @@ package com.allana.food_recipe_app_chapter7.di
 
 import com.allana.food_recipe_app_chapter7.data.local.datasource.LocalAuthDataSource
 import com.allana.food_recipe_app_chapter7.data.local.room.datasource.FavoriteRecipeDataSource
-import com.allana.food_recipe_app_chapter7.data.network.datasource.RecipeDataSource
+import com.allana.food_recipe_app_chapter7.data.network.datasource.recipe.RecipeDataSource
 import com.allana.food_recipe_app_chapter7.data.network.datasource.auth.AuthApiDataSource
-import com.allana.food_recipe_app_chapter7.ui.features.favoriterecipe.FavoriteRecipeRepository
+import com.allana.food_recipe_app_chapter7.ui.features.favorite.FavoriteRecipeRepository
 import com.allana.food_recipe_app_chapter7.ui.features.home.HomeRepository
 import com.allana.food_recipe_app_chapter7.ui.features.profile.ProfileRepository
 import com.allana.food_recipe_app_chapter7.ui.loginpage.LoginPageRepository
@@ -22,15 +22,15 @@ object RepositoryModule {
     @Provides
     @Singleton
     fun provideRecipeListRepository(
-        recipeDataSource: RecipeDataSource
+        recipeDataSource: RecipeDataSource,
+        localDataSource: LocalAuthDataSource
     ): HomeRepository {
         // TODO add localDataSource
-        return HomeRepository(recipeDataSource)
+        return HomeRepository(recipeDataSource, localDataSource)
     }
 
     @Singleton
     @Provides
-
     fun provideLoginPageRepository(
         authApiDataSource: AuthApiDataSource,
         localAuthDataSource: LocalAuthDataSource

@@ -1,8 +1,8 @@
 package com.allana.food_recipe_app_chapter7.data.network.datasource.auth
 
-import com.allana.food_recipe_app_chapter7.data.network.model.request.AuthRequest
-import com.allana.food_recipe_app_chapter7.data.network.model.response.auth.BaseAuthResponse
-import com.allana.food_recipe_app_chapter7.data.network.model.response.auth.User
+import com.allana.food_recipe_app_chapter7.data.model.request.AuthRequest
+import com.allana.food_recipe_app_chapter7.data.model.response.auth.BaseAuthResponse
+import com.allana.food_recipe_app_chapter7.data.model.response.auth.User
 import com.allana.food_recipe_app_chapter7.data.network.services.AuthApiServices
 import okhttp3.MediaType
 import okhttp3.MultipartBody

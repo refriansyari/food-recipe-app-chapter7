@@ -9,23 +9,18 @@
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/cv_img"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="@dimen/_88sdp"
         app:cardBackgroundColor="@color/white"
         app:cardCornerRadius="@dimen/_6sdp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <LinearLayout
+        <ImageView
+            android:id="@+id/iv_food"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <ImageView
-                android:id="@+id/iv_food"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/_88sdp"
-                android:scaleType="centerCrop"
-                android:src="@drawable/ic_intro_third" />
-        </LinearLayout>
+            android:layout_height="@dimen/_88sdp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_intro_third" />
     </com.google.android.material.card.MaterialCardView>
 
     <TextView

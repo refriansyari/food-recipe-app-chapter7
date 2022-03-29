@@ -5,7 +5,7 @@ import com.allana.food_recipe_app_chapter7.data.local.room.datasource.FavoriteRe
 import com.allana.food_recipe_app_chapter7.data.local.room.datasource.FavoriteRecipeDataSourceImpl
 import com.allana.food_recipe_app_chapter7.data.local.room.entity.FavoriteRecipe
 import com.allana.food_recipe_app_chapter7.data.model.response.recipe.detail.RecipeDetailResponse
-import com.allana.food_recipe_app_chapter7.data.network.datasource.RecipeDataSource
+import com.allana.food_recipe_app_chapter7.data.network.datasource.recipe.RecipeDataSource
 import javax.inject.Inject
 
 class DetailRepository @Inject constructor(

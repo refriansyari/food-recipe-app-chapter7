@@ -6,9 +6,9 @@ import com.google.gson.annotations.SerializedName
 data class Recipe(
 
     @SerializedName("id")
-    var id: Int?,
+    var id: Long? = null,
     @SerializedName("image")
-    var image: String?,
+    var image: String? = null,
     @SerializedName("title")
-    var title: String?
+    var title: String? = null
 )

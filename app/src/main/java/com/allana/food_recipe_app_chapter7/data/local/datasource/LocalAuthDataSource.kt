@@ -1,6 +1,6 @@
 package com.allana.food_recipe_app_chapter7.data.local.datasource
 
-import com.allana.food_recipe_app_chapter7.data.network.model.response.auth.User
+import com.allana.food_recipe_app_chapter7.data.model.response.auth.User
 
 interface LocalAuthDataSource {
     fun getAuthToken(): String?
