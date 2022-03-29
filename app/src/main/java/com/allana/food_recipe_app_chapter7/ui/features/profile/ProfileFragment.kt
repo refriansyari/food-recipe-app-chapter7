@@ -26,6 +26,12 @@ ProfileContract.View {
         setOnClickListener()
     }
 
+    override fun onResume() {
+        super.onResume()
+        initView()
+        observeData()
+    }
+
     override fun getData() {
         getViewModel().getProfileData()
     }
