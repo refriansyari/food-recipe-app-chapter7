@@ -59,7 +59,7 @@ ProfileContract.View {
 
     override fun logout() {
         getViewModel().logout()
-        Toast.makeText(requireContext(), "Logout Successful", Toast.LENGTH_SHORT).show()
+        Toast.makeText(requireContext(), getString(R.string.text_logout_successful), Toast.LENGTH_SHORT).show()
         navigateToLoginActivity()
     }
 
@@ -72,13 +72,13 @@ ProfileContract.View {
     override fun showLogoutConfirmation() {
         MaterialAlertDialogBuilder(requireContext())
             .apply {
-                setTitle("Logout Profile")
-                    .setMessage("Are you sure you want to log out?")
-                    .setPositiveButton("Logout") { dialog, _ ->
+                setTitle(getString(R.string.text_logout_profile))
+                    .setMessage(getString(R.string.text_logout_confirmation))
+                    .setPositiveButton(getString(R.string.text_logout)) { dialog, _ ->
                         logout()
                         dialog.dismiss()
                     }
-                    .setNegativeButton("Cancel") { dialog, _ ->
+                    .setNegativeButton(getString(R.string.text_cancel)) { dialog, _ ->
                         dialog.dismiss()
                     }
             }.create().show()

@@ -45,4 +45,9 @@
     <string name="text_register_success">Account Successfully Registered!</string>
 
     <string name="username_string">\@%s</string>
+    <string name="text_logout_successful">Logout Successful</string>
+    <string name="text_logout_profile">Logout Profile</string>
+    <string name="text_logout_confirmation">Are you sure you want to log out?</string>
+    <string name="text_logout">Logout</string>
+    <string name="text_cancel">Cancel</string>
 </resources>
