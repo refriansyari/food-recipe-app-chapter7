@@ -7,6 +7,7 @@ import com.allana.food_recipe_app_chapter7.base.arch.BaseActivity
 import com.allana.food_recipe_app_chapter7.base.model.Resource
 import com.allana.food_recipe_app_chapter7.data.local.preference.SessionPreference
 import com.allana.food_recipe_app_chapter7.databinding.ActivitySplashScreenBinding
+import com.allana.food_recipe_app_chapter7.ui.features.MainActivity
 import com.allana.food_recipe_app_chapter7.ui.features.home.HomeFragment
 import com.allana.food_recipe_app_chapter7.ui.intro.IntroScreenActivity
 import com.allana.food_recipe_app_chapter7.ui.loginpage.LoginPageActivity
@@ -70,6 +71,7 @@ class SplashScreenActivity : BaseActivity<ActivitySplashScreenBinding, SplashScr
     override fun checkLoginStatus() {
         if(getViewModel().isUserLoggedIn()){
             getViewModel().getSyncUser()
+            navigateToHome()
         }else{
             navigateToLogin()
         }
@@ -86,7 +88,7 @@ class SplashScreenActivity : BaseActivity<ActivitySplashScreenBinding, SplashScr
     }
 
     override fun navigateToHome() {
-        val intent = Intent(this@SplashScreenActivity, HomeFragment::class.java)
+        val intent = Intent(this@SplashScreenActivity, MainActivity::class.java)
         intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
         startActivity(intent)
     }
