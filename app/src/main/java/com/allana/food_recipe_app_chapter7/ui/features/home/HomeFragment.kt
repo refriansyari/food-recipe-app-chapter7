@@ -8,8 +8,6 @@ import android.widget.LinearLayout
 import androidx.core.content.ContextCompat.startActivity
 import androidx.core.view.isVisible
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.allana.food_recipe_app_chapter7.base.arch.BaseFragment
 import com.allana.food_recipe_app_chapter7.base.model.Resource
 import com.allana.food_recipe_app_chapter7.data.model.response.recipe.Recipe
@@ -24,9 +22,8 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewModel>(FragmentHo
     private lateinit var adapter: HomeAdapter
 
     override fun initView() {
-        initList()
         getData()
-        initSwipeRefresh()
+//        initSwipeRefresh()
     }
 
     override fun initList() {
@@ -39,8 +36,8 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewModel>(FragmentHo
         }
     }
 
-    override fun getData(apikey: String, number: Int) {
-        getViewModel().getAllRecipes(apikey, number)
+    override fun getData() {
+        getViewModel().getAllRecipes()
     }
 
     override fun showLoading(isVisible: Boolean) {
@@ -68,6 +65,8 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewModel>(FragmentHo
                     showLoading(false)
                     showContent(true)
                     showError(false, null)
+
+                    initList()
                     setAdapter(it.data)
                 }
                 is Resource.Error -> {
@@ -83,10 +82,10 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewModel>(FragmentHo
         data?.let { adapter.setItems(it) }
     }
 
-    override fun initSwipeRefresh() {
-        getViewBinding().swipeRefresh.setOnRefreshListener {
-            getViewBinding().swipeRefresh.isRefreshing = false
-            getData()
-        }
-    }
+//    override fun initSwipeRefresh() {
+//        getViewBinding().swipeRefresh.setOnRefreshListener {
+//            getViewBinding().swipeRefresh.isRefreshing = false
+//            getData()
+//        }
+//    }
 }

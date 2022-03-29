@@ -9,10 +9,12 @@ import com.allana.food_recipe_app_chapter7.ui.features.profile.ProfileRepository
 import com.allana.food_recipe_app_chapter7.ui.features.profile.ProfileViewModel
 import com.allana.food_recipe_app_chapter7.ui.features.home.detail.DetailRepository
 import com.allana.food_recipe_app_chapter7.ui.features.home.detail.DetailViewModel
-import com.allana.food_recipe_app_chapter7.ui.register.RegisterRepository
-import com.allana.food_recipe_app_chapter7.ui.register.RegisterViewModel
+import com.allana.food_recipe_app_chapter7.ui.features.profile.ProfileRepository
+import com.allana.food_recipe_app_chapter7.ui.features.profile.ProfileViewModel
 import com.allana.food_recipe_app_chapter7.ui.loginpage.LoginPageRepository
 import com.allana.food_recipe_app_chapter7.ui.loginpage.LoginPageViewModel
+import com.allana.food_recipe_app_chapter7.ui.register.RegisterRepository
+import com.allana.food_recipe_app_chapter7.ui.register.RegisterViewModel
 import com.allana.food_recipe_app_chapter7.ui.splash.SplashScreenRepository
 import com.allana.food_recipe_app_chapter7.ui.splash.SplashScreenViewModel
 import dagger.Module

@@ -35,7 +35,7 @@ FavoriteRecipeContract.View {
 
     override fun initList() {
         adapter = FavoriteRecipeAdapter {
-            DetailActivity.startActivity(context, it.idRecipe?.toInt() ?: 0)
+            DetailActivity.startActivity(context, it.idRecipe?.toLong() ?: 0)
         }
         getViewBinding().rvFavoriteRecipe.apply {
             layoutManager = LinearLayoutManager(context)

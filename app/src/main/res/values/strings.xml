@@ -23,7 +23,7 @@
     <string name="label_btm_profile">Profile</string>
     <string name="label_btm_favorite">Favorite</string>
     <string name="label_btm_home">Home</string>
-    <string name="text_welcome">Hello,&#032;</string>
+    <string name="text_welcome"><font color="#3D3D3D">Simple way to find \n</font><font color="#FF6838">tasty recipes</font></string>
     <string name="text_what_you_want_to_cook_today">What you want to cook today?</string>
     <string name="hint_search_recipe">Search recipe</string>
     <string name="text_popular_meal">Popular Meal</string>
@@ -43,6 +43,5 @@
     <string name="error_password_empty">Password is Required</string>
     <string name="error_username_empty">Username is Required</string>
     <string name="text_register_success">Account Successfully Registered!</string>
-
     <string name="username_string">\@%s</string>
 </resources>

@@ -14,28 +14,32 @@ import java.lang.Exception
 import javax.inject.Inject
 
 @HiltViewModel
-class HomeViewModel @Inject constructor(private val repository: HomeRepository) :
-    BaseViewModelImpl(), HomeListContract.ViewModel {
+class HomeViewModel @Inject constructor(
+    private val repository: HomeRepository
+) : BaseViewModelImpl(), HomeListContract.ViewModel {
 
     private val recipeLiveData = MutableLiveData<Resource<List<Recipe>>>()
+    override fun getRecipeListLiveData(): LiveData<Resource<List<Recipe>>> {
+        return recipeLiveData
+    }
 
-    override fun getRecipeListLiveData(): LiveData<Resource<List<Recipe>>> = recipeLiveData
-
-    override fun getAllRecipes(apikey: String, number: Int) {
+    override fun getAllRecipes() {
         recipeLiveData.value = Resource.Loading()
-        viewModelScope.launch(Dispatchers.IO) {
+
+        viewModelScope.launch(Dispatchers.IO){
             try {
-                val response = repository.getAllRecipes(apikey, number)
-                viewModelScope.launch(Dispatchers.Main) {
-                    recipeLiveData.value = Resource.Success(response)
+                val response = repository.getAllRecipes()
+                viewModelScope.launch (Dispatchers.Main){
+                    recipeLiveData.value = response.recipes?.let { Resource.Success(it) }!!
                 }
-            } catch (e: Exception) {
-                viewModelScope.launch(Dispatchers.Main) {
-                    recipeLiveData.value = Resource.Error(e.message.orEmpty())
+            } catch (e: Exception){
+                viewModelScope.launch (Dispatchers.Main){
+                    recipeLiveData.value = Resource.Error(e. localizedMessage.orEmpty())
                 }
             }
         }
     }
+
 
     override fun deleteSession() {
         repository.deleteSession()
