@@ -30,6 +30,7 @@ class ProfileFragment: BaseFragment<FragmentProfileBinding, ProfileViewModel>(Fr
         super.onResume()
         initView()
         observeData()
+        getData()
     }
 
     override fun getData() {

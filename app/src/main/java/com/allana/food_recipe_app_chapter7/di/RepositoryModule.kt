@@ -7,6 +7,7 @@ import com.allana.food_recipe_app_chapter7.data.network.datasource.auth.AuthApiD
 import com.allana.food_recipe_app_chapter7.ui.features.favorite.FavoriteRecipeRepository
 import com.allana.food_recipe_app_chapter7.ui.features.home.HomeRepository
 import com.allana.food_recipe_app_chapter7.ui.features.profile.ProfileRepository
+import com.allana.food_recipe_app_chapter7.ui.features.profile.editprofile.EditProfileRepository
 import com.allana.food_recipe_app_chapter7.ui.loginpage.LoginPageRepository
 import com.allana.food_recipe_app_chapter7.ui.splash.SplashScreenRepository
 import dagger.Module
@@ -73,4 +74,14 @@ object RepositoryModule {
     ): ProfileRepository {
         return ProfileRepository(localAuthDataSource)
     }
+
+    @Singleton
+    @Provides
+    fun provideEditProfileRepository(
+        authApiDataSource: AuthApiDataSource,
+        localAuthDataSource: LocalAuthDataSource
+    ): EditProfileRepository {
+        return EditProfileRepository(authApiDataSource,localAuthDataSource)
+    }
+
 }
