@@ -16,5 +16,4 @@ class ProfileRepository
         localDataSource.clearSession()
     }
 
-
 }

@@ -3,19 +3,16 @@ package com.allana.food_recipe_app_chapter7.ui.features.profile
 import android.content.Intent
 import android.widget.Toast
 import coil.load
+import coil.size.Scale
 import coil.transform.CircleCropTransformation
 import com.allana.food_recipe_app_chapter7.R
 import com.allana.food_recipe_app_chapter7.base.arch.BaseFragment
-import com.allana.food_recipe_app_chapter7.base.arch.GenericViewModelFactory
 import com.allana.food_recipe_app_chapter7.base.model.Resource
-import com.allana.food_recipe_app_chapter7.data.local.datasource.LocalAuthDataSourceImpl
-import com.allana.food_recipe_app_chapter7.data.local.preference.SessionPreference
 import com.allana.food_recipe_app_chapter7.data.network.model.response.auth.User
 import com.allana.food_recipe_app_chapter7.databinding.FragmentProfileBinding
 import com.allana.food_recipe_app_chapter7.ui.editprofile.EditProfileActivity
 import com.allana.food_recipe_app_chapter7.ui.loginpage.LoginPageActivity
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
-import com.google.gson.Gson
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -24,12 +21,6 @@ ProfileContract.View {
     override fun initView() {
         getData()
         setOnClickListener()
-    }
-
-    override fun onResume() {
-        super.onResume()
-        initView()
-        observeData()
     }
 
     override fun getData() {
@@ -45,7 +36,11 @@ ProfileContract.View {
         }
     }
 
-
+    override fun onResume() {
+        super.onResume()
+        initView()
+        observeData()
+    }
 
     override fun setProfileData(data: User) {
         if (!data.photo.isNullOrEmpty()){
