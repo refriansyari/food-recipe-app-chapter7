@@ -1,8 +1,8 @@
 package com.allana.food_recipe_app_chapter7.ui.features.favoriterecipe
 
 import android.widget.Toast
-import androidx.appcompat.widget.SearchView
 import androidx.core.view.isVisible
+import androidx.core.widget.addTextChangedListener
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.allana.food_recipe_app_chapter7.base.arch.BaseFragment
 import com.allana.food_recipe_app_chapter7.base.model.Resource
@@ -13,14 +13,14 @@ import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class FavoriteRecipeFragment : BaseFragment<FragmentFavoriteRecipeBinding, FavoriteRecipeViewModel>(FragmentFavoriteRecipeBinding::inflate),
-FavoriteRecipeContract.View, SearchView.OnQueryTextListener {
+FavoriteRecipeContract.View {
 
     private lateinit var adapter: FavoriteRecipeAdapter
 
     override fun initView() {
-        val search = getViewBinding().etSearchFavoriteRecipe as SearchView
-        search.isSubmitButtonEnabled = true
-        search.setOnQueryTextListener(this)
+        getViewBinding().etSearchFavoriteRecipe.addTextChangedListener{ searchQuery ->
+            getSearchData(searchQuery.toString())
+        }
     }
 
     override fun initList() {
@@ -90,15 +90,6 @@ FavoriteRecipeContract.View, SearchView.OnQueryTextListener {
         data?.let {
             adapter.setItems(it)
         }
-    }
-
-    override fun onQueryTextSubmit(query: String?): Boolean = true
-
-    override fun onQueryTextChange(query: String?): Boolean {
-        if (query != null) {
-            getSearchData(query)
-        }
-        return true
     }
 
     override fun showLoading(isVisible: Boolean) {
