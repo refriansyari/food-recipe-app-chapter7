@@ -1,60 +1,116 @@
 package com.allana.food_recipe_app_chapter7.ui.features.profile
 
-import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.content.Intent
+import android.widget.Toast
+import coil.load
+import coil.transform.CircleCropTransformation
 import com.allana.food_recipe_app_chapter7.R
+import com.allana.food_recipe_app_chapter7.base.arch.BaseFragment
+import com.allana.food_recipe_app_chapter7.base.arch.GenericViewModelFactory
+import com.allana.food_recipe_app_chapter7.base.model.Resource
+import com.allana.food_recipe_app_chapter7.data.local.datasource.LocalAuthDataSourceImpl
+import com.allana.food_recipe_app_chapter7.data.local.preference.SessionPreference
+import com.allana.food_recipe_app_chapter7.data.network.model.response.auth.User
+import com.allana.food_recipe_app_chapter7.databinding.FragmentProfileBinding
+import com.allana.food_recipe_app_chapter7.ui.editprofile.EditProfileActivity
+import com.allana.food_recipe_app_chapter7.ui.loginpage.LoginPageActivity
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import com.google.gson.Gson
+import dagger.hilt.android.AndroidEntryPoint
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
+@AndroidEntryPoint
+class ProfileFragment: BaseFragment<FragmentProfileBinding, ProfileViewModel>(FragmentProfileBinding::inflate),
+ProfileContract.View {
+    override fun initView() {
+        getData()
+        setOnClickListener()
+    }
 
-/**
- * A simple [Fragment] subclass.
- * Use the [ProfileFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
-class ProfileFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+    override fun onResume() {
+        super.onResume()
+        initView()
+        observeData()
+    }
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
+    override fun getData() {
+        getViewModel().getProfileData()
+    }
+
+    override fun setOnClickListener() {
+        getViewBinding().llEditProfile.setOnClickListener {
+            startActivity(Intent(requireContext(), EditProfileActivity::class.java))
+        }
+        getViewBinding().llLogout.setOnClickListener {
+            showLogoutConfirmation()
         }
     }
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_profile, container, false)
+
+
+    override fun setProfileData(data: User) {
+        if (!data.photo.isNullOrEmpty()){
+            getViewBinding().ivProfilePicture.load(data.photo) {
+                crossfade(true)
+                transformations(CircleCropTransformation())
+                placeholder(R.drawable.ic_photo)
+            }
+        } else {
+            getViewBinding().ivProfilePicture.load(R.drawable.ic_photo)
+        }
+
+        getViewBinding().tvName.text = data.username
+        getViewBinding().tvUsername.text = getString(R.string.username_string, data.username)
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment ProfileFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            ProfileFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
+    override fun logout() {
+        getViewModel().logout()
+        Toast.makeText(requireContext(), "Logout Successful", Toast.LENGTH_SHORT).show()
+        navigateToLoginActivity()
+    }
+
+    override fun navigateToLoginActivity() {
+        val intent = Intent(requireContext(), LoginPageActivity::class.java)
+        intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
+        startActivity(intent)
+    }
+
+    override fun showLogoutConfirmation() {
+        MaterialAlertDialogBuilder(requireContext())
+            .apply {
+                setTitle("Logout Profile")
+                    .setMessage("Are you sure you want to log out?")
+                    .setPositiveButton("Logout") { dialog, _ ->
+                        logout()
+                        dialog.dismiss()
+                    }
+                    .setNegativeButton("Cancel") { dialog, _ ->
+                        dialog.dismiss()
+                    }
+            }.create().show()
+    }
+
+    override fun observeData() {
+        super.observeData()
+        getViewModel().getProfileLiveData().observe(this) {
+            when (it){
+                is Resource.Loading -> {
+                    showLoading(true)
+                    showContent(false)
+                    showError(false, null)
+                }
+                is Resource.Success -> {
+                    showLoading(false)
+                    showContent(true)
+                    showError(false, null)
+                    setProfileData(it.data!!)
+                }
+                is Resource.Error -> {
+                    showLoading(false)
+                    showContent(false)
+                    showError(true, it.message)
                 }
             }
+        }
     }
+
 }
