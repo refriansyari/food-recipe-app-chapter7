@@ -44,7 +44,7 @@
             android:screenOrientation="portrait"
             android:theme="@style/Theme.Intro"/>
         <activity
-            android:name="com.allana.food_recipe_app_chapter7.ui.register.RegisterActivity"
+            android:name=".ui.features.register.RegisterActivity"
             android:exported="false"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.Intro"/>

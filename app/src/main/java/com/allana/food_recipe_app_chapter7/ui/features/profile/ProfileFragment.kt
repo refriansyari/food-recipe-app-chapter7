@@ -1,6 +1,7 @@
 package com.allana.food_recipe_app_chapter7.ui.features.profile
 
 import android.content.Intent
+import android.widget.Toast
 import coil.load
 import coil.transform.CircleCropTransformation
 import com.allana.food_recipe_app_chapter7.R
@@ -23,13 +24,6 @@ ProfileContract.View {
     override fun initView() {
         getData()
         setOnClickListener()
-    }
-
-    override fun initViewModel(): ProfileViewModel {
-        val repository = ProfileRepository(LocalAuthDataSourceImpl(SessionPreference(requireContext(), Gson())))
-        return GenericViewModelFactory(ProfileViewModel(repository)).create(
-            ProfileViewModel::class.java
-        )
     }
 
     override fun getData() {
@@ -64,6 +58,7 @@ ProfileContract.View {
 
     override fun logout() {
         getViewModel().logout()
+        Toast.makeText(requireContext(), "Logout Successful", Toast.LENGTH_SHORT).show()
         navigateToLoginActivity()
     }
 
