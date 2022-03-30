@@ -42,16 +42,21 @@
                     android:textSize="@dimen/_16ssp"
                     tools:text="Teriyaki Chicken Casserole" />
 
-                <TextView
-                    android:id="@+id/tv_serving_detail"
-                    android:layout_width="wrap_content"
+                <HorizontalScrollView
+                    android:id="@+id/hsv_chips"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/_10sdp"
-                    android:layout_gravity="center"
-                    android:fontFamily="@font/poppins_regular"
-                    android:textColor="@color/font_black_color"
-                    android:textSize="@dimen/_14ssp"
-                    tools:text="Chicken" />
+                    android:layout_marginTop="8dp"
+                    android:scrollbars="none"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_title_detail">
+
+                    <com.google.android.material.chip.ChipGroup
+                        android:id="@+id/cg_category"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </HorizontalScrollView>
 
                 <TextView
                     android:id="@+id/tv_title_ingredients_detail"

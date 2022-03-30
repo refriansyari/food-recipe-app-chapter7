@@ -16,7 +16,7 @@ class DetailRepository @Inject constructor(
         return recipeFavoriteDataSource.insertFavoriteRecipe(favRecipe)
     }
 
-    override suspend fun getRecipeDetail(id: Int): RecipeDetailResponse {
+    override suspend fun getRecipeDetail(id: Long): RecipeDetailResponse {
         return recipeDataSource.getRecipeDetail(id)
     }
 }

@@ -17,13 +17,13 @@ interface DetailContract {
     interface ViewModel : BaseContract.BaseViewModel{
         fun insertRecipeFavorite(favRecipe: FavoriteRecipe)
         fun getRecipeDetailResponse(): LiveData<Resource<RecipeDetailResponse>>
-        fun getRecipeId(): LiveData<Int?>
+        fun getRecipeId(): LiveData<Long?>
         fun setIntentData(extras : Bundle?)
-        fun getRecipeDetail(id: Int)
+        fun getRecipeDetail(id: Long)
     }
 
     interface Repository  : BaseContract.BaseRepository {
         suspend fun insertRecipeFavorite(favRecipe: FavoriteRecipe) : Long
-        suspend fun getRecipeDetail(id: Int): RecipeDetailResponse
+        suspend fun getRecipeDetail(id: Long): RecipeDetailResponse
     }
 }
