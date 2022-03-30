@@ -90,7 +90,7 @@ class DetailActivity :
                     recipeToFav.id,
                     recipeToFav.title,
                     recipeToFav.image,
-                    recipeToFav.serving.toString()
+                    recipeToFav.serving
                 )
             }
             recipeFavorite.let {

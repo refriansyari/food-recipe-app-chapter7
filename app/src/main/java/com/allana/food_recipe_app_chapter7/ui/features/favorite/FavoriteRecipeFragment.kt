@@ -42,7 +42,7 @@ FavoriteRecipeContract.View {
     }
 
     override fun getListData() {
-        getViewModel().getRecipeListLiveData()
+        getViewModel().getAllRecipes()
     }
 
     override fun getSearchData(searchQuery: String) {
@@ -111,6 +111,8 @@ FavoriteRecipeContract.View {
     }
 
     override fun showError(isErrorEnabled: Boolean, msg: String?) {
-        Toast.makeText(context, msg, Toast.LENGTH_SHORT).show()
+        msg?.let {
+            Toast.makeText(context, it, Toast.LENGTH_SHORT).show()
+        }
     }
 }
