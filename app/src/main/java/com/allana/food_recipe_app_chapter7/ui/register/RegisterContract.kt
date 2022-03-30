@@ -1,11 +1,11 @@
-package com.allana.food_recipe_app_chapter7.ui.features.register
+package com.allana.food_recipe_app_chapter7.ui.register
 
 import androidx.lifecycle.LiveData
 import com.allana.food_recipe_app_chapter7.base.arch.BaseContract
 import com.allana.food_recipe_app_chapter7.base.model.Resource
-import com.allana.food_recipe_app_chapter7.data.network.model.request.AuthRequest
-import com.allana.food_recipe_app_chapter7.data.network.model.response.auth.BaseAuthResponse
-import com.allana.food_recipe_app_chapter7.data.network.model.response.auth.User
+import com.allana.food_recipe_app_chapter7.data.model.request.AuthRequest
+import com.allana.food_recipe_app_chapter7.data.model.response.auth.BaseAuthResponse
+import com.allana.food_recipe_app_chapter7.data.model.response.auth.User
 
 class RegisterContract {
     interface View : BaseContract.BaseView {

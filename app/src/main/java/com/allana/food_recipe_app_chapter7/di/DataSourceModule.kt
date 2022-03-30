@@ -7,10 +7,10 @@ import com.allana.food_recipe_app_chapter7.data.local.room.dao.FavoriteRecipeDao
 import com.allana.food_recipe_app_chapter7.data.local.room.datasource.FavoriteRecipeDataSource
 import com.allana.food_recipe_app_chapter7.data.local.room.datasource.FavoriteRecipeDataSourceImpl
 import com.allana.food_recipe_app_chapter7.data.local.room.entity.FavoriteRecipe
-import com.allana.food_recipe_app_chapter7.data.network.datasource.RecipeDataSource
-import com.allana.food_recipe_app_chapter7.data.network.datasource.RecipeDataSourceImpl
 import com.allana.food_recipe_app_chapter7.data.network.datasource.auth.AuthApiDataSource
 import com.allana.food_recipe_app_chapter7.data.network.datasource.auth.AuthApiDataSourceImpl
+import com.allana.food_recipe_app_chapter7.data.network.datasource.recipe.RecipeDataSource
+import com.allana.food_recipe_app_chapter7.data.network.datasource.recipe.RecipeDataSourceImpl
 import com.allana.food_recipe_app_chapter7.data.network.services.AuthApiServices
 import com.allana.food_recipe_app_chapter7.data.network.services.RecipeApiService
 import dagger.Module

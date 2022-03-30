@@ -3,8 +3,8 @@ package com.allana.food_recipe_app_chapter7.ui.splash
 import com.allana.food_recipe_app_chapter7.base.arch.BaseRepositoryImpl
 import com.allana.food_recipe_app_chapter7.data.local.datasource.LocalAuthDataSource
 import com.allana.food_recipe_app_chapter7.data.network.datasource.auth.AuthApiDataSource
-import com.allana.food_recipe_app_chapter7.data.network.model.response.auth.BaseAuthResponse
-import com.allana.food_recipe_app_chapter7.data.network.model.response.auth.User
+import com.allana.food_recipe_app_chapter7.data.model.response.auth.BaseAuthResponse
+import com.allana.food_recipe_app_chapter7.data.model.response.auth.User
 import javax.inject.Inject
 
 class SplashScreenRepository @Inject constructor(

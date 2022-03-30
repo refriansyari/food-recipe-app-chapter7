@@ -2,7 +2,7 @@ package com.allana.food_recipe_app_chapter7.ui.features.profile
 
 import com.allana.food_recipe_app_chapter7.base.arch.BaseRepositoryImpl
 import com.allana.food_recipe_app_chapter7.data.local.datasource.LocalAuthDataSource
-import com.allana.food_recipe_app_chapter7.data.network.model.response.auth.User
+import com.allana.food_recipe_app_chapter7.data.model.response.auth.User
 import javax.inject.Inject
 
 class ProfileRepository

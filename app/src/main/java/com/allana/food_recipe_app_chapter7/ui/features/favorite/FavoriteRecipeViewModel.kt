@@ -1,4 +1,4 @@
-package com.allana.food_recipe_app_chapter7.ui.features.favoriterecipe
+package com.allana.food_recipe_app_chapter7.ui.features.favorite
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

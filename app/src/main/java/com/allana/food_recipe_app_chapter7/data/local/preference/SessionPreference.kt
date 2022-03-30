@@ -2,7 +2,7 @@ package com.allana.food_recipe_app_chapter7.data.local.preference
 
 import android.content.Context
 import android.content.SharedPreferences
-import com.allana.food_recipe_app_chapter7.data.network.model.response.auth.User
+import com.allana.food_recipe_app_chapter7.data.model.response.auth.User
 import com.google.gson.Gson
 import dagger.hilt.android.qualifiers.ApplicationContext
 import java.lang.Exception

@@ -2,9 +2,9 @@ package com.allana.food_recipe_app_chapter7.data.network.services
 
 import com.allana.food_recipe_app_chapter7.BuildConfig
 import com.allana.food_recipe_app_chapter7.data.local.datasource.LocalAuthDataSource
-import com.allana.food_recipe_app_chapter7.data.network.model.request.AuthRequest
-import com.allana.food_recipe_app_chapter7.data.network.model.response.auth.BaseAuthResponse
-import com.allana.food_recipe_app_chapter7.data.network.model.response.auth.User
+import com.allana.food_recipe_app_chapter7.data.model.request.AuthRequest
+import com.allana.food_recipe_app_chapter7.data.model.response.auth.BaseAuthResponse
+import com.allana.food_recipe_app_chapter7.data.model.response.auth.User
 import com.chuckerteam.chucker.api.ChuckerInterceptor
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient

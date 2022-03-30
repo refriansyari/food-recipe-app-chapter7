@@ -5,7 +5,7 @@ import androidx.lifecycle.viewModelScope
 import com.allana.food_recipe_app_chapter7.base.arch.BaseContract
 import com.allana.food_recipe_app_chapter7.base.arch.BaseViewModelImpl
 import com.allana.food_recipe_app_chapter7.base.model.Resource
-import com.allana.food_recipe_app_chapter7.data.network.model.response.auth.User
+import com.allana.food_recipe_app_chapter7.data.model.response.auth.User
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch

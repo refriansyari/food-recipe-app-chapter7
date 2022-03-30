@@ -1,7 +1,7 @@
 package com.allana.food_recipe_app_chapter7.data.network.services
 
 import com.allana.food_recipe_app_chapter7.BuildConfig
-import com.allana.food_recipe_app_chapter7.data.model.response.recipe.Recipe
+import com.allana.food_recipe_app_chapter7.data.model.response.recipe.RecipeResponse
 import com.allana.food_recipe_app_chapter7.data.model.response.recipe.detail.RecipeDetailResponse
 import com.allana.food_recipe_app_chapter7.data.network.services.ApiKey.API_KEY
 import com.chuckerteam.chucker.api.ChuckerInterceptor
@@ -20,16 +20,16 @@ interface RecipeApiService {
      * **/
     @GET("random/")
     suspend fun getAllRecipes(
-        @Query("apiKey") key: String = API_KEY,
+        @Query("apiKey") key: String = BuildConfig.API_KEY,
         @Query("number") number: Int = 20
-    ): List<Recipe>
+    ): RecipeResponse
 
     /**
      * detail
      * **/
     // TODO sesuaikan dengan strukturnya
     @GET("recipes/{recipeId}/information?apiKey=6ea0d5be0db54fb59cf9ee4b285232f1&includeNutrition=false")
-    suspend fun getRecipeDetail(@Path("recipeId") recipeId : Int): RecipeDetailResponse
+    suspend fun getRecipeDetail(@Path("recipeId") recipeId: Int): RecipeDetailResponse
 
     companion object {
         @JvmStatic
