@@ -118,7 +118,7 @@ class DetailActivity :
                     )
             }
             recipeFavorite.let {
-                viewModelInstance.insertRecipeFavorite(it)
+                getViewModel().insertRecipeFavorite(it)
             }
         }
     }
