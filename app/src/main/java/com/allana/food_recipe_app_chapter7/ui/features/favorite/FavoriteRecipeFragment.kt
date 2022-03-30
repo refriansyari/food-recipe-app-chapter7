@@ -1,4 +1,4 @@
-package com.allana.food_recipe_app_chapter7.ui.features.favoriterecipe
+package com.allana.food_recipe_app_chapter7.ui.features.favorite
 
 import android.widget.Toast
 import androidx.core.view.isVisible
@@ -8,10 +8,7 @@ import com.allana.food_recipe_app_chapter7.base.arch.BaseFragment
 import com.allana.food_recipe_app_chapter7.base.model.Resource
 import com.allana.food_recipe_app_chapter7.data.local.room.entity.FavoriteRecipe
 import com.allana.food_recipe_app_chapter7.databinding.FragmentFavoriteRecipeBinding
-import com.allana.food_recipe_app_chapter7.ui.features.favorite.FavoriteRecipeContract
-import com.allana.food_recipe_app_chapter7.ui.features.favorite.FavoriteRecipeViewModel
 import com.allana.food_recipe_app_chapter7.ui.features.favorite.adapter.FavoriteRecipeAdapter
-import com.allana.food_recipe_app_chapter7.ui.features.home.detail.DetailActivity
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -28,13 +25,15 @@ FavoriteRecipeContract.View {
                 }
             }
         }
-        initList()
         getListData()
     }
 
     override fun initList() {
         adapter = FavoriteRecipeAdapter {
-            DetailActivity.startActivity(context, it.idRecipe?.toInt() ?: 0)
+            /**
+             * need to update with latest branch detail
+             */
+            //DetailActivity.startActivity(context, it.idRecipe?.toInt() ?: 0)
         }
         getViewBinding().rvFavoriteRecipe.apply {
             layoutManager = LinearLayoutManager(context)
@@ -64,6 +63,7 @@ FavoriteRecipeContract.View {
                     showLoading(false)
                     showContent(true)
                     showError(false, null)
+                    initList()
                     setDataAdapter(it.data)
                 }
                 is Resource.Error -> {
@@ -84,6 +84,7 @@ FavoriteRecipeContract.View {
                     showLoading(false)
                     showContent(true)
                     showError(false, null)
+                    initList()
                     setDataAdapter(it.data)
                 }
                 is Resource.Error -> {
