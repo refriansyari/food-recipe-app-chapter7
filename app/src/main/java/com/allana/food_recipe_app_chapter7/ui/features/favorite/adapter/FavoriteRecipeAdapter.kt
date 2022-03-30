@@ -6,7 +6,6 @@ import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import com.allana.food_recipe_app_chapter7.data.local.room.entity.FavoriteRecipe
 import com.allana.food_recipe_app_chapter7.databinding.ItemListFavoriteRecipeBinding
-import com.google.android.material.chip.Chip
 
 class FavoriteRecipeAdapter(private val itemClick: (FavoriteRecipe) -> Unit) :
     RecyclerView.Adapter<FavoriteRecipeAdapter.FavoriteRecipeViewHolder>() {
@@ -47,17 +46,17 @@ class FavoriteRecipeAdapter(private val itemClick: (FavoriteRecipe) -> Unit) :
                 itemView.setOnClickListener { itemClick(this) }
                 binding.ivFavoriteRecipe.load(image)
                 binding.tvTitleFavoriteRecipe.text = name
-                generateChips(dishTypes)
+                //generateChips(dishTypes)
             }
         }
-        private fun generateChips(categories: List<String?>?) {
-            categories?.filter { !it.isNullOrEmpty() }?.forEach {
-                binding.tvDishTypeFavoriteRecipe.addView(
-                    Chip(itemView.context).apply {
-                        text = it
-                        isClickable = false
-                    })
-            }
-        }
+//        private fun generateChips(categories: List<String?>?) {
+//            categories?.filter { !it.isNullOrEmpty() }?.forEach {
+//                binding.tvDishTypeFavoriteRecipe.addView(
+//                    Chip(itemView.context).apply {
+//                        text = it
+//                        isClickable = false
+//                    })
+//            }
+//        }
     }
 }

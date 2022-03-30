@@ -15,6 +15,6 @@ data class FavoriteRecipe(
     var name: String? = null,
     @ColumnInfo(name = "image")
     var image: String? = null,
-    @ColumnInfo(name = "dish_types")
-    var dishTypes: List<String>? = null
+//    @ColumnInfo(name = "dish_types")
+//    var dishTypes: List<String>? = null
 ) : Parcelable

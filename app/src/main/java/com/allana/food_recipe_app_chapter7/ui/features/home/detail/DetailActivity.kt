@@ -114,7 +114,7 @@ class DetailActivity :
                         detailRecipe.id,
                         detailRecipe.title,
                         detailRecipe.image,
-                        detailRecipe.serving.toString()
+                        //detailRecipe.serving
                     )
             }
             recipeFavorite.let {
