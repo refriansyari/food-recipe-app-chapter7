@@ -3,6 +3,7 @@ package com.allana.food_recipe_app_chapter7.data.network.services
 import com.allana.food_recipe_app_chapter7.BuildConfig
 import com.allana.food_recipe_app_chapter7.data.model.response.recipe.RecipeResponse
 import com.allana.food_recipe_app_chapter7.data.model.response.recipe.detail.RecipeDetailResponse
+import com.allana.food_recipe_app_chapter7.data.network.services.ApiKey.API_KEY
 import com.chuckerteam.chucker.api.ChuckerInterceptor
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
@@ -27,8 +28,12 @@ interface RecipeApiService {
      * detail
      * **/
     // TODO sesuaikan dengan strukturnya
-    @GET("{recipeId}/information?apiKey=8f03a930b24f4e86bf68ecacf0a56909&includeNutrition=false")
-    suspend fun getRecipeDetail(@Path("recipeId") recipeId: Long): RecipeDetailResponse
+    @GET("{recipeId}/information")
+    suspend fun getRecipeDetail(
+        @Path("recipeId") recipeId: Long,
+        @Query("apiKey") key: String = BuildConfig.API_KEY,
+        @Query("number") includeNutrition: Boolean = false
+    ): RecipeDetailResponse
 
     companion object {
         @JvmStatic
