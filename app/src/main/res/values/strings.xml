@@ -50,4 +50,5 @@
     <string name="text_edit_username">Username</string>
     <string name="text_change_profile_photo">Change profile photo</string>
     <string name="text_edit_profile_title">Edit Profile</string>
+    <string name="text_placeholder_ingredients">%s\n</string>
 </resources>

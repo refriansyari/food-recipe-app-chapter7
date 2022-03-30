@@ -10,8 +10,11 @@ import com.allana.food_recipe_app_chapter7.R
 import com.allana.food_recipe_app_chapter7.base.arch.BaseActivity
 import com.allana.food_recipe_app_chapter7.base.model.Resource
 import com.allana.food_recipe_app_chapter7.data.local.room.entity.FavoriteRecipe
+import com.allana.food_recipe_app_chapter7.data.model.response.recipe.detail.Ingredients
 import com.allana.food_recipe_app_chapter7.data.model.response.recipe.detail.RecipeDetailResponse
 import com.allana.food_recipe_app_chapter7.databinding.ActivityDetailBinding
+import com.allana.food_recipe_app_chapter7.utils.Extension.textFromHtml
+import com.google.android.material.chip.Chip
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -65,9 +68,29 @@ class DetailActivity :
 
     override fun setContentData(data: RecipeDetailResponse) {
         getViewBinding().ivDetailRecipe.load(data.image)
-        getViewBinding().tvServingDetail.text = data.serving.toString()
-        getViewBinding().tvIngredientDetail.text = data.ingredients.toString()
-        getViewBinding().tvInstructionDetail.text = data.instruction
+        getViewBinding().tvTitleDetail.text = data.title
+        generateChips(data.serving)
+        showIngredients(data.ingredients)
+        getViewBinding().tvInstructionDetail.textFromHtml(data.instruction)
+    }
+
+    private fun showIngredients(ingredients: ArrayList<Ingredients>?) {
+        ingredients?.forEach {
+            if (it != null) {
+                getViewBinding().tvIngredientDetail.append(getString(R.string.text_placeholder_ingredients, it.name))
+            }
+        }
+    }
+
+
+    private fun generateChips(serving: List<String?>?) {
+        serving?.filter { !it.isNullOrEmpty() }?.forEach {
+            getViewBinding().cgCategory.addView(
+                Chip(this).apply {
+                    text = it
+                    isClickable = false
+                })
+        }
     }
 
     override fun getIntentData() {
@@ -99,6 +122,7 @@ class DetailActivity :
             }
         }
     }
+
 
     override fun showLoading(isVisible: Boolean) {
         getViewBinding().progressBar.isVisible = isVisible
