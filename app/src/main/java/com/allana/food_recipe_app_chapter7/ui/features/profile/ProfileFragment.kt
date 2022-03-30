@@ -3,14 +3,13 @@ package com.allana.food_recipe_app_chapter7.ui.features.profile
 import android.content.Intent
 import android.widget.Toast
 import coil.load
-import coil.size.Scale
 import coil.transform.CircleCropTransformation
 import com.allana.food_recipe_app_chapter7.R
 import com.allana.food_recipe_app_chapter7.base.arch.BaseFragment
 import com.allana.food_recipe_app_chapter7.base.model.Resource
-import com.allana.food_recipe_app_chapter7.data.network.model.response.auth.User
+import com.allana.food_recipe_app_chapter7.data.model.response.auth.User
 import com.allana.food_recipe_app_chapter7.databinding.FragmentProfileBinding
-import com.allana.food_recipe_app_chapter7.ui.editprofile.EditProfileActivity
+import com.allana.food_recipe_app_chapter7.ui.features.profile.editprofile.EditProfileActivity
 import com.allana.food_recipe_app_chapter7.ui.loginpage.LoginPageActivity
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import dagger.hilt.android.AndroidEntryPoint
