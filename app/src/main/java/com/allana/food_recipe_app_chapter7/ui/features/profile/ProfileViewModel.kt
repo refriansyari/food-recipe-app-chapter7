@@ -14,7 +14,8 @@ import javax.inject.Inject
 
 @HiltViewModel
 class ProfileViewModel
-    @Inject constructor(private val repository: ProfileRepository): ProfileContract.ViewModel, BaseViewModelImpl() {
+@Inject constructor(private val repository: ProfileRepository) : ProfileContract.ViewModel,
+    BaseViewModelImpl() {
 
     private val getProfileResponseLiveData = MutableLiveData<Resource<User?>>()
 
@@ -26,7 +27,7 @@ class ProfileViewModel
                 viewModelScope.launch(Dispatchers.Main) {
                     getProfileResponseLiveData.value = Resource.Success(response)
                 }
-            } catch (e:Exception){
+            } catch (e: Exception) {
                 viewModelScope.launch(Dispatchers.Main) {
                     getProfileResponseLiveData.value = Resource.Error(e.message.orEmpty())
                 }

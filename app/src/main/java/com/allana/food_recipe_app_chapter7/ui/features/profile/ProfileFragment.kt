@@ -6,31 +6,20 @@ import coil.load
 import coil.transform.CircleCropTransformation
 import com.allana.food_recipe_app_chapter7.R
 import com.allana.food_recipe_app_chapter7.base.arch.BaseFragment
-import com.allana.food_recipe_app_chapter7.base.arch.GenericViewModelFactory
 import com.allana.food_recipe_app_chapter7.base.model.Resource
-import com.allana.food_recipe_app_chapter7.data.local.datasource.LocalAuthDataSourceImpl
-import com.allana.food_recipe_app_chapter7.data.local.preference.SessionPreference
 import com.allana.food_recipe_app_chapter7.data.model.response.auth.User
 import com.allana.food_recipe_app_chapter7.databinding.FragmentProfileBinding
 import com.allana.food_recipe_app_chapter7.ui.features.profile.editprofile.EditProfileActivity
 import com.allana.food_recipe_app_chapter7.ui.loginpage.LoginPageActivity
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
-import com.google.gson.Gson
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class ProfileFragment: BaseFragment<FragmentProfileBinding, ProfileViewModel>(FragmentProfileBinding::inflate),
-    ProfileContract.View {
+ProfileContract.View {
     override fun initView() {
         getData()
         setOnClickListener()
-    }
-
-    override fun onResume() {
-        super.onResume()
-        initView()
-        observeData()
-        getData()
     }
 
     override fun getData() {
@@ -46,7 +35,11 @@ class ProfileFragment: BaseFragment<FragmentProfileBinding, ProfileViewModel>(Fr
         }
     }
 
-
+    override fun onResume() {
+        super.onResume()
+        initView()
+        observeData()
+    }
 
     override fun setProfileData(data: User) {
         if (!data.photo.isNullOrEmpty()){
@@ -65,7 +58,7 @@ class ProfileFragment: BaseFragment<FragmentProfileBinding, ProfileViewModel>(Fr
 
     override fun logout() {
         getViewModel().logout()
-        Toast.makeText(requireContext(), "Logout Successful", Toast.LENGTH_SHORT).show()
+        Toast.makeText(requireContext(), getString(R.string.text_logout_successful), Toast.LENGTH_SHORT).show()
         navigateToLoginActivity()
     }
 
@@ -78,13 +71,13 @@ class ProfileFragment: BaseFragment<FragmentProfileBinding, ProfileViewModel>(Fr
     override fun showLogoutConfirmation() {
         MaterialAlertDialogBuilder(requireContext())
             .apply {
-                setTitle("Logout Profile")
-                    .setMessage("Are you sure you want to log out?")
-                    .setPositiveButton("Logout") { dialog, _ ->
+                setTitle(getString(R.string.text_logout_profile))
+                    .setMessage(getString(R.string.text_logout_confirmation))
+                    .setPositiveButton(getString(R.string.text_logout)) { dialog, _ ->
                         logout()
                         dialog.dismiss()
                     }
-                    .setNegativeButton("Cancel") { dialog, _ ->
+                    .setNegativeButton(getString(R.string.text_cancel)) { dialog, _ ->
                         dialog.dismiss()
                     }
             }.create().show()
