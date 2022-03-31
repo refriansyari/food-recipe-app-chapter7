@@ -40,7 +40,7 @@ class DetailActivity :
                 is Resource.Loading -> {
                     showLoading(true)
                     showContent(false)
-//                    showError(false, null)
+                    showError(false, null)
                 }
                 is Resource.Success -> {
                     showLoading(false)
@@ -49,12 +49,12 @@ class DetailActivity :
                         setContentData(data)
                         addRecipeToFavorite(data)
                     }
-//                    showError(false, null)
+                    showError(false, null)
                 }
                 is Resource.Error -> {
                     showLoading(false)
                     showContent(false)
-//                    showError(true, it.message)
+                    showError(true, it.message)
                 }
             }
         }
@@ -113,8 +113,7 @@ class DetailActivity :
                     FavoriteRecipe(
                         detailRecipe.id,
                         detailRecipe.title,
-                        detailRecipe.image,
-                        //detailRecipe.serving
+                        detailRecipe.image
                     )
             }
             recipeFavorite.let {
@@ -133,7 +132,9 @@ class DetailActivity :
     }
 
     override fun showError(isErrorEnabled: Boolean, msg: String?) {
-        Toast.makeText(this, msg, Toast.LENGTH_SHORT).show()
+        if (isErrorEnabled){
+            Toast.makeText(this, msg, Toast.LENGTH_SHORT).show()
+        }
     }
 
     companion object {
