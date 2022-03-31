@@ -19,6 +19,7 @@ class LoginPageViewModel @Inject constructor(
 ) : BaseViewModelImpl(), LoginPageContract.ViewModel {
 
     private val loginResultLiveData = MutableLiveData<Resource<User>>()
+    override fun getLoginResultLiveData(): LiveData<Resource<User>> = loginResultLiveData
     override fun loginUser(loginRequest: AuthRequest) {
         loginResultLiveData.value = Resource.Loading()
         viewModelScope.launch(Dispatchers.IO) {
@@ -29,12 +30,12 @@ class LoginPageViewModel @Inject constructor(
                 }
             } catch (e:Exception){
                 viewModelScope.launch (Dispatchers.Main){
-                    loginResultLiveData.value = Resource.Error(e. localizedMessage.orEmpty())
+                    loginResultLiveData.value = Resource.Error(e.message.orEmpty())
                 }
             }
 
         }
     }
 
-    override fun getLoginResultLiveData(): LiveData<Resource<User>> = loginResultLiveData
+
 }

@@ -21,6 +21,8 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewModel>(FragmentHo
 
     private lateinit var adapter: HomeAdapter
 
+
+
     override fun initView() {
         getData()
 //        initSwipeRefresh()
