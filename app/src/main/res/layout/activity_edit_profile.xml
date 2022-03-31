@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F2F2F2"
+    android:background="@color/bg_app_darker_white"
     android:padding="@dimen/_12sdp"
     tools:context=".ui.features.profile.editprofile.EditProfileActivity">
 
@@ -20,8 +20,8 @@
 
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/cv_button_back"
-                android:layout_width="@dimen/_48sdp"
-                android:layout_height="@dimen/_48sdp"
+                android:layout_width="@dimen/_36sdp"
+                android:layout_height="@dimen/_36sdp"
                 android:background="@color/white"
                 app:cardCornerRadius="@dimen/_10sdp"
                 app:layout_constraintLeft_toLeftOf="parent"
@@ -29,10 +29,10 @@
 
                 <ImageView
                     android:id="@+id/iv_edit_profile_back_button"
-                    android:layout_width="18dp"
-                    android:layout_height="18dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:src="@drawable/ic_chevron_left" />
+                    android:src="@drawable/ic_baseline_chevron_left" />
 
             </com.google.android.material.card.MaterialCardView>
 

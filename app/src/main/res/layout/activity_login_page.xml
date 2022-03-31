@@ -57,13 +57,14 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="@dimen/_10sdp"
-                    android:hint="@string/text_hint_enter_email_login"
+                    app:boxBackgroundColor="@color/bg_app_darker_white"
                     app:boxCornerRadiusBottomEnd="@dimen/_10sdp"
                     app:boxCornerRadiusBottomStart="@dimen/_10sdp"
                     app:boxCornerRadiusTopEnd="@dimen/_10sdp"
                     app:boxCornerRadiusTopStart="@dimen/_10sdp"
                     app:boxStrokeWidth="0dp"
-                    app:boxStrokeWidthFocused="0dp">
+                    app:boxStrokeWidthFocused="0dp"
+                    app:hintEnabled="false">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/et_email_username"
@@ -71,44 +72,27 @@
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/poppins_regular"
                         android:inputType="textEmailAddress"
-                        android:maxLines="1" />
+                        android:maxLines="1"
+                        android:textColor="@color/font_black_color"
+                        android:padding="@dimen/_12sdp"
+                        android:hint="@string/text_hint_enter_email_login"/>
 
                 </com.google.android.material.textfield.TextInputLayout>
-                -->
-                <!-- <com.google.android.material.card.MaterialCardView
-                      android:id="@+id/cv_text_email_username"
-                      android:layout_width="match_parent"
-                      android:layout_height="wrap_content"
-                      android:backgroundTint="@color/bg_input_text_darker_white"
-                      app:cardCornerRadius="@dimen/_10sdp">
 
-                      <com.google.android.material.textfield.TextInputEditText
-                          android:id="@+id/et_email_username"
-                          android:layout_width="match_parent"
-                          android:layout_height="@dimen/_48sdp"
-                          android:fontFamily="@font/poppins_regular"
-                          android:textColor="@color/font_black_color"
-                          android:hint="@string/text_hint_enter_email_or_username"
-                          android:padding="@dimen/_10sdp"
-                          android:inputType="textEmailAddress"
-                          android:maxLines="1"
-                          android:textColorHint="@color/font_black_color"
-                          android:textSize="@dimen/_14ssp"/>
-
-                  </com.google.android.material.card.MaterialCardView>-->
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/til_password"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="@dimen/_10sdp"
-                    android:hint="@string/text_hint_password"
+                    app:boxBackgroundColor="@color/bg_app_darker_white"
                     app:boxCornerRadiusBottomEnd="@dimen/_10sdp"
                     app:boxCornerRadiusBottomStart="@dimen/_10sdp"
                     app:boxCornerRadiusTopEnd="@dimen/_10sdp"
                     app:boxCornerRadiusTopStart="@dimen/_10sdp"
                     app:boxStrokeWidth="0dp"
                     app:boxStrokeWidthFocused="0dp"
-                    app:passwordToggleEnabled="true">
+                    app:passwordToggleEnabled="true"
+                    app:hintEnabled="false">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/et_password"
@@ -116,37 +100,19 @@
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/poppins_regular"
                         android:inputType="textPassword"
-                        android:maxLines="1" />
+                        android:maxLines="1"
+                        android:textColor="@color/font_black_color"
+                        android:padding="@dimen/_12sdp"
+                        android:hint="@string/text_hint_password"/>
 
                 </com.google.android.material.textfield.TextInputLayout>
-                <!-- <com.google.android.material.card.MaterialCardView
-                     android:id="@+id/cv_text_password"
-                     android:layout_width="match_parent"
-                     android:layout_marginTop="@dimen/_10sdp"
-                     android:layout_height="wrap_content"
-                     android:backgroundTint="@color/bg_input_text_darker_white"
-                     app:cardCornerRadius="@dimen/_10sdp">
-
-                     <com.google.android.material.textfield.TextInputEditText
-                         android:id="@+id/et_password"
-                         android:layout_width="match_parent"
-                         android:layout_height="@dimen/_48sdp"
-                         android:fontFamily="@font/poppins_regular"
-                         android:hint="@string/text_hint_password"
-                         android:textColor="@color/font_black_color"
-                         android:padding="@dimen/_10sdp"
-                         android:inputType="textPassword"
-                         android:textColorHint="@color/font_black_color"
-                         android:textSize="@dimen/_14ssp"/>
-
-                 </com.google.android.material.card.MaterialCardView>-->
 
                 <ProgressBar
                     android:id="@+id/pb_login"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginTop="@dimen/_15sdp"
+                    android:padding="@dimen/_10sdp"
                     android:visibility="gone"
                     tools:visibility="visible" />
 
@@ -154,12 +120,12 @@
                     android:id="@+id/btn_login"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/_42sdp"
-                    android:layout_marginTop="@dimen/_15sdp"
                     android:backgroundTint="@color/primary_color"
                     android:fontFamily="@font/roboto_bold"
                     android:text="@string/text_btn_login"
                     android:textColor="@color/white"
-                    android:textSize="@dimen/_16ssp"
+                    android:textSize="@dimen/_14ssp"
+                    android:textAllCaps="false"
                     app:cornerRadius="@dimen/_10sdp" />
 
             </LinearLayout>
@@ -168,7 +134,7 @@
                 android:id="@+id/ll_text_navigate"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_30sdp"
+                android:layout_marginTop="@dimen/_10sdp"
                 android:gravity="center_horizontal"
                 android:orientation="horizontal"
                 app:layout_constraintEnd_toEndOf="parent"

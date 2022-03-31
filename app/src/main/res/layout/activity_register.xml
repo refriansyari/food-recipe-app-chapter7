@@ -14,7 +14,8 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/_22sdp">
 
             <ImageView
                 android:id="@+id/iv_login_page"
@@ -53,25 +54,30 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tv_login">
 
-
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/til_email"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="@dimen/_10sdp"
-                    android:hint="@string/text_hint_enter_email"
+                    app:boxBackgroundColor="@color/bg_app_darker_white"
                     app:boxCornerRadiusBottomEnd="@dimen/_10sdp"
                     app:boxCornerRadiusBottomStart="@dimen/_10sdp"
                     app:boxCornerRadiusTopEnd="@dimen/_10sdp"
                     app:boxCornerRadiusTopStart="@dimen/_10sdp"
                     app:boxStrokeWidth="0dp"
-                    app:boxStrokeWidthFocused="0dp">
-
+                    app:boxStrokeWidthFocused="0dp"
+                    app:hintEnabled="false">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/et_email"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content" />
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_regular"
+                        android:inputType="textEmailAddress"
+                        android:maxLines="1"
+                        android:textColor="@color/font_black_color"
+                        android:padding="@dimen/_12sdp"
+                        android:hint="@string/text_hint_enter_email"/>
 
                 </com.google.android.material.textfield.TextInputLayout>
 
@@ -80,18 +86,25 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="@dimen/_10sdp"
-                    android:hint="@string/text_hint_enter_user_name"
+                    app:boxBackgroundColor="@color/bg_app_darker_white"
                     app:boxCornerRadiusBottomEnd="@dimen/_10sdp"
                     app:boxCornerRadiusBottomStart="@dimen/_10sdp"
                     app:boxCornerRadiusTopEnd="@dimen/_10sdp"
                     app:boxCornerRadiusTopStart="@dimen/_10sdp"
                     app:boxStrokeWidth="0dp"
-                    app:boxStrokeWidthFocused="0dp">
+                    app:boxStrokeWidthFocused="0dp"
+                    app:hintEnabled="false">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/et_username"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content" />
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_regular"
+                        android:inputType="text"
+                        android:maxLines="1"
+                        android:textColor="@color/font_black_color"
+                        android:padding="@dimen/_12sdp"
+                        android:hint="@string/text_hint_enter_user_name"/>
 
                 </com.google.android.material.textfield.TextInputLayout>
 
@@ -100,45 +113,28 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="@dimen/_16sdp"
-                    android:hint="@string/text_hint_password"
+                    app:boxBackgroundColor="@color/bg_app_darker_white"
                     app:boxCornerRadiusBottomEnd="@dimen/_10sdp"
                     app:boxCornerRadiusBottomStart="@dimen/_10sdp"
                     app:boxCornerRadiusTopEnd="@dimen/_10sdp"
                     app:boxCornerRadiusTopStart="@dimen/_10sdp"
                     app:boxStrokeWidth="0dp"
                     app:boxStrokeWidthFocused="0dp"
-                    app:passwordToggleEnabled="true">
+                    app:passwordToggleEnabled="true"
+                    app:hintEnabled="false">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/et_password"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:inputType="textPassword" />
+                        android:fontFamily="@font/poppins_regular"
+                        android:inputType="textPassword"
+                        android:maxLines="1"
+                        android:textColor="@color/font_black_color"
+                        android:padding="@dimen/_12sdp"
+                        android:hint="@string/text_hint_password" />
 
                 </com.google.android.material.textfield.TextInputLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="@dimen/_30sdp"
-                    android:gravity="center_horizontal"
-                    android:orientation="horizontal"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/ll_login_page">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/text_privacy_policy"
-                        android:textColor="@color/font_black_color"
-                        android:textSize="@dimen/_10ssp"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/ll_login_page" />
-
-
-                </LinearLayout>
 
                 <ProgressBar
                     android:id="@+id/pb_loading"
@@ -159,7 +155,8 @@
                     android:fontFamily="@font/roboto_bold"
                     android:text="Continue"
                     android:textColor="@color/white"
-                    android:textSize="@dimen/_12ssp"
+                    android:textSize="@dimen/_14ssp"
+                    android:textAllCaps="false"
                     app:cornerRadius="@dimen/_10sdp" />
 
             </LinearLayout>
@@ -168,8 +165,7 @@
                 android:id="@+id/ll_text_navigate"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_30sdp"
-                android:layout_marginBottom="@dimen/_30sdp"
+                android:layout_marginTop="@dimen/_10sdp"
                 android:gravity="center_horizontal"
                 android:orientation="horizontal"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -185,8 +181,7 @@
                     android:textSize="@dimen/_10ssp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/ll_login_page" />
-
+                    app:layout_constraintTop_toBottomOf="@id/ll_login_page"/>
 
             </LinearLayout>
         </androidx.constraintlayout.widget.ConstraintLayout>
