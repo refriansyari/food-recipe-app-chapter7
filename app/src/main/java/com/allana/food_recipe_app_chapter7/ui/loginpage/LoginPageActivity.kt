@@ -25,10 +25,6 @@ class LoginPageActivity :
         super.onCreate(savedInstanceState)
     }
 
-    override fun initView() {
-        setToolbar()
-        setOnClick()
-    }
 
     override fun setOnClick() {
         getViewBinding().btnLogin.setOnClickListener {
@@ -70,9 +66,14 @@ class LoginPageActivity :
             getViewBinding().tilPassword.isErrorEnabled = true
             getViewBinding().tilPassword.error = getString(R.string.error_password)
         } else {
-            getViewBinding().tilEmailUsername.isErrorEnabled = false
+            getViewBinding().tilPassword.isErrorEnabled = false
         }
         return isFormValid
+    }
+
+    override fun initView() {
+        observeData()
+        setOnClick()
     }
 
     override fun navigateToHome() {
@@ -88,9 +89,8 @@ class LoginPageActivity :
     }
 
     override fun observeData() {
-        super.observeData()
-        getViewModel().getLoginResultLiveData().observe(this) {
-            when (it) {
+        getViewModel().getLoginResultLiveData().observe(this) { response ->
+            when (response) {
                 is Resource.Loading -> {
                     showLoading(true)
                 }
@@ -108,7 +108,6 @@ class LoginPageActivity :
     }
 
     override fun showLoading(isVisible: Boolean) {
-        super.showLoading(isVisible)
         getViewBinding().pbLogin.isVisible = isVisible
     }
 

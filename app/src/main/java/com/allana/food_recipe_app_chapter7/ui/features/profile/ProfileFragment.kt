@@ -1,7 +1,10 @@
 package com.allana.food_recipe_app_chapter7.ui.features.profile
 
 import android.content.Intent
+import android.os.Bundle
+import android.view.View
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatDelegate
 import coil.load
 import coil.transform.CircleCropTransformation
 import com.allana.food_recipe_app_chapter7.R
@@ -17,6 +20,10 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class ProfileFragment: BaseFragment<FragmentProfileBinding, ProfileViewModel>(FragmentProfileBinding::inflate),
 ProfileContract.View {
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+        super.onViewCreated(view, savedInstanceState)
+    }
     override fun initView() {
         getData()
         setOnClickListener()
