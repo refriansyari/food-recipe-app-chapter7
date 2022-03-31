@@ -44,7 +44,7 @@ android {
             dimension = 'default'
             buildConfigField("String", "BASE_URL_BINAR_AUTH", "\"https://binar-gdd-cc8.herokuapp.com/api/v1/\"")
             buildConfigField("String", "BASE_URL_RECIPE", "\"https://api.spoonacular.com/recipes/\"")
-            buildConfigField("String", "API_KEY", "\"6ea0d5be0db54fb59cf9ee4b285232f1\"")
+            buildConfigField("String", "API_KEY", "\"8f03a930b24f4e86bf68ecacf0a56909\"")
         }
     }
 }

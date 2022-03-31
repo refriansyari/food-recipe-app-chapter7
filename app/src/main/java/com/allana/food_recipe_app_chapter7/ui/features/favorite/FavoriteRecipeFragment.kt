@@ -28,13 +28,12 @@ FavoriteRecipeContract.View {
                 }
             }
         }
-        initList()
         getListData()
     }
 
     override fun initList() {
         adapter = FavoriteRecipeAdapter {
-            DetailActivity.startActivity(context, it.idRecipe?.toInt() ?: 0)
+            DetailActivity.startActivity(context, it.idRecipe)
         }
         getViewBinding().rvFavoriteRecipe.apply {
             layoutManager = LinearLayoutManager(context)
@@ -43,7 +42,7 @@ FavoriteRecipeContract.View {
     }
 
     override fun getListData() {
-        getViewModel().getRecipeListLiveData()
+        getViewModel().getAllRecipes()
     }
 
     override fun getSearchData(searchQuery: String) {
@@ -64,6 +63,7 @@ FavoriteRecipeContract.View {
                     showLoading(false)
                     showContent(true)
                     showError(false, null)
+                    initList()
                     setDataAdapter(it.data)
                 }
                 is Resource.Error -> {
@@ -84,6 +84,7 @@ FavoriteRecipeContract.View {
                     showLoading(false)
                     showContent(true)
                     showError(false, null)
+                    initList()
                     setDataAdapter(it.data)
                 }
                 is Resource.Error -> {
@@ -110,6 +111,8 @@ FavoriteRecipeContract.View {
     }
 
     override fun showError(isErrorEnabled: Boolean, msg: String?) {
-        Toast.makeText(context, msg, Toast.LENGTH_SHORT).show()
+        msg?.let {
+            Toast.makeText(context, it, Toast.LENGTH_SHORT).show()
+        }
     }
 }

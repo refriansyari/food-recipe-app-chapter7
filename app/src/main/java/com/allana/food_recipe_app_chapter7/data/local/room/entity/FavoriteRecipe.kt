@@ -10,11 +10,11 @@ import kotlinx.parcelize.Parcelize
 @Entity(tableName = "favRecipe")
 data class FavoriteRecipe(
     @PrimaryKey
-    var idRecipe : Long? = null,
+    var idRecipe: Long? = null,
     @ColumnInfo(name = "name")
     var name: String? = null,
     @ColumnInfo(name = "image")
     var image: String? = null,
-    @ColumnInfo(name = "dish_types")
-    var dishTypes: String? = null
+//    @ColumnInfo(name = "dish_types")
+//    var dishTypes: List<String>? = null
 ) : Parcelable

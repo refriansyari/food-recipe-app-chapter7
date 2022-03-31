@@ -12,56 +12,75 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent">
+
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
+
             <ImageView
                 android:id="@+id/iv_detail_recipe"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/_210sdp"
+                android:layout_height="@dimen/_300sdp"
+                android:scaleType="centerCrop"
                 app:layout_constraintTop_toTopOf="parent"
-                tools:src="@drawable/burger"
-                tools:background="@color/bg_splash_color"/>
+                tools:src="@drawable/burger" />
 
             <LinearLayout
                 android:id="@+id/ll_detail_recipe"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_20sdp"
                 android:layout_marginStart="@dimen/_22sdp"
                 android:layout_marginEnd="@dimen/_22sdp"
                 android:orientation="vertical"
                 app:layout_constraintTop_toBottomOf="@id/iv_detail_recipe">
-                <TextView
-                    android:id="@+id/tv_title_detail"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/_20sdp"
-                    android:layout_gravity="center"
-                    android:fontFamily="@font/poppins_bold"
-                    android:textColor="@color/font_black_color"
-                    android:textSize="@dimen/_16ssp"
-                    tools:text="Teriyaki Chicken Casserole" />
 
-                <TextView
-                    android:id="@+id/tv_serving_detail"
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/_10sdp"
-                    android:layout_gravity="center"
-                    android:fontFamily="@font/poppins_regular"
-                    android:textColor="@color/font_black_color"
-                    android:textSize="@dimen/_14ssp"
-                    tools:text="Chicken" />
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tv_title_detail"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_bold"
+                        android:textColor="@color/font_black_color"
+                        android:textSize="@dimen/_14ssp"
+                        tools:text="@string/text_title_recipe"
+                        android:layout_weight="1"
+                        android:maxLines="2"/>
+
+                    <ImageView
+                        android:id="@+id/iv_btn_favorite"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_favorite"
+                        android:layout_marginStart="@dimen/_8sdp" />
+                </LinearLayout>
+
+                <HorizontalScrollView
+                    android:id="@+id/hsv_chips"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:scrollbars="none">
+
+                    <com.google.android.material.chip.ChipGroup
+                        android:id="@+id/cg_category"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </HorizontalScrollView>
 
                 <TextView
                     android:id="@+id/tv_title_ingredients_detail"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/_20sdp"
-                    android:fontFamily="@font/poppins_semibold"
+                    android:layout_marginTop="@dimen/_16sdp"
+                    android:fontFamily="@font/poppins_regular"
                     android:text="@string/text_title_ingredients_detail"
                     android:textColor="@color/font_black_color"
-                    android:textSize="@dimen/_16ssp" />
+                    android:textStyle="bold"
+                    android:textSize="@dimen/_14ssp" />
 
                 <TextView
                     android:id="@+id/tv_ingredient_detail"
@@ -69,19 +88,20 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/_10sdp"
                     android:fontFamily="@font/poppins_regular"
-                    android:textColor="@color/font_black_color"
-                    android:textSize="@dimen/_14ssp"
-                    tools:text="Chicken" />
+                    android:textColor="@color/font_secondary"
+                    android:textSize="@dimen/_12ssp"
+                    tools:text="@string/text_title_recipe" />
 
                 <TextView
                     android:id="@+id/tv_title_instructions_recipe"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/_20sdp"
-                    android:fontFamily="@font/poppins_semibold"
+                    android:layout_marginTop="@dimen/_18sdp"
+                    android:fontFamily="@font/poppins_regular"
                     android:text="@string/text_title_instructions_title"
                     android:textColor="@color/font_black_color"
-                    android:textSize="@dimen/_16ssp" />
+                    android:textSize="@dimen/_14ssp"
+                    android:textStyle="bold"/>
 
                 <TextView
                     android:id="@+id/tv_instruction_detail"
@@ -89,54 +109,38 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/_10sdp"
                     android:fontFamily="@font/poppins_regular"
-                    android:textColor="@color/font_black_color"
-                    android:textSize="@dimen/_14ssp"
-                    tools:text="Chicken" />
+                    android:textColor="@color/font_secondary"
+                    android:textSize="@dimen/_12ssp"
+                    tools:text="@string/text_title_recipe" />
             </LinearLayout>
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 
     <FrameLayout
         android:id="@+id/fl_btn_back"
-        android:layout_width="@dimen/_48sdp"
-        android:layout_height="@dimen/_48sdp"
-        android:layout_marginTop="@dimen/_5sdp"
-        android:layout_marginStart="@dimen/_5sdp"
-        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="@dimen/_36sdp"
+        android:layout_height="@dimen/_36sdp"
+        android:layout_margin="@dimen/_12sdp"
+        android:background="@drawable/ic_rectangle"
         app:layout_constraintStart_toStartOf="parent"
-        android:background="@drawable/ic_rectangle">
+        app:layout_constraintTop_toTopOf="parent">
+
         <ImageView
-            android:layout_width="@dimen/_24sdp"
-            android:layout_height="@dimen/_24sdp"
-            android:src="@drawable/ic_baseline_chevron_left"
-            android:layout_gravity="center"/>
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_baseline_chevron_left" />
     </FrameLayout>
-    <FrameLayout
-        android:id="@+id/fl_btn_favorite"
-        android:layout_width="@dimen/_48sdp"
-        android:layout_height="@dimen/_48sdp"
-        android:layout_marginTop="@dimen/_5sdp"
-        android:layout_marginEnd="@dimen/_5sdp"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:background="@drawable/ic_rectangle">
-        <ImageView
-            android:id="@+id/iv_btn_favorite"
-            android:layout_width="@dimen/_24sdp"
-            android:layout_height="@dimen/_24sdp"
-            android:src="@drawable/ic_baseline_favorite_border"
-            android:layout_gravity="center"/>
-    </FrameLayout>
+
     <ProgressBar
         android:id="@+id/progressBar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        tools:visibility="visible"
         android:visibility="invisible"
-        android:layout_marginTop="@dimen/_48sdp"
-        app:layout_constraintTop_toTopOf="@+id/sv_detail_recipe"
-        app:layout_constraintBottom_toBottomOf="@+id/sv_detail_recipe"
-        app:layout_constraintStart_toStartOf="@+id/sv_detail_recipe"
-        app:layout_constraintEnd_toEndOf="@+id/sv_detail_recipe"/>
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="visible" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

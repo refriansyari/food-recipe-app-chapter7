@@ -28,8 +28,12 @@ interface RecipeApiService {
      * detail
      * **/
     // TODO sesuaikan dengan strukturnya
-    @GET("recipes/{recipeId}/information?apiKey=6ea0d5be0db54fb59cf9ee4b285232f1&includeNutrition=false")
-    suspend fun getRecipeDetail(@Path("recipeId") recipeId: Int): RecipeDetailResponse
+    @GET("{recipeId}/information")
+    suspend fun getRecipeDetail(
+        @Path("recipeId") recipeId: Long,
+        @Query("apiKey") key: String = BuildConfig.API_KEY,
+        @Query("number") includeNutrition: Boolean = false
+    ): RecipeDetailResponse
 
     companion object {
         @JvmStatic

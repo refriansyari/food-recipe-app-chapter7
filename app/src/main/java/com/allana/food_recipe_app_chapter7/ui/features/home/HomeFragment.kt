@@ -28,7 +28,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewModel>(FragmentHo
 
     override fun initList() {
         adapter = HomeAdapter {
-            DetailActivity.startActivity(requireContext(), it.id?.toInt() ?: 0)
+            DetailActivity.startActivity(requireContext(), it.id)
         }
         getViewBinding().rvRecipe.apply {
             layoutManager = GridLayoutManager(context, 2)

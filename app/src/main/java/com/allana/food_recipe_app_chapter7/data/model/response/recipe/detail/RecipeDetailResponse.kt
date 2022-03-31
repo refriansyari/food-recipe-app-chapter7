@@ -12,7 +12,7 @@ data class RecipeDetailResponse(
     @SerializedName("dishTypes")
     var serving: List<String>? = null,
     @SerializedName("extendedIngredients")
-    var ingredients: List<Ingredients>? = null,
-    @SerializedName("instruction")
+    var ingredients: ArrayList<Ingredients>? = null,
+    @SerializedName("instructions")
     var instruction: String? = null
 )

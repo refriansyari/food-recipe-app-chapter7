@@ -36,8 +36,7 @@
     <string name="text_hint_enter_email">Enter Email</string>
     <string name="text_hint_enter_user_name">Create User name</string>
     <string name="text_privacy_policy">By signing up, you’re agree to our  <font color='#FF672C'><b>Terms &amp; Conditions</b></font> and <font color='#FF672C'><b>Privacy Policy</b></font> </string>
-    <string name="text_to_login">Join
-        us before? <font color='#FF672C'><b>Login</b></font></string>
+    <string name="text_to_login">Join us before? <font color='#FF672C'><b>Login</b></font></string>
     <string name="error_email_empty">Email is Required</string>
     <string name="error_email_invalid">Email is Invalid</string>
     <string name="error_password_empty">Password is Required</string>
@@ -50,6 +49,7 @@
     <string name="text_edit_username">Username</string>
     <string name="text_change_profile_photo">Change profile photo</string>
     <string name="text_edit_profile_title">Edit Profile</string>
+    <string name="text_placeholder_ingredients">%s\n</string>
     <string name="text_logout_successful">Logout Successful</string>
     <string name="text_logout_profile">Logout Profile</string>
     <string name="text_logout_confirmation">Are you sure you want to log out?</string>
