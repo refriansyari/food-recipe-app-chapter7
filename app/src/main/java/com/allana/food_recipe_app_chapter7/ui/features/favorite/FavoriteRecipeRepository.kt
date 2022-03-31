@@ -16,4 +16,8 @@ class FavoriteRecipeRepository @Inject constructor(private val favoriteRecipeDat
         return favoriteRecipeDataSource.searchFavoriteRecipe(searchQuery)
     }
 
+    override suspend fun deleteFavoriteRecipe(favRecipe: FavoriteRecipe): Int {
+        return favoriteRecipeDataSource.deleteFavoriteRecipe(favRecipe)
+    }
+
 }
