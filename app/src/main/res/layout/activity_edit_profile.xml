@@ -65,7 +65,7 @@
                     android:layout_height="@dimen/_110sdp"
                     android:layout_gravity="center"
                     android:scaleType="centerCrop"
-                    tools:src="@drawable/ic_photo" />
+                    android:src="@drawable/ic_photo" />
 
                 <TextView
                     android:id="@+id/tv_change_profile_picture"

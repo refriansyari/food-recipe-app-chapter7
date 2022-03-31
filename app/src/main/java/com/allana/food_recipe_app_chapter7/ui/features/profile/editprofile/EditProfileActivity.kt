@@ -192,11 +192,14 @@ class EditProfileActivity :
     }
 
     override fun setDataToView(data: User) {
-        getViewBinding().
-        ivEditProfilePict.load(data.photo) {
-            crossfade(true)
-            transformations(CircleCropTransformation())
-            placeholder(R.drawable.ic_photo)
+        if (!data.photo.isNullOrEmpty()){
+            getViewBinding().ivEditProfilePict.load(data.photo) {
+                crossfade(true)
+                transformations(CircleCropTransformation())
+                placeholder(R.drawable.ic_photo)
+            }
+        }else{
+            getViewBinding().ivEditProfilePict.load(R.drawable.ic_photo)
         }
         getViewBinding().etEditProfileEmail.setText(data.email)
         getViewBinding().etEditProfileUsername.setText(data.username)
