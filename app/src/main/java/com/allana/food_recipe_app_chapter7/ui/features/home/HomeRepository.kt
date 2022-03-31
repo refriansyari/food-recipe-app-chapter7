@@ -15,11 +15,11 @@ class HomeRepository @Inject constructor(
     override suspend fun getAllRecipes(): RecipeResponse = datasource.getAllRecipes()
 
     override fun deleteSession() {
-        TODO("Not yet implemented")
+        localAuthDataSource.clearSession()
     }
 
     override fun getUser(): User? {
-        TODO("Not yet implemented")
+        return localAuthDataSource.getUserData()
     }
 
 

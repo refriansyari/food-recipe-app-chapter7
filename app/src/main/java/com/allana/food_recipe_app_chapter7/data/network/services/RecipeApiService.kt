@@ -3,7 +3,6 @@ package com.allana.food_recipe_app_chapter7.data.network.services
 import com.allana.food_recipe_app_chapter7.BuildConfig
 import com.allana.food_recipe_app_chapter7.data.model.response.recipe.RecipeResponse
 import com.allana.food_recipe_app_chapter7.data.model.response.recipe.detail.RecipeDetailResponse
-import com.allana.food_recipe_app_chapter7.data.network.services.ApiKey.API_KEY
 import com.chuckerteam.chucker.api.ChuckerInterceptor
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
