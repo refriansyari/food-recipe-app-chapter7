@@ -14,13 +14,15 @@ interface FavoriteRecipeContract {
 
     interface ViewModel : BaseContract.BaseViewModel {
         fun getRecipeListLiveData(): LiveData<Resource<List<FavoriteRecipe>>>
-        fun searchFavoriteRecipeLiveData(): LiveData<Resource<List<FavoriteRecipe>>>
         fun getAllRecipes()
         fun searchFavoriteRecipe(searchQuery: String)
+        fun deleteFavoriteRecipe(favRecipe: FavoriteRecipe)
     }
 
     interface Repository : BaseContract.BaseRepository {
         suspend fun getAllFavoriteRecipes(): List<FavoriteRecipe>
         suspend fun searchFavoriteRecipe(searchQuery: String): List<FavoriteRecipe>
+        suspend fun deleteFavoriteRecipe(favRecipe: FavoriteRecipe): Int
+
     }
 }

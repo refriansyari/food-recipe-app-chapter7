@@ -20,12 +20,10 @@ class FavoriteRecipeAdapter(private val itemClick: (FavoriteRecipe) -> Unit) :
 
     private fun addItems(items: List<FavoriteRecipe>) {
         this.items.addAll(items)
-        notifyDataSetChanged()
     }
 
     private fun clearItems() {
         this.items.clear()
-        notifyDataSetChanged()
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FavoriteRecipeViewHolder {
@@ -46,17 +44,7 @@ class FavoriteRecipeAdapter(private val itemClick: (FavoriteRecipe) -> Unit) :
                 itemView.setOnClickListener { itemClick(this) }
                 binding.ivFavoriteRecipe.load(image)
                 binding.tvTitleFavoriteRecipe.text = name
-                //generateChips(dishTypes)
             }
         }
-//        private fun generateChips(categories: List<String?>?) {
-//            categories?.filter { !it.isNullOrEmpty() }?.forEach {
-//                binding.tvDishTypeFavoriteRecipe.addView(
-//                    Chip(itemView.context).apply {
-//                        text = it
-//                        isClickable = false
-//                    })
-//            }
-//        }
     }
 }

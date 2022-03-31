@@ -16,11 +16,8 @@ class FavoriteRecipeViewModel @Inject constructor(private val repository: Favori
     : BaseViewModelImpl(), FavoriteRecipeContract.ViewModel{
 
     private val allRecipeLiveData = MutableLiveData<Resource<List<FavoriteRecipe>>>()
-    private val searchFavoriteRecipeLiveData = MutableLiveData<Resource<List<FavoriteRecipe>>>()
 
     override fun getRecipeListLiveData(): LiveData<Resource<List<FavoriteRecipe>>> = allRecipeLiveData
-
-    override fun searchFavoriteRecipeLiveData(): LiveData<Resource<List<FavoriteRecipe>>> = searchFavoriteRecipeLiveData
 
     override fun getAllRecipes() {
         allRecipeLiveData.value = Resource.Loading()
@@ -39,18 +36,24 @@ class FavoriteRecipeViewModel @Inject constructor(private val repository: Favori
     }
 
     override fun searchFavoriteRecipe(searchQuery: String) {
-        searchFavoriteRecipeLiveData.value = Resource.Loading()
+        allRecipeLiveData.value = Resource.Loading()
         viewModelScope.launch(Dispatchers.IO) {
             try {
                 val searchRecipe = repository.searchFavoriteRecipe(searchQuery)
                 viewModelScope.launch(Dispatchers.Main) {
-                    searchFavoriteRecipeLiveData.value = Resource.Success(searchRecipe)
+                    allRecipeLiveData.value = Resource.Success(searchRecipe)
                 }
             } catch (e: Exception) {
                 viewModelScope.launch(Dispatchers.Main) {
                     allRecipeLiveData.value = Resource.Error(e.message.orEmpty())
                 }
             }
+        }
+    }
+
+    override fun deleteFavoriteRecipe(favRecipe: FavoriteRecipe) {
+        viewModelScope.launch(Dispatchers.IO) {
+            repository.deleteFavoriteRecipe(favRecipe)
         }
     }
 }
