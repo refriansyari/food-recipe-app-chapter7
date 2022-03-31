@@ -6,6 +6,7 @@ import com.allana.food_recipe_app_chapter7.data.network.datasource.recipe.Recipe
 import com.allana.food_recipe_app_chapter7.data.network.datasource.auth.AuthApiDataSource
 import com.allana.food_recipe_app_chapter7.ui.features.favorite.FavoriteRecipeRepository
 import com.allana.food_recipe_app_chapter7.ui.features.home.HomeRepository
+import com.allana.food_recipe_app_chapter7.ui.features.home.detail.DetailRepository
 import com.allana.food_recipe_app_chapter7.ui.features.profile.ProfileRepository
 import com.allana.food_recipe_app_chapter7.ui.features.profile.editprofile.EditProfileRepository
 import com.allana.food_recipe_app_chapter7.ui.loginpage.LoginPageRepository
@@ -39,13 +40,13 @@ object RepositoryModule {
         return LoginPageRepository(authApiDataSource, localAuthDataSource)
     }
 
-//    @Provides
-//    @Singleton
-//    fun provideDetailRepository(
-//        favoriteRecipeDataSource: FavoriteRecipeDataSource, recipeDataSource: RecipeDataSource
-//    ): DetailRepository{
-//        return DetailRepository(favoriteRecipeDataSource,recipeDataSource)
-//    }
+    @Provides
+    @Singleton
+    fun provideDetailRepository(
+        favoriteRecipeDataSource: FavoriteRecipeDataSource, recipeDataSource: RecipeDataSource
+    ): DetailRepository {
+        return DetailRepository(favoriteRecipeDataSource,recipeDataSource)
+    }
 
     @Singleton
     @Provides
